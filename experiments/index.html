@@ -11,48 +11,132 @@
         <div class="container">
             <h1><a href="/">State Capacity AI</a></h1>
             <nav>
-                <a href="/framework">Framework</a>
-                <a href="/experiments">Experiments</a>
-                <a href="https://blog.ronbronson.com">Blog</a>
+                <a href="/guide">Guide</a>
+                <a href="/experiments" class="active">Experiments</a>
+                <a href="https://blog.ronbronson.com">Writing</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
+        <section class="experiments-hero">
+            <div class="container">
                 <h2>Experiments</h2>
-                <p class="lead">Working prototypes demonstrating <a href="/framework">ACX principles</a>. New experiments shipping weekly.</p>
+                <p class="lead">Working prototypes demonstrating the <a href="/guide">five principles</a>. Not mockups—actual demonstrations of what context engineering design looks like in practice.</p>
             </div>
         </section>
 
-        <section class="experiment-list">
-            <div class="container-narrow">
-                <article class="experiment-card">
-                    <div class="exp-header">
-                        <span class="exp-number">#001</span>
-                        <span class="status in-progress">In Progress</span>
+        <section class="experiments-list">
+            <div class="container">
+                <article id="001" class="experiment-detail">
+                    <div class="experiment-meta">
+                        <span class="exp-number-large">#001</span>
+                        <span class="exp-badge in-progress">In Progress</span>
                     </div>
                     <h3>Context Legibility Dashboard</h3>
-                    <p>Making system assumptions, limits, and reasoning visible to end users.</p>
+                    <p class="experiment-intro">A tool for making AI system assumptions, limits, and reasoning visible in public-facing systems. Designed for government benefits eligibility chatbots and similar high-stakes contexts.</p>
+                    
+                    <div class="experiment-details">
+                        <div class="detail-section">
+                            <h4>What it demonstrates</h4>
+                            <p>Principle 3: Context Legibility. Shows what "nutrition labels for AI" could look like in practice—not for everyday users, but for oversight, advocacy, and critical moments.</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>The scenario</h4>
+                            <p>A government benefits application chatbot. Citizens need to understand what data the system has, what it assumes about their situation, and how it reached eligibility decisions.</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Key features</h4>
+                            <ul>
+                                <li>What information the system is using (and where it came from)</li>
+                                <li>What assumptions it's making about the user's situation</li>
+                                <li>What the system can and cannot do</li>
+                                <li>Step-by-step reasoning for decisions</li>
+                                <li>Controls for users to correct wrong assumptions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Status</h4>
+                            <p>Building React prototype with realistic mock data. Expected completion: November 2025.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experiment-links">
+                        <a href="/guide#principle-3" class="text-link">← Back to Principle 3</a>
+                    </div>
                 </article>
 
-                <article class="experiment-card">
-                    <div class="exp-header">
-                        <span class="exp-number">#002</span>
-                        <span class="status planned">Planned</span>
+                <article id="002" class="experiment-detail">
+                    <div class="experiment-meta">
+                        <span class="exp-number-large">#002</span>
+                        <span class="exp-badge planned">Planned</span>
                     </div>
                     <h3>Escalation Pattern Library</h3>
-                    <p>Designing for when systems should refuse, ask for help, or admit uncertainty.</p>
+                    <p class="experiment-intro">A collection of design patterns for when AI systems should refuse tasks, escalate to humans, or admit uncertainty—with working examples for different contexts.</p>
+                    
+                    <div class="experiment-details">
+                        <div class="detail-section">
+                            <h4>What it demonstrates</h4>
+                            <p>Principle 4: Escalation & Refusal Design. How to build systems that know their limits and can gracefully admit when they can't help.</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Planned patterns</h4>
+                            <ul>
+                                <li>The "I Don't Know" Button: Explicit uncertainty acknowledgment</li>
+                                <li>Confidence-based escalation: Automatic handoff at low confidence thresholds</li>
+                                <li>Capability boundaries: Clear statements of what system cannot do</li>
+                                <li>Graceful refusal: Explaining why and suggesting alternatives</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Status</h4>
+                            <p>Research and planning phase. Expected start: December 2025.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experiment-links">
+                        <a href="/guide#principle-4" class="text-link">← Back to Principle 4</a>
+                    </div>
                 </article>
 
-                <article class="experiment-card">
-                    <div class="exp-header">
-                        <span class="exp-number">#003</span>
-                        <span class="status planned">Planned</span>
+                <article id="003" class="experiment-detail">
+                    <div class="experiment-meta">
+                        <span class="exp-number-large">#003</span>
+                        <span class="exp-badge planned">Planned</span>
                     </div>
                     <h3>Disintermediation Case Studies</h3>
-                    <p>Documenting where agent mediation creates problems in government and public services.</p>
+                    <p class="experiment-intro">Documentation and analysis of where AI mediation creates problems in real government and public service deployments—with design recommendations.</p>
+                    
+                    <div class="experiment-details">
+                        <div class="detail-section">
+                            <h4>What it demonstrates</h4>
+                            <p>Principle 2: Disintermediation Analysis. How to identify where AI mediation separates people from capabilities and relationships—and what to do about it.</p>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Planned case studies</h4>
+                            <ul>
+                                <li>Customer service chatbots and loss of human judgment</li>
+                                <li>Benefits eligibility systems and due process</li>
+                                <li>HR automation and the removal of relationship-building</li>
+                                <li>Healthcare triage bots and clinical decision-making</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4>Status</h4>
+                            <p>Research phase. Expected start: January 2026.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="experiment-links">
+                        <a href="/guide#principle-2" class="text-link">← Back to Principle 2</a>
+                    </div>
                 </article>
             </div>
         </section>
@@ -60,7 +144,13 @@
 
     <footer>
         <div class="container">
-            <p>By <a href="https://blog.ronbronson.com">Ron Bronson</a></p>
+            <div class="footer-content">
+                <p>State Capacity AI — A public research lab by <a href="https://blog.ronbronson.com">Ron Bronson</a></p>
+                <div class="footer-links">
+                    <a href="https://bsky.app/profile/ronbronson.bsky.social">Bluesky</a>
+                    <a href="https://blog.ronbronson.com/rss.xml">RSS</a>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
