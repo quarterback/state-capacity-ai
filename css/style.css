@@ -188,7 +188,19 @@ section {
     color: var(--color-text-light);
     font-weight: 600;
 }
+ul {
+    list-style: none;
+    margin-left: 0;
+}
 
+ul li {
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
 .experiment h4 {
     margin: 0;
 }
