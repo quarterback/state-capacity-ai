@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide — State Capacity AI</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="/">State Capacity AI</a></h1>
+            <nav>
+                <a href="/guide" class="active">Guide</a>
+                <a href="/experiments">Experiments</a>
+                <a href="https://blog.ronbronson.com">Writing</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="guide-hero">
+            <div class="container-narrow">
+                <h2>Five Principles of Context Engineering Design</h2>
+                <p class="lead">Context engineering isn't just about managing tokens and retrieval. It's about designing the systems AI models enter, the assumptions they carry, and the consequences they create.</p>
+            </div>
+        </section>
+
+        <section class="guide-intro">
+            <div class="container-narrow">
+                <div class="intro-box">
+                    <p>Most people use "context engineering" to describe extensible ways of managing context states for LLMs—things like retrieval, memory architectures, and prompt optimization.</p>
+                    <p>This guide expands that frame to include the systems these models enter, the assumptions they carry, and the consequences they create on the people using them.</p>
+                </div>
+            </div>
+        </section>
+
+        <article id="principle-1" class="principle-section">
+            <div class="container-narrow">
+                <div class="principle-header">
+                    <span class="principle-number-large">01</span>
+                    <h3>Context as Environment, Not Just Input</h3>
+                </div>
+                <div class="principle-content">
+                    <p class="principle-intro">Where is this system being deployed? What assumptions does it carry? What power does it hold? Context isn't just what's in the window—it's the environment the system enters.</p>
+                    
+                    <h4>What this means</h4>
+                    <p>Traditional context engineering treats context as input: documents to retrieve, conversation history to maintain, data to compress. But context is also environment—the institutional setting, the power dynamics, the stakes of getting it wrong.</p>
+                    
+                    <h4>Why it matters</h4>
+                    <p>An AI system deployed in a benefits eligibility process carries different context than the same system deployed in a customer service chatbot. The environment shapes what "success" means, who absorbs failure, and what guardrails are needed.</p>
+                    
+                    <h4>In practice</h4>
+                    <ul>
+                        <li>Document the deployment context: where, for whom, with what alternatives</li>
+                        <li>Map the power dynamics: who can exit vs. who is captive to the system</li>
+                        <li>Identify environmental constraints: regulatory requirements, due process needs</li>
+                        <li>Design for the actual context, not the ideal one</li>
+                    </ul>
+                    
+                    <div class="related-experiment">
+                        <span class="related-label">Related Experiment</span>
+                        <a href="/experiments#001">Context Legibility Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="principle-2" class="principle-section">
+            <div class="container-narrow">
+                <div class="principle-header">
+                    <span class="principle-number-large">02</span>
+                    <h3>Disintermediation Analysis</h3>
+                </div>
+                <div class="principle-content">
+                    <p class="principle-intro">When does AI mediation separate people from relationships, capabilities, and decision-making? Not just "is the agent working?" but "is mediation helping or hurting?"</p>
+                    
+                    <h4>What this means</h4>
+                    <p>Disintermediation is the process by which people become separated from direct relationships, capabilities, and decision-making as AI interfaces interpret and act on their behalf. Unlike automation that makes processes more efficient, disintermediation fundamentally changes how people interact with systems.</p>
+                    
+                    <h4>Why it matters</h4>
+                    <p>When AI chatbots become the primary way to access customer service, people don't just lose direct contact—they lose the ability to express needs in their own terms, must learn to communicate in ways the AI understands, and lose access to human judgment in complex situations.</p>
+                    
+                    <h4>In practice</h4>
+                    <ul>
+                        <li>Identify what capabilities people are losing access to</li>
+                        <li>Map where human judgment is being removed from processes</li>
+                        <li>Document when AI mediation creates new barriers</li>
+                        <li>Preserve escalation paths to human decision-makers</li>
+                    </ul>
+                    
+                    <div class="case-study-box">
+                        <h5>Case Study: Customer Service Chatbots</h5>
+                        <p>When chatbots become the only way to resolve issues, users lose: the ability to explain nuanced problems, access to empathy and judgment, the option to escalate immediately, and the relationship with the company.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="principle-3" class="principle-section">
+            <div class="container-narrow">
+                <div class="principle-header">
+                    <span class="principle-number-large">03</span>
+                    <h3>Context Legibility (Auditability)</h3>
+                </div>
+                <div class="principle-content">
+                    <p class="principle-intro">Making AI reasoning visible—not just for end users, but for oversight, advocacy, and the moments when someone needs to understand what went wrong.</p>
+                    
+                    <h4>The nutrition label argument</h4>
+                    <p>Most people don't read nutrition labels. But they matter because regulators can audit them, researchers can analyze patterns, advocates can identify problems, and they exist for the 1% of cases where someone needs to know.</p>
+                    
+                    <p>Context legibility works the same way. It's not about overwhelming users with information. It's about building systems that can be examined when it matters.</p>
+                    
+                    <h4>Who needs legibility</h4>
+                    <ul>
+                        <li><strong>Oversight bodies:</strong> Auditors and regulators checking if systems work as intended</li>
+                        <li><strong>Advocates:</strong> Organizations representing affected communities who need evidence</li>
+                        <li><strong>Researchers:</strong> People documenting patterns and problems</li>
+                        <li><strong>Staff:</strong> Caseworkers who need to explain outcomes to constituents</li>
+                        <li><strong>Users in crisis:</strong> The person whose benefits got denied who needs to understand why</li>
+                    </ul>
+                    
+                    <h4>In practice</h4>
+                    <ul>
+                        <li>Build audit interfaces even if they're not user-facing by default</li>
+                        <li>Document what data the system has access to and where it came from</li>
+                        <li>Make assumptions explicit and correctable</li>
+                        <li>Provide step-by-step reasoning for decisions</li>
+                        <li>Create controls for users to see/edit/delete what systems know</li>
+                    </ul>
+                    
+                    <div class="related-experiment">
+                        <span class="related-label">Related Experiment</span>
+                        <a href="/experiments#001">Context Legibility Dashboard →</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="principle-4" class="principle-section">
+            <div class="container-narrow">
+                <div class="principle-header">
+                    <span class="principle-number-large">04</span>
+                    <h3>Escalation & Refusal Design</h3>
+                </div>
+                <div class="principle-content">
+                    <p class="principle-intro">How do systems recognize their limits and know when to stop? Not just "can the agent handle edge cases?" but "can it admit when it can't?"</p>
+                    
+                    <h4>What this means</h4>
+                    <p>AI systems need the ability to refuse tasks they're not equipped to handle, escalate to human judgment when needed, and admit uncertainty rather than simulate confidence.</p>
+                    
+                    <h4>Why it matters</h4>
+                    <p>In high-stakes contexts, a system that confidently provides wrong information is worse than a system that says "I don't know" or "you should talk to a human about this."</p>
+                    
+                    <h4>In practice</h4>
+                    <ul>
+                        <li>Design explicit "I don't know" responses, not just silence or deflection</li>
+                        <li>Build clear escalation paths to human decision-makers</li>
+                        <li>Set confidence thresholds that trigger refusal or escalation</li>
+                        <li>Make refusal graceful: explain why and what to do instead</li>
+                        <li>Track refusal/escalation patterns to identify system limits</li>
+                    </ul>
+                    
+                    <div class="related-experiment">
+                        <span class="related-label">Related Experiment</span>
+                        <a href="/experiments#002">Escalation Pattern Library (planned)</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="principle-5" class="principle-section">
+            <div class="container-narrow">
+                <div class="principle-header">
+                    <span class="principle-number-large">05</span>
+                    <h3>Capability Preservation</h3>
+                </div>
+                <div class="principle-content">
+                    <p class="principle-intro">How do we ensure AI enhances rather than erodes human capability? Not just "is the interface intuitive?" but "are people learning or losing skills?"</p>
+                    
+                    <h4>What this means</h4>
+                    <p>When AI mediates tasks, people can lose the underlying knowledge and skills. The system might work efficiently today, but leaves people dependent and unable to function when it fails or changes.</p>
+                    
+                    <h4>Why it matters</h4>
+                    <p>In public systems, capability loss creates brittleness. If staff can't do their jobs without the AI, what happens when it breaks? If citizens can't navigate services without the chatbot, who gets left behind?</p>
+                    
+                    <h4>In practice</h4>
+                    <ul>
+                        <li>Document what capabilities people had before AI mediation</li>
+                        <li>Design for graceful degradation: systems that can revert to human operation</li>
+                        <li>Build in learning: help people understand why, not just what</li>
+                        <li>Preserve parallel paths: don't make AI the only way to accomplish tasks</li>
+                        <li>Monitor for skill atrophy in staff who rely on AI tools</li>
+                    </ul>
+                    
+                    <div class="case-study-box">
+                        <h5>Example: Navigation Apps</h5>
+                        <p>GPS navigation is efficient but many people have lost the ability to read maps or navigate using landmarks. When the system fails (no signal, dead battery), they're stranded. Public infrastructure should build for both AI efficiency and human capability.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <section class="guide-footer">
+            <div class="container-narrow">
+                <div class="footer-box">
+                    <h3>Background</h3>
+                    <p>This framework builds on years of work in consequence design and public mechanics. It extends Agent Experience (AX) principles for deployment contexts where failure has real consequences: government services, healthcare, customer support, HR.</p>
+                    
+                    <h4>Further Reading</h4>
+                    <ul>
+                        <li><a href="https://blog.ronbronson.com/context-is-not-just-a-map-its-the-terrain/">Context is not just a map, it's the terrain</a></li>
+                        <li><a href="https://blog.ronbronson.com/context-engineering-for-llms-starts-with-systems-not-prompts/">Context Engineering for LLMs Starts With Systems, Not Prompts</a></li>
+                        <li><a href="https://blog.ronbronson.com/service-design-for-ai-why-human-experience-hx-matters/">Service Design for AI: Why Human Experience (HX) Matters</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>State Capacity AI — A public research lab by <a href="https://blog.ronbronson.com">Ron Bronson</a></p>
+                <div class="footer-links">
+                    <a href="https://bsky.app/profile/ronbronson.bsky.social">Bluesky</a>
+                    <a href="https://blog.ronbronson.com/rss.xml">RSS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
