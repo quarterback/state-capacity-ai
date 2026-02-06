@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disclosure Widget — State Capacity AI</title>
+  <meta name="description" content="Tardigrade: an embeddable disclosure widget for AI transparency. One-line install, five government templates, multi-framework compliance.">
+  <meta property="og:title" content="Disclosure Widget — State Capacity AI">
+  <meta property="og:description" content="Tardigrade: an embeddable disclosure widget for AI transparency. One-line install, five government templates, multi-framework compliance.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://statecapacity.ai/img/card.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Disclosure Widget — State Capacity AI">
+  <meta name="twitter:description" content="Tardigrade: an embeddable disclosure widget for AI transparency. One-line install, five government templates, multi-framework compliance.">
+  <meta name="twitter:image" content="https://statecapacity.ai/img/card.svg">
+  <link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body class="has-sidebar">
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+  <div class="sidebar-overlay"></div>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
+      <div class="sidebar-section">
+        <div class="sidebar-label">AI Enablement Statements</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/enablement-statements/">Overview</a></li>
+          <li><a href="/guides/enablement-statements/examples/">Worked Examples</a></li>
+          <li><a href="/guides/enablement-statements/widget/" class="active">Disclosure Widget</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+
+      <h1>Tardigrade Disclosure Widget</h1>
+      <p class="lead">An embeddable disclosure badge for AI transparency. One line of code. Five government templates. Multi-framework compliance checking. Works in legacy browsers.</p>
+
+      <div class="callout">
+        <p>Tardigrade is the implementation layer for <a href="/guides/enablement-statements/">AI Enablement Statements</a>. It turns disclosure documents into live, embeddable, regulation-aware components.</p>
+      </div>
+
+      <h2 id="what-it-does">What It Does</h2>
+
+      <p>Tardigrade places a disclosure badge on any page where AI touches a public service decision. The badge tells people what the AI does, its automation level, how to request human review, and what data it uses.</p>
+
+      <p>The badge auto-updates when regulatory requirements change. Organizations maintain one configuration; the widget handles compliance formatting.</p>
+
+      <h2 id="install">Installation</h2>
+
+      <h3>CDN (one line)</h3>
+
+      <pre><code>&lt;script src="https://unpkg.com/@tardigrade-ai/disclosure/widget.min.js"&gt;&lt;/script&gt;</code></pre>
+
+      <p>No dependencies. Works in all modern browsers and IE11. The script adds a disclosure badge to the page automatically.</p>
+
+      <h3>NPM</h3>
+
+      <pre><code>npm install @tardigrade-ai/disclosure</code></pre>
+
+      <h2 id="templates">Five Government Templates</h2>
+
+      <p>Each template follows a standard structure: what the AI does, automation level, human review process, how to request review, data inputs, and accuracy metrics.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Template</th>
+            <th>Use Case</th>
+            <th>Human Review</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>benefits-screener</code></td>
+            <td>Eligibility checking</td>
+            <td>Required for denials</td>
+          </tr>
+          <tr>
+            <td><code>risk-assessment</code></td>
+            <td>Scoring and prioritization</td>
+            <td>Required for high scores</td>
+          </tr>
+          <tr>
+            <td><code>document-processor</code></td>
+            <td>Data extraction</td>
+            <td>Required for exceptions</td>
+          </tr>
+          <tr>
+            <td><code>fraud-detection</code></td>
+            <td>Anomaly flagging</td>
+            <td>Always reviewed</td>
+          </tr>
+          <tr>
+            <td><code>resource-allocation</code></td>
+            <td>Distribution recommendations</td>
+            <td>Final approval required</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="usage">Basic Usage</h2>
+
+      <pre><code>// Initialize with your configuration
+Tardigrade.init({
+  agency: 'Department of Health Services',
+  system: 'Medicaid Eligibility Screener',
+  template: 'benefits-screener',
+  automationLevel: 'assistive',
+  contactUrl: '/contact',
+  reviewUrl: '/request-review'
+});
+
+// Validate compliance completeness
+Tardigrade.validate();
+
+// Check for updated regulatory requirements
+Tardigrade.update();</code></pre>
+
+      <h2 id="api">JavaScript API</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Tardigrade.init(config)</code></td>
+            <td>Initialize with agency and system configuration</td>
+          </tr>
+          <tr>
+            <td><code>Tardigrade.create(disclosure)</code></td>
+            <td>Create custom disclosures programmatically</td>
+          </tr>
+          <tr>
+            <td><code>Tardigrade.validate()</code></td>
+            <td>Check compliance completeness against active frameworks</td>
+          </tr>
+          <tr>
+            <td><code>Tardigrade.update()</code></td>
+            <td>Fetch latest regulatory requirements</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="compliance">Compliance Frameworks</h2>
+
+      <p>Tardigrade validates disclosures against multiple regulatory frameworks simultaneously:</p>
+
+      <ul>
+        <li><strong>EU AI Act</strong> (Article 13) &mdash; transparency obligations for high-risk AI</li>
+        <li><strong>NIST AI RMF</strong> &mdash; risk management framework requirements</li>
+        <li><strong>California AI Transparency</strong> &mdash; state-level disclosure requirements</li>
+        <li><strong>Federal AI Executive Orders</strong> &mdash; federal agency obligations</li>
+        <li><strong>WCAG 2.1 AA</strong> &mdash; accessibility for disclosure content</li>
+      </ul>
+
+      <p>The <code>validate()</code> method returns a compliance report showing which requirements are met and which need attention.</p>
+
+      <h2 id="events">Event Tracking</h2>
+
+      <p>Tardigrade emits events when users interact with disclosure badges. Track when disclosures are viewed, expanded, or when someone requests human review:</p>
+
+      <pre><code>Tardigrade.on('disclosure:viewed', function(data) {
+  // User viewed the disclosure badge
+});
+
+Tardigrade.on('review:requested', function(data) {
+  // User requested human review
+});</code></pre>
+
+      <nav class="page-nav">
+        <a class="prev" href="/guides/enablement-statements/examples/">Previous<span>Worked Examples</span></a>
+      </nav>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-row">
+      <p>State Capacity AI</p>
+      <div class="footer-links">
+        <a href="mailto:contact@statecapacity.ai">Contact</a>
+      </div>
+    </div>
+    <div class="footer-badge">
+      <a href="/guides/enablement-statements/widget/" class="disclosure-badge">
+        <span class="disclosure-badge-dot"></span>
+        AI Disclosure: Advisory
+      </a>
+    </div>
+  </footer>
+  <script src="/js/nav.js"></script>
+</body>
+</html>
