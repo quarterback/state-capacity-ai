@@ -17,7 +17,6 @@
   <header class="site-header">
     <a href="/" class="site-title">State Capacity AI</a>
     <div class="header-links">
-      <a href="https://github.com/State-Capacity-AI" class="desktop-only">GitHub</a>
       <a href="mailto:contact@statecapacity.ai" class="desktop-only">Contact</a>
       <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
     </div>
@@ -34,32 +33,27 @@
         </ul>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-label">Methods</div>
+        <div class="sidebar-label">Guides</div>
         <ul class="sidebar-nav">
-          <li><a href="/methods/interface/">I. The Interface</a></li>
-          <li><a href="/methods/protocol/">II. The Protocol</a></li>
-          <li><a href="/methods/shield/">III. The Shield</a></li>
+          <li><a href="/guides/disclosure/">AI Disclosure Standards</a></li>
+          <li><a href="/guides/agent-standards/">Agent Interface Standards</a></li>
+          <li><a href="/guides/judgment-routing/">Judgment Routing</a></li>
+          <li><a href="/guides/commons-license/">Parachute Commons License</a></li>
         </ul>
       </div>
       <div class="sidebar-section">
         <div class="sidebar-label">Research</div>
         <ul class="sidebar-nav">
-          <li><a href="/guide/">Principles Guide</a></li>
+          <li><a href="/guide/">Design Principles</a></li>
           <li><a href="/experiments/">Experiments</a></li>
           <li><a href="/framework/">Framework</a></li>
-        </ul>
-      </div>
-      <div class="sidebar-section">
-        <div class="sidebar-label">External</div>
-        <ul class="sidebar-nav">
-          <li><a href="https://github.com/State-Capacity-AI">GitHub</a></li>
         </ul>
       </div>
     </nav>
 
     <main class="main-content">
       <div class="doctrine-intro">
-        <h1>The Doctrine of State Capacity</h1>
+        <h1>State Capacity AI</h1>
         <p class="lead">State Capacity AI works at the intersection of public institution building and frontier technology. We conduct applied research, develop implementable doctrine, and build reference artifacts to help high-stakes sectors&mdash;from federal agencies to local services&mdash;responsibly harness new tools.</p>
       </div>
 
@@ -70,37 +64,39 @@
       <h2>Anti-Delegation</h2>
       <p>The default trajectory of AI adoption is delegation: hand the task to the model, trust the output, move on. This works for low-stakes, high-volume tasks. It fails catastrophically for anything that requires judgment, context, or accountability.</p>
       <p>Anti-delegation is not anti-AI. It is the discipline of knowing <strong>what you cannot outsource</strong>&mdash;and building the organizational muscle to keep doing those things yourself, better, with AI as a tool rather than a replacement.</p>
-      <p>Our work is guided by a focus on sustainable integration, aiming to augment core institutional functions and strengthen operational capacity. The methods below are case studies in that discipline. Each one addresses a specific failure mode of naive AI adoption and offers a concrete, implementable alternative.</p>
+      <p>Our work is guided by a focus on sustainable integration, aiming to augment core institutional functions and strengthen operational capacity. The guides below are the substance of that work.</p>
 
-      <h2>Methods</h2>
-      <p>Three technical guides, each grounded in a working artifact. Not theory&mdash;methods you can deploy.</p>
+      <h2>Guides</h2>
 
       <div class="method-listing">
         <div class="method-item">
-          <a href="/methods/interface/">
-            <span class="method-item-number">Method I</span>
-            <div class="method-item-title">The Interface</div>
-            <p class="method-item-desc">Draft standards for agent experience in public services. Designing agent-to-human boundaries that prioritize human context, accountability, and structured handoffs over machine speed.</p>
+          <a href="/guides/disclosure/">
+            <div class="method-item-title">AI Disclosure Standards</div>
+            <p class="method-item-desc">When government uses algorithms to make decisions about people's lives, no disclosure requirement exists. These are lightweight standards for closing that gap&mdash;enablement statements, a decision-grade taxonomy, and practice standards agencies can implement under pressure.</p>
           </a>
         </div>
         <div class="method-item">
-          <a href="/methods/protocol/">
-            <span class="method-item-number">Method II</span>
-            <div class="method-item-title">The Protocol</div>
-            <p class="method-item-desc">Judgment routing and delegated authority infrastructure for agentic AI. Implementing hard-stops, decision receipts, and human-in-the-loop triggers for high-stakes actions.</p>
+          <a href="/guides/agent-standards/">
+            <div class="method-item-title">Agent Interface Standards</div>
+            <p class="method-item-desc">Draft standards for how autonomous agents interact with public service systems. Covers policy logic as versioned interfaces, action surfaces, handoff protocols, audit trails, context delivery, and public value principles.</p>
           </a>
         </div>
         <div class="method-item">
-          <a href="/methods/shield/">
-            <span class="method-item-number">Method III</span>
-            <div class="method-item-title">The Shield</div>
-            <p class="method-item-desc">The Parachute Commons License. Expanding protection that prevents the extraction of organizational knowledge in hyper-replicable environments.</p>
+          <a href="/guides/judgment-routing/">
+            <div class="method-item-title">Judgment Routing</div>
+            <p class="method-item-desc">Infrastructure for delegated authority and decision engineering in agentic AI. A middleware pattern that evaluates agent actions against policy constraints and authority boundaries, producing auditable decision receipts.</p>
+          </a>
+        </div>
+        <div class="method-item">
+          <a href="/guides/commons-license/">
+            <div class="method-item-title">Parachute Commons License</div>
+            <p class="method-item-desc">A license that deploys protection as it gets closer to the ground. Starts permissive, escalates protections when risks like commercial extraction, automated ingestion, or misrepresentation are detected.</p>
           </a>
         </div>
       </div>
 
-      <h2>Context Engineering Principles</h2>
-      <p>These methods are informed by five principles of context engineering design&mdash;a framework for thinking about AI deployment in environments where failure has real consequences.</p>
+      <h2>Design Principles</h2>
+      <p>These guides are informed by five principles of context engineering design&mdash;a framework for thinking about AI deployment in environments where failure has real consequences.</p>
       <ul>
         <li><strong>Context as Environment, Not Just Input</strong> &mdash; Where the system is deployed shapes what success means.</li>
         <li><strong>Disintermediation Analysis</strong> &mdash; When does AI mediation separate people from capabilities?</li>
@@ -108,7 +104,7 @@
         <li><strong>Escalation &amp; Refusal Design</strong> &mdash; Systems that know their limits and act on them.</li>
         <li><strong>Capability Preservation</strong> &mdash; AI should enhance human skill, not replace it.</li>
       </ul>
-      <a href="/guide/" class="related-link">Read the full Principles Guide</a>
+      <a href="/guide/" class="related-link">Read the full Design Principles guide</a>
 
       <div class="background-section">
         <h3>About</h3>
@@ -120,7 +116,6 @@
   <footer class="site-footer">
     <p>State Capacity AI</p>
     <div class="footer-links">
-      <a href="https://github.com/State-Capacity-AI">GitHub</a>
       <a href="mailto:contact@statecapacity.ai">Contact</a>
     </div>
   </footer>

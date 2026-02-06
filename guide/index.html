@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Principles Guide — State Capacity AI</title>
+  <title>Design Principles — State Capacity AI</title>
   <meta name="description" content="Five Principles of Context Engineering Design for high-stakes AI deployment.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="/css/sovereign.css">
@@ -13,7 +13,6 @@
   <header class="site-header">
     <a href="/" class="site-title">State Capacity AI</a>
     <div class="header-links">
-      <a href="https://github.com/State-Capacity-AI" class="desktop-only">GitHub</a>
       <a href="mailto:contact@statecapacity.ai" class="desktop-only">Contact</a>
       <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
     </div>
@@ -30,25 +29,20 @@
         </ul>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-label">Methods</div>
+        <div class="sidebar-label">Guides</div>
         <ul class="sidebar-nav">
-          <li><a href="/methods/interface/">I. The Interface</a></li>
-          <li><a href="/methods/protocol/">II. The Protocol</a></li>
-          <li><a href="/methods/shield/">III. The Shield</a></li>
+          <li><a href="/guides/disclosure/">AI Disclosure Standards</a></li>
+          <li><a href="/guides/agent-standards/">Agent Interface Standards</a></li>
+          <li><a href="/guides/judgment-routing/">Judgment Routing</a></li>
+          <li><a href="/guides/commons-license/">Parachute Commons License</a></li>
         </ul>
       </div>
       <div class="sidebar-section">
         <div class="sidebar-label">Research</div>
         <ul class="sidebar-nav">
-          <li><a href="/guide/" class="active">Principles Guide</a></li>
+          <li><a href="/guide/" class="active">Design Principles</a></li>
           <li><a href="/experiments/">Experiments</a></li>
           <li><a href="/framework/">Framework</a></li>
-        </ul>
-      </div>
-      <div class="sidebar-section">
-        <div class="sidebar-label">External</div>
-        <ul class="sidebar-nav">
-          <li><a href="https://github.com/State-Capacity-AI">GitHub</a></li>
         </ul>
       </div>
     </nav>
@@ -66,13 +60,10 @@
         <span class="principle-block-number">Principle 01</span>
         <h2>Context as Environment, Not Just Input</h2>
         <p>Where is this system being deployed? What assumptions does it carry? What power does it hold? Context isn't just what's in the window&mdash;it's the environment the system enters.</p>
-
         <h4>What this means</h4>
         <p>Traditional context engineering treats context as input: documents to retrieve, conversation history to maintain, data to compress. But context is also environment&mdash;the institutional setting, the power dynamics, the stakes of getting it wrong.</p>
-
         <h4>Why it matters</h4>
         <p>An AI system deployed in a benefits eligibility process carries different context than the same system deployed in a customer service chatbot. The environment shapes what "success" means, who absorbs failure, and what guardrails are needed.</p>
-
         <h4>In practice</h4>
         <ul>
           <li>Document the deployment context: where, for whom, with what alternatives</li>
@@ -80,7 +71,6 @@
           <li>Identify environmental constraints: regulatory requirements, due process needs</li>
           <li>Design for the actual context, not the ideal one</li>
         </ul>
-
         <a href="/experiments/#001" class="related-link">Related: Context Legibility Dashboard</a>
       </article>
 
@@ -88,13 +78,8 @@
         <span class="principle-block-number">Principle 02</span>
         <h2>Disintermediation Analysis</h2>
         <p>When does AI mediation separate people from relationships, capabilities, and decision-making? Not just "is the agent working?" but "is mediation helping or hurting?"</p>
-
         <h4>What this means</h4>
-        <p>Disintermediation is the process by which people become separated from direct relationships, capabilities, and decision-making as AI interfaces interpret and act on their behalf. Unlike automation that makes processes more efficient, disintermediation fundamentally changes how people interact with systems.</p>
-
-        <h4>Why it matters</h4>
-        <p>When AI chatbots become the primary way to access customer service, people don't just lose direct contact&mdash;they lose the ability to express needs in their own terms, must learn to communicate in ways the AI understands, and lose access to human judgment in complex situations.</p>
-
+        <p>Disintermediation is the process by which people become separated from direct relationships, capabilities, and decision-making as AI interfaces interpret and act on their behalf.</p>
         <h4>In practice</h4>
         <ul>
           <li>Identify what capabilities people are losing access to</li>
@@ -102,7 +87,6 @@
           <li>Document when AI mediation creates new barriers</li>
           <li>Preserve escalation paths to human decision-makers</li>
         </ul>
-
         <div class="case-study">
           <h5>Case Study: Customer Service Chatbots</h5>
           <p>When chatbots become the only way to resolve issues, users lose: the ability to explain nuanced problems, access to empathy and judgment, the option to escalate immediately, and the relationship with the company.</p>
@@ -113,11 +97,8 @@
         <span class="principle-block-number">Principle 03</span>
         <h2>Context Legibility (Auditability)</h2>
         <p>Making AI reasoning visible&mdash;not just for end users, but for oversight, advocacy, and the moments when someone needs to understand what went wrong.</p>
-
         <h4>The nutrition label argument</h4>
         <p>Most people don't read nutrition labels. But they matter because regulators can audit them, researchers can analyze patterns, advocates can identify problems, and they exist for the 1% of cases where someone needs to know.</p>
-        <p>Context legibility works the same way. It's not about overwhelming users with information. It's about building systems that can be examined when it matters.</p>
-
         <h4>Who needs legibility</h4>
         <ul>
           <li><strong>Oversight bodies:</strong> Auditors and regulators checking if systems work as intended</li>
@@ -126,7 +107,6 @@
           <li><strong>Staff:</strong> Caseworkers who need to explain outcomes to constituents</li>
           <li><strong>Users in crisis:</strong> The person whose benefits got denied who needs to understand why</li>
         </ul>
-
         <h4>In practice</h4>
         <ul>
           <li>Build audit interfaces even if they're not user-facing by default</li>
@@ -135,7 +115,6 @@
           <li>Provide step-by-step reasoning for decisions</li>
           <li>Create controls for users to see/edit/delete what systems know</li>
         </ul>
-
         <a href="/experiments/#001" class="related-link">Related: Context Legibility Dashboard</a>
       </article>
 
@@ -143,13 +122,8 @@
         <span class="principle-block-number">Principle 04</span>
         <h2>Escalation &amp; Refusal Design</h2>
         <p>How do systems recognize their limits and know when to stop? Not just "can the agent handle edge cases?" but "can it admit when it can't?"</p>
-
         <h4>What this means</h4>
         <p>AI systems need the ability to refuse tasks they're not equipped to handle, escalate to human judgment when needed, and admit uncertainty rather than simulate confidence.</p>
-
-        <h4>Why it matters</h4>
-        <p>In high-stakes contexts, a system that confidently provides wrong information is worse than a system that says "I don't know" or "you should talk to a human about this."</p>
-
         <h4>In practice</h4>
         <ul>
           <li>Design explicit "I don't know" responses, not just silence or deflection</li>
@@ -158,7 +132,6 @@
           <li>Make refusal graceful: explain why and what to do instead</li>
           <li>Track refusal/escalation patterns to identify system limits</li>
         </ul>
-
         <a href="/experiments/#002" class="related-link">Related: Escalation Pattern Library (planned)</a>
       </article>
 
@@ -166,13 +139,8 @@
         <span class="principle-block-number">Principle 05</span>
         <h2>Capability Preservation</h2>
         <p>How do we ensure AI enhances rather than erodes human capability? Not just "is the interface intuitive?" but "are people learning or losing skills?"</p>
-
         <h4>What this means</h4>
         <p>When AI mediates tasks, people can lose the underlying knowledge and skills. The system might work efficiently today, but leaves people dependent and unable to function when it fails or changes.</p>
-
-        <h4>Why it matters</h4>
-        <p>In public systems, capability loss creates brittleness. If staff can't do their jobs without the AI, what happens when it breaks? If citizens can't navigate services without the chatbot, who gets left behind?</p>
-
         <h4>In practice</h4>
         <ul>
           <li>Document what capabilities people had before AI mediation</li>
@@ -181,7 +149,6 @@
           <li>Preserve parallel paths: don't make AI the only way to accomplish tasks</li>
           <li>Monitor for skill atrophy in staff who rely on AI tools</li>
         </ul>
-
         <div class="case-study">
           <h5>Example: Navigation Apps</h5>
           <p>GPS navigation is efficient but many people have lost the ability to read maps or navigate using landmarks. When the system fails (no signal, dead battery), they're stranded. Public infrastructure should build for both AI efficiency and human capability.</p>
@@ -198,7 +165,6 @@
   <footer class="site-footer">
     <p>State Capacity AI</p>
     <div class="footer-links">
-      <a href="https://github.com/State-Capacity-AI">GitHub</a>
       <a href="mailto:contact@statecapacity.ai">Contact</a>
     </div>
   </footer>
