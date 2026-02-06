@@ -22,13 +22,40 @@
   <link rel="stylesheet" href="/css/sovereign.css">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <a href="/" class="site-title">State Capacity AI</a>
-    <div class="header-links">
-      <a href="/about/">About</a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="/#guides-section" class="nav-link">Guides</a>
+      <a href="/#tools-section" class="nav-link">Tools</a>
+      <a href="/about/" class="nav-link">About</a>
+    </nav>
+    <div class="header-actions">
       <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </header>
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <nav aria-label="Mobile navigation">
+      <div class="mobile-nav-section">
+        <div class="mobile-nav-label">Guides</div>
+        <a href="/guides/agent-standards/" class="mobile-nav-link">Agent Experience Standards</a>
+        <a href="/guides/enablement-statements/" class="mobile-nav-link">AI Enablement Statements</a>
+        <a href="/guides/taxonomy/" class="mobile-nav-link">Decision-Grade Taxonomy</a>
+        <a href="/guides/practice-standards/" class="mobile-nav-link">Practice Standards</a>
+        <a href="/guides/commons-license/" class="mobile-nav-link">Parachute Commons</a>
+      </div>
+      <div class="mobile-nav-section">
+        <div class="mobile-nav-label">Tools</div>
+        <a href="/guides/enablement-statements/widget/" class="mobile-nav-link">Tardigrade</a>
+        <a href="https://occupant.ee/gov" target="_blank" rel="noopener" class="mobile-nav-link">Gov Benchmarks &rarr;</a>
+      </div>
+      <div class="mobile-nav-section">
+        <a href="/about/" class="mobile-nav-link">About</a>
+      </div>
+    </nav>
+  </div>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
