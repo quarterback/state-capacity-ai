@@ -3,504 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agent Interface Standards — State Capacity AI</title>
-  <meta name="description" content="Standards for how autonomous agents interact with public service systems.">
+  <title>Agent Experience Standards — State Capacity AI</title>
+  <meta name="description" content="Standards for how autonomous agents interact with public service systems — covering policy logic, action surfaces, handoff protocols, audit trails, context delivery, and public value principles.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="/css/sovereign.css">
 </head>
-<body>
+<body class="has-sidebar">
   <header class="site-header">
     <a href="/" class="site-title">State Capacity AI</a>
     <div class="header-links">
-      <a href="mailto:contact@statecapacity.ai" class="desktop-only">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
       <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
     </div>
   </header>
   <div class="sidebar-overlay"></div>
   <div class="site-layout">
-    <nav class="sidebar" aria-label="Site navigation">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
       <div class="sidebar-section">
-        <div class="sidebar-label">Doctrine</div>
+        <div class="sidebar-label">Agent Experience Standards</div>
         <ul class="sidebar-nav">
-          <li><a href="/">Overview</a></li>
-        </ul>
-      </div>
-      <div class="sidebar-section">
-        <div class="sidebar-label">Guides</div>
-        <ul class="sidebar-nav">
-          <li><a href="/guides/disclosure/">AI Disclosure Standards</a></li>
-          <li><a href="/guides/agent-standards/" class="active">Agent Interface Standards</a></li>
-          <li><a href="/guides/judgment-routing/">Judgment Routing</a></li>
-          <li><a href="/guides/commons-license/">Parachute Commons License</a></li>
-        </ul>
-      </div>
-      <div class="sidebar-section">
-        <div class="sidebar-label">Research</div>
-        <ul class="sidebar-nav">
-          <li><a href="/guide/">Design Principles</a></li>
-          <li><a href="/experiments/">Experiments</a></li>
-          <li><a href="/framework/">Framework</a></li>
+          <li><a href="/guides/agent-standards/" class="active">Overview</a></li>
+          <li><a href="/guides/agent-standards/policy-logic/">Policy Logic</a></li>
+          <li><a href="/guides/agent-standards/action-surfaces/">Action Surfaces</a></li>
+          <li><a href="/guides/agent-standards/handoff-protocols/">Handoff Protocols</a></li>
+          <li><a href="/guides/agent-standards/audit-trails/">Audit Trails</a></li>
+          <li><a href="/guides/agent-standards/context-delivery/">Context Delivery</a></li>
+          <li><a href="/guides/agent-standards/public-value/">Public Value</a></li>
+          <li><a href="/guides/agent-standards/domains/">Standards Domains</a></li>
         </ul>
       </div>
     </nav>
     <main class="main-content">
 
-      <h1>Agent Interface Standards for Public Service Systems</h1>
-      <p class="lead">A complete specification for how autonomous agents interact with government and public service infrastructure&mdash;covering policy representation, action surfaces, handoff protocols, audit trails, context delivery, and public value principles.</p>
+      <h1>Agent Experience Standards for Public Service Systems</h1>
+      <p class="lead">A specification for how autonomous agents interact with government and public service infrastructure.</p>
 
       <div class="intro-box">
         <p><strong>Version 1.0 Draft.</strong> This standard defines the interface layer between autonomous AI agents and public service systems. It establishes requirements for machine-readable policy, structured action surfaces, human handoff protocols, audit accountability, context delivery, and the public value principles that govern them all.</p>
-        <p>The standard applies to any system where an autonomous agent takes actions on behalf of or in service to the public&mdash;benefits administration, permitting, licensing, case management, service delivery, and related domains.</p>
+        <p>The standard applies to any system where an autonomous agent takes actions on behalf of or in service to the public: benefits administration, permitting, licensing, case management, service delivery, and related domains.</p>
       </div>
 
-      <!-- ============================================
-           PART ONE
-           ============================================ -->
+      <h2>Guide Structure</h2>
 
-      <article id="part-1">
-        <span class="method-number">Part One</span>
-        <h2>Policy Logic as Versioned Interfaces</h2>
-        <p>Policy is the operating system of public services. When agents interact with policy, they must treat it as a formal, versioned interface&mdash;not as ambient knowledge to be inferred or approximated. Every rule an agent applies must be traceable to an authoritative source, at a specific version, at a specific point in time.</p>
+      <h3><a href="/guides/agent-standards/policy-logic/">Part 1: Policy Logic</a></h3>
+      <p>Policy as versioned, machine-readable interfaces. Covers canonical representation, version control, and reasoning attachments.</p>
 
-        <h3 id="canonical-representation">1.1 Canonical Representation of Policy</h3>
-        <p>Each agency or service provider shall publish a single authoritative expression of its policy rules for each program or service domain. This canonical representation serves as the sole source of truth for agent behavior.</p>
+      <h3><a href="/guides/agent-standards/action-surfaces/">Part 2: Action Surfaces</a></h3>
+      <p>Defined surfaces for agent interaction with public service systems. Covers action types, context requirements, outcome rules, and escalation conditions.</p>
 
-        <h4>Requirements</h4>
-        <ul>
-          <li><strong>Machine-readable format:</strong> Policy rules must be expressed in a structured, parseable format that agents can consume directly&mdash;not extracted from PDF documents or narrative guidance.</li>
-          <li><strong>Human-readable companion:</strong> Every machine-readable policy expression must have a corresponding human-readable version that uses plain language and is accessible to caseworkers, applicants, and oversight bodies.</li>
-          <li><strong>Consistency guarantee:</strong> The machine-readable and human-readable versions must be generated from the same source or verified as equivalent. Divergence between the two is a compliance failure.</li>
-          <li><strong>Scope declaration:</strong> Each policy expression must declare its scope&mdash;what programs, populations, geographies, and time periods it covers.</li>
-          <li><strong>Dependency mapping:</strong> Where policy rules depend on external data sources (income thresholds, federal poverty levels, regulatory definitions), those dependencies must be explicitly declared with source references and update schedules.</li>
-        </ul>
+      <h3><a href="/guides/agent-standards/handoff-protocols/">Part 3: Handoff Protocols</a></h3>
+      <p>Protocols for transitions between agents and caseworkers. Covers triggers, handoff packages, caseworker response paths, and context restoration.</p>
 
-        <blockquote>
-          <p>Policy that cannot be read by both a machine and a person is policy that cannot be accountably enforced by either.</p>
-        </blockquote>
+      <h3><a href="/guides/agent-standards/audit-trails/">Part 4: Audit Trails</a></h3>
+      <p>Accountability through complete reasoning records. Covers reasoning history, version anchoring, temporal records, and rights review.</p>
 
-        <h3 id="version-control">1.2 Version Control Requirements</h3>
-        <p>Policy changes over time. Agents must always know which version of policy they are applying, and every determination must be permanently linked to the version that produced it.</p>
+      <h3><a href="/guides/agent-standards/context-delivery/">Part 5: Context Delivery</a></h3>
+      <p>How systems deliver context to agents. Covers structured data access, machine documentation, stable patterns, and consent flows.</p>
 
-        <h4>Requirements</h4>
-        <ul>
-          <li><strong>Unique version identifiers:</strong> Every policy update&mdash;whether a substantive rule change, a threshold adjustment, or a clarification&mdash;must receive a unique version identifier that distinguishes it from all prior versions.</li>
-          <li><strong>Determination anchoring:</strong> Agents must carry the policy version identifier in every determination, recommendation, or action they produce. A determination without a version reference is incomplete.</li>
-          <li><strong>Appeals and review references:</strong> Any appeal, review, or audit of an agent-produced determination must be able to reference the exact policy version that was in effect at the time of the determination.</li>
-          <li><strong>Transition rules:</strong> When policy versions change, the canonical source must specify transition rules&mdash;whether pending cases are grandfathered, re-evaluated, or handled under specific transition logic.</li>
-          <li><strong>Rollback capability:</strong> Systems must retain prior policy versions in full and be capable of re-evaluating a case under a previous version when required for appeals, audits, or error correction.</li>
-        </ul>
+      <h3><a href="/guides/agent-standards/public-value/">Part 6: Public Value</a></h3>
+      <p>Design constraints that govern interpretation and application of the technical standards. Covers equity of access, clarity, protection of judgment, and continuous review.</p>
 
-        <h3 id="reasoning-attachments">1.3 Reasoning Attachments</h3>
-        <p>Every action an agent takes must produce a reasoning file&mdash;a structured record of how the agent arrived at its determination. This is not optional logging. It is a core output of the system.</p>
-
-        <h4>Required elements of a reasoning attachment</h4>
-        <ul>
-          <li><strong>Inputs received:</strong> The complete set of data inputs the agent used, including their sources and timestamps.</li>
-          <li><strong>Policy version applied:</strong> The specific version identifier of the policy rules the agent followed.</li>
-          <li><strong>Rule path:</strong> The sequence of policy rules the agent evaluated, including which branches were taken and which were not, and why.</li>
-          <li><strong>Intermediate steps:</strong> Any intermediate calculations, lookups, comparisons, or transformations the agent performed between receiving inputs and producing a determination.</li>
-          <li><strong>Confidence indicators:</strong> Where applicable, the agent's assessment of input quality, rule applicability, or determination certainty.</li>
-          <li><strong>Exclusions:</strong> Any inputs the agent received but did not use, with explanation of why they were excluded.</li>
-        </ul>
-
-        <div class="case-study">
-          <h5>Example: Benefits Eligibility Determination</h5>
-          <p>An agent evaluating benefits eligibility attaches a reasoning file showing: household income data (source: verified payroll records, retrieved 2024-03-15), policy version SNAP-2024-03-v2, rule path through household size calculation, income threshold comparison, and categorical eligibility check. The file notes that self-reported savings data was received but excluded pending verification, triggering an incomplete-information hold rather than a denial.</p>
-        </div>
-      </article>
-
-      <hr>
-
-      <!-- ============================================
-           PART TWO
-           ============================================ -->
-
-      <article id="part-2">
-        <span class="method-number">Part Two</span>
-        <h2>Action Surfaces for Agent Interaction</h2>
-        <p>Agents need clearly defined surfaces through which they interact with public service systems. These action surfaces define what agents can do, what context they must provide, what outcomes are possible, and when they must escalate rather than proceed.</p>
-
-        <h3 id="action-types">2.1 Definition of Action Types</h3>
-        <p>Every action an agent may perform must be formally defined with a complete schema. The following action types constitute the standard surface for public service interactions.</p>
-
-        <h4>Core action types</h4>
-        <ul>
-          <li><strong>Data retrieval:</strong> Requesting information from system records, external data sources, or prior case history. Schema must specify what data is requested, authorization basis, purpose limitation, and retention rules.</li>
-          <li><strong>Form submission:</strong> Submitting structured data on behalf of or in service to an applicant or case. Schema must specify required fields, validation rules, data format requirements, and confirmation mechanisms.</li>
-          <li><strong>Case record updates:</strong> Modifying existing case records with new information, status changes, or annotations. Schema must specify what fields may be modified, what constitutes a material change, and what triggers review.</li>
-          <li><strong>Scheduling:</strong> Creating, modifying, or canceling appointments, deadlines, or procedural dates. Schema must specify scheduling constraints, notification requirements, and cancellation rules.</li>
-          <li><strong>Procedural steps:</strong> Advancing a case through defined procedural stages&mdash;initiating reviews, triggering notifications, requesting verifications, or closing completed steps. Schema must specify preconditions, required documentation, and downstream effects.</li>
-        </ul>
-
-        <h4>Schema requirements for each action type</h4>
-        <ul>
-          <li>Complete field definitions with data types, constraints, and validation rules</li>
-          <li>Required versus optional field designation</li>
-          <li>Authorization requirements specifying who or what may invoke the action</li>
-          <li>Rate limiting and abuse prevention parameters</li>
-          <li>Idempotency requirements&mdash;whether the action can be safely retried</li>
-          <li>Side effects&mdash;what other system states change as a result of the action</li>
-        </ul>
-
-        <h3 id="context-requirements">2.2 Context Requirements</h3>
-        <p>Every agent action must include mandatory context. Actions submitted without complete context must be rejected, not inferred.</p>
-
-        <h4>Mandatory context for all actions</h4>
-        <ul>
-          <li><strong>Identity:</strong> Verified identity of the person on whose behalf the agent is acting, the agent's own identity, and the operator or organization that deployed the agent.</li>
-          <li><strong>Case identifiers:</strong> All relevant case numbers, application IDs, or record references that scope the action to a specific matter.</li>
-          <li><strong>Data provenance:</strong> For every data element submitted, the source of that data, when it was obtained, and how it was verified.</li>
-          <li><strong>Consent record:</strong> Evidence that the person on whose behalf the agent acts has authorized this specific action or class of actions, including the scope and duration of that authorization.</li>
-          <li><strong>Action justification:</strong> A reference to the policy rule, procedural requirement, or user request that triggered this action.</li>
-        </ul>
-
-        <h3 id="outcome-rules">2.3 Outcome Rules</h3>
-        <p>Every action must resolve to one of a defined set of outcomes. Systems must not produce ambiguous or undefined states.</p>
-
-        <h4>Standard outcome types</h4>
-        <ul>
-          <li><strong>Success:</strong> The action completed as requested. Full confirmation returned with resulting state changes documented.</li>
-          <li><strong>Incomplete information:</strong> The action cannot be completed because required data is missing or unverified. Response specifies exactly what is needed and how to provide it.</li>
-          <li><strong>Policy restriction:</strong> The action is not permitted under current policy rules. Response cites the specific rule, version, and the conditions that triggered the restriction.</li>
-          <li><strong>Human review required:</strong> The action falls within a category that requires human judgment before proceeding. Response specifies why human review is required and what the review will evaluate.</li>
-          <li><strong>Procedural hold:</strong> The action is valid but must wait for a prior step to complete, a deadline to pass, or an external event to occur. Response specifies the hold condition and expected timeline.</li>
-          <li><strong>System error:</strong> The action failed due to a technical issue unrelated to policy or data. Response includes error classification and retry guidance.</li>
-        </ul>
-
-        <h3 id="escalation-conditions">2.4 Escalation Conditions</h3>
-        <p>Certain conditions must always trigger escalation to a human decision-maker. Agents must not attempt to resolve these conditions independently.</p>
-
-        <h4>Mandatory escalation triggers</h4>
-        <ul>
-          <li><strong>Ambiguous information:</strong> When data inputs are contradictory, internally inconsistent, or cannot be resolved through defined verification procedures.</li>
-          <li><strong>User distress signals:</strong> When the person interacting with the system expresses distress, confusion, frustration beyond normal difficulty, or indicates they do not understand what is happening.</li>
-          <li><strong>Rights-related determinations:</strong> Any action that would deny, terminate, reduce, or materially alter a person's access to benefits, services, or legal rights.</li>
-          <li><strong>Hardship signals:</strong> When available information suggests the person is experiencing housing instability, medical emergency, domestic violence, or other conditions that may require immediate human intervention regardless of the procedural matter at hand.</li>
-          <li><strong>Novel conditions:</strong> When the agent encounters a combination of circumstances not addressed by current policy rules or action schemas.</li>
-          <li><strong>Repeated failures:</strong> When prior agent actions on the same case have failed or been reversed, suggesting the case requires human assessment.</li>
-        </ul>
-
-        <blockquote>
-          <p>Escalation is not failure. It is the system working correctly&mdash;recognizing the boundary between what machines should handle and what requires human judgment.</p>
-        </blockquote>
-      </article>
-
-      <hr>
-
-      <!-- ============================================
-           PART THREE
-           ============================================ -->
-
-      <article id="part-3">
-        <span class="method-number">Part Three</span>
-        <h2>Handoff Protocols Between Agents and Caseworkers</h2>
-        <p>The transition between agent processing and human judgment is one of the highest-risk moments in a public service interaction. Poor handoffs lose context, waste time, and force people to repeat themselves. This section specifies the protocol for every handoff.</p>
-
-        <h3 id="handoff-triggers">3.1 Triggers for Handoff</h3>
-        <p>Handoffs from agent to caseworker are initiated under the following conditions.</p>
-
-        <h4>Standard triggers</h4>
-        <ul>
-          <li><strong>Uncertainty thresholds:</strong> The agent's confidence in its determination or next action falls below a defined threshold. Thresholds must be set per action type and calibrated against outcome data.</li>
-          <li><strong>Procedural transitions:</strong> The case has reached a stage where policy or regulation requires human review&mdash;such as final eligibility determinations, adverse actions, or discretionary decisions.</li>
-          <li><strong>Legal significance:</strong> The next action carries legal consequences&mdash;denial of rights, imposition of obligations, or creation of binding commitments.</li>
-          <li><strong>User request:</strong> The person involved in the case explicitly requests to speak with or have their case reviewed by a human. This trigger is unconditional and may not be deflected, delayed, or discouraged by the agent.</li>
-        </ul>
-
-        <h3 id="handoff-package">3.2 The Handoff Package</h3>
-        <p>When a handoff occurs, the agent must transmit a complete handoff package to the receiving caseworker. Incomplete handoffs are a protocol violation.</p>
-
-        <h4>Four required elements</h4>
-        <ol>
-          <li><strong>Reasoning file:</strong> The full reasoning attachment (as specified in Section 1.3) for all agent actions taken on this case, including the reasoning for initiating the handoff itself.</li>
-          <li><strong>Data inputs:</strong> The complete set of data the agent received, used, and excluded&mdash;with provenance, timestamps, and verification status for each element.</li>
-          <li><strong>Policy version:</strong> The exact policy version(s) the agent applied, including any version transitions that occurred during processing.</li>
-          <li><strong>Full action history with timestamps:</strong> A chronological record of every action the agent took or attempted on this case, including outcomes, errors, and escalation events, each with precise timestamps.</li>
-        </ol>
-
-        <h3 id="caseworker-response">3.3 Caseworker Response Path</h3>
-        <p>Handoff packages enter a queue that presents the caseworker with a complete overview of the case. The caseworker is not expected to re-investigate from scratch.</p>
-
-        <h4>Caseworker response options</h4>
-        <ul>
-          <li><strong>Proceed:</strong> The caseworker reviews the handoff package and advances the case&mdash;approving the agent's recommended action, making a different determination, or taking the next procedural step.</li>
-          <li><strong>Request additional data:</strong> The caseworker identifies information gaps and initiates specific requests&mdash;to the applicant, to external sources, or back to the agent for further processing on a defined subtask.</li>
-          <li><strong>Return with instructions:</strong> The caseworker determines that the case can be returned to agent processing with specific instructions, constraints, or clarifications that resolve the condition that triggered the handoff.</li>
-        </ul>
-
-        <h3 id="context-restoration">3.4 Restoration of Context</h3>
-        <p>When a case transitions between agent and caseworker in either direction, the receiving party must be provided with sufficient context to act without requiring the person involved to re-explain their situation.</p>
-
-        <h4>Context restoration requirements</h4>
-        <ul>
-          <li><strong>Human-readable summary:</strong> A plain-language narrative of the case status, what has been done, what triggered the transition, and what remains to be done. This summary is generated from the structured handoff data but written for a human reader.</li>
-          <li><strong>Clear next steps:</strong> An explicit statement of what the receiving party is expected to do, with relevant deadlines, requirements, and decision points identified.</li>
-          <li><strong>Record of completed actions:</strong> A simplified timeline showing what has already been accomplished, so that no steps are repeated and no prior work is lost.</li>
-          <li><strong>Contact and communication history:</strong> A record of all communications with the person involved&mdash;what they were told, what they submitted, what questions remain unanswered.</li>
-        </ul>
-
-        <div class="case-study">
-          <h5>The Repeat-Yourself Problem</h5>
-          <p>The most common failure in agent-to-human handoffs is forcing the person to re-explain their situation from scratch. This is not just inefficient&mdash;it signals to the person that the system does not value their time, does not retain what they have already provided, and cannot be trusted to handle their case coherently. The handoff protocol exists to eliminate this failure mode entirely.</p>
-        </div>
-      </article>
-
-      <hr>
-
-      <!-- ============================================
-           PART FOUR
-           ============================================ -->
-
-      <article id="part-4">
-        <span class="method-number">Part Four</span>
-        <h2>Audit Trails for Public Accountability</h2>
-        <p>Public service systems must be accountable to the people they serve. Audit trails are not an afterthought or a compliance checkbox&mdash;they are a core system output that enables oversight, correction, and trust.</p>
-
-        <h3 id="reasoning-history">4.1 Complete Reasoning History</h3>
-        <p>Every action an agent takes must create an audit entry. These entries are append-only, immutable, and permanently retained.</p>
-
-        <h4>Audit entry requirements</h4>
-        <ul>
-          <li><strong>Action identifier:</strong> A unique identifier for the action, linked to the case, the agent, and the operator.</li>
-          <li><strong>Reasoning record:</strong> The full reasoning attachment (Section 1.3) including inputs, rule path, intermediate steps, and determination.</li>
-          <li><strong>Policy version:</strong> The specific policy version applied, with a reference to the canonical source.</li>
-          <li><strong>Input values:</strong> The actual data values used in the determination&mdash;not just references to data sources, but the values themselves as they existed at the time of processing.</li>
-          <li><strong>Intermediate decisions:</strong> Any branch points, threshold comparisons, or conditional evaluations that shaped the final outcome, recorded with both the condition tested and the result.</li>
-          <li><strong>Outcome:</strong> The final determination or action taken, including its classification under the standard outcome types (Section 2.3).</li>
-        </ul>
-
-        <h3 id="version-anchoring">4.2 Policy Version Anchoring</h3>
-        <p>Each determination in the audit trail must reference the specific policy version that governed it. This anchoring must be permanent&mdash;even when policy is subsequently updated, the audit record retains its reference to the version that was in effect at the time.</p>
-
-        <h4>Anchoring requirements</h4>
-        <ul>
-          <li>Every audit entry includes the policy version identifier as a mandatory field.</li>
-          <li>Policy version references are immutable once written&mdash;they cannot be updated to point to newer versions.</li>
-          <li>The audit system must be capable of retrieving the full text of any referenced policy version on demand.</li>
-          <li>When multiple policy versions apply to different aspects of a single determination, each is recorded separately with its scope of application.</li>
-        </ul>
-
-        <h3 id="temporal-record">4.3 Temporal Record</h3>
-        <p>Time is a critical dimension of accountability. Every event in the system must be precisely timestamped and permanently stored.</p>
-
-        <h4>Temporal requirements</h4>
-        <ul>
-          <li><strong>Timestamps on everything:</strong> Every action, input, determination, handoff, communication, and system event receives a timestamp at the point of occurrence, using a consistent time standard.</li>
-          <li><strong>Permanent storage:</strong> Audit records are retained permanently. Retention periods, where required by policy, must be measured in decades, not years. Records may not be deleted, overwritten, or summarized in ways that lose detail.</li>
-          <li><strong>Sequence integrity:</strong> The chronological ordering of events must be preserved and verifiable. Systems must detect and flag any events recorded out of sequence.</li>
-          <li><strong>Clock synchronization:</strong> All system components must use synchronized time sources to ensure timestamp consistency across distributed systems.</li>
-        </ul>
-
-        <h3 id="rights-review">4.4 Rights Review Path</h3>
-        <p>Any person affected by an agent determination has the right to request a full explanation of how that determination was reached. The audit trail must support this right.</p>
-
-        <h4>Rights review requirements</h4>
-        <ul>
-          <li><strong>Request mechanism:</strong> Any person may request an explanation of any determination that affects them. The request mechanism must be accessible, clearly documented, and available through multiple channels.</li>
-          <li><strong>Full reasoning path:</strong> In response to a request, the system must be capable of reconstructing and presenting the complete reasoning path&mdash;from inputs received through policy rules applied to determination reached.</li>
-          <li><strong>Plain-language explanation:</strong> The reconstructed reasoning path must be translatable into a plain-language explanation that a non-technical person can understand.</li>
-          <li><strong>Timeliness:</strong> Explanations must be provided within defined timeframes, calibrated to the urgency of the matter. Adverse determinations require faster response times.</li>
-          <li><strong>Correction mechanism:</strong> Where the explanation reveals an error&mdash;in inputs, rule application, or system behavior&mdash;a defined correction process must be initiated.</li>
-        </ul>
-
-        <blockquote>
-          <p>An audit trail that cannot be understood by the person it affects is an audit trail that serves the institution, not the public.</p>
-        </blockquote>
-      </article>
-
-      <hr>
-
-      <!-- ============================================
-           PART FIVE
-           ============================================ -->
-
-      <article id="part-5">
-        <span class="method-number">Part Five</span>
-        <h2>Context Delivery Requirements</h2>
-        <p>Agents can only act correctly if they receive the right context in the right form. This section specifies how public service systems must deliver context to agents&mdash;structured data, documentation, interaction patterns, and consent flows.</p>
-
-        <h3 id="structured-data">5.1 Structured Data Access</h3>
-        <p>Agents require access to case data, reference data, and system state. This access must be formally structured, not scraped from interfaces designed for humans.</p>
-
-        <h4>Data access requirements</h4>
-        <ul>
-          <li><strong>Clearly defined schemas:</strong> Every data source an agent may access must publish a formal schema describing its structure, field definitions, data types, and update frequency.</li>
-          <li><strong>Ownership declaration:</strong> Each data element must have a declared owner&mdash;the system, agency, or individual responsible for its accuracy and currency.</li>
-          <li><strong>Sensitivity classification:</strong> Data must be classified by sensitivity level, with access controls that enforce need-to-know and purpose limitations appropriate to each level.</li>
-          <li><strong>Consent linkage:</strong> Access to personal data must be linked to specific consent records. Agents must not access personal data without a valid, current consent authorization that covers the intended use.</li>
-          <li><strong>Freshness indicators:</strong> Every data element must carry metadata indicating when it was last updated, verified, or confirmed, so agents can assess whether the data is current enough for their purpose.</li>
-        </ul>
-
-        <h3 id="machine-documentation">5.2 Machine-Oriented Documentation</h3>
-        <p>Agents need documentation designed for machine consumption&mdash;not human-oriented manuals repurposed as agent context.</p>
-
-        <h4>Documentation requirements</h4>
-        <ul>
-          <li><strong>Step sequences:</strong> Procedural documentation must be expressed as ordered sequences of discrete steps, with preconditions, actions, and postconditions for each step.</li>
-          <li><strong>Common cases:</strong> Documentation must include the most frequent case patterns with expected inputs, processing paths, and outcomes for each.</li>
-          <li><strong>Worked examples:</strong> Each action type and procedure must include concrete examples with sample inputs and expected outputs, covering both typical and edge cases.</li>
-          <li><strong>Error guidance:</strong> For every defined error condition, documentation must specify the cause, the correct agent response, and the recovery path.</li>
-          <li><strong>Decision trees:</strong> Complex policy logic must be represented as traversable decision structures, not narrative descriptions.</li>
-        </ul>
-
-        <h3 id="stable-patterns">5.3 Stable Interaction Patterns</h3>
-        <p>Agent effectiveness depends on predictable, stable interaction patterns. Frequent changes to interfaces, schemas, or procedures create failure modes that harm the people agents serve.</p>
-
-        <h4>Stability requirements</h4>
-        <ul>
-          <li><strong>Predictable patterns:</strong> Interaction surfaces must follow consistent patterns across action types. Agents that learn one action type's pattern should be able to predict the structure of others.</li>
-          <li><strong>Reduced friction:</strong> Unnecessary complexity in interaction patterns&mdash;redundant fields, inconsistent naming, ambiguous status codes&mdash;must be identified and eliminated.</li>
-          <li><strong>Deprecation protocol:</strong> When interaction patterns must change, the old pattern must remain available for a defined transition period with clear migration guidance.</li>
-          <li><strong>Change notification:</strong> Agents and their operators must receive advance notice of interface changes, with sufficient lead time to adapt.</li>
-          <li><strong>Backward compatibility:</strong> New versions of interaction surfaces should maintain backward compatibility wherever possible, using versioned endpoints rather than breaking changes.</li>
-        </ul>
-
-        <h3 id="consent-authorization">5.4 Consent and Authorization Flow</h3>
-        <p>Consent is not a checkbox. It is a structured flow that must be explicit, informed, scoped, and recorded.</p>
-
-        <h4>Consent flow requirements</h4>
-        <ul>
-          <li><strong>Explicit consent:</strong> The person must affirmatively authorize the agent to act on their behalf. Implicit consent, inferred consent, or opt-out models are not sufficient for public service interactions.</li>
-          <li><strong>Identity confirmation:</strong> Before any agent action, the identity of the person on whose behalf the agent acts must be confirmed through defined verification procedures.</li>
-          <li><strong>Scope limitation:</strong> Consent must specify what actions the agent is authorized to take, what data it may access, and for what duration. Open-ended authorizations are not valid.</li>
-          <li><strong>Revocation mechanism:</strong> The person must be able to revoke consent at any time, through any channel. Revocation takes effect immediately for all future actions.</li>
-          <li><strong>Complete record:</strong> Every consent grant, modification, and revocation must be recorded with timestamps, the specific scope authorized, and the identity verification method used.</li>
-        </ul>
-      </article>
-
-      <hr>
-
-      <!-- ============================================
-           PART SIX
-           ============================================ -->
-
-      <article id="part-6">
-        <span class="method-number">Part Six</span>
-        <h2>Public Value Principles</h2>
-        <p>The technical standards in Parts One through Five exist to serve a set of public value principles. These principles are not aspirational&mdash;they are design constraints that govern how the technical standards are interpreted and applied.</p>
-
-        <h3 id="equity-of-access">6.1 Equity of Access</h3>
-        <p>Agent-mediated public services must not create or deepen disparities in access. The introduction of AI agents into service delivery must be evaluated against its effect on equitable access across all populations.</p>
-        <ul>
-          <li>Agent interfaces must not require technical sophistication, specific devices, or connectivity levels that exclude portions of the population.</li>
-          <li>Services must remain available through non-agent channels. Agent-mediated access is an addition, not a replacement.</li>
-          <li>Outcomes must be monitored for disparate impact across demographic groups, geographies, and levels of digital access.</li>
-          <li>Where agent-mediated access produces better outcomes (faster processing, fewer errors), those benefits must be extended equitably&mdash;not reserved for populations with greater technical access.</li>
-        </ul>
-
-        <h3 id="clarity-for-public">6.2 Clarity for the Public</h3>
-        <p>People interacting with public services have the right to understand what is happening with their case, who or what is making decisions, and what their options are at every stage.</p>
-        <ul>
-          <li>When an agent is involved in processing a case, the person must be informed&mdash;clearly and in plain language&mdash;that an automated system is acting.</li>
-          <li>Determinations must be explainable. "The system decided" is never an acceptable explanation.</li>
-          <li>Available actions&mdash;including appeals, requests for human review, and complaint mechanisms&mdash;must be presented proactively, not buried in documentation.</li>
-          <li>Status information must be current, accurate, and accessible without requiring the person to navigate complex systems.</li>
-        </ul>
-
-        <h3 id="protection-of-judgment">6.3 Protection of Human Judgment</h3>
-        <p>Agents augment human judgment. They do not replace it. The standard explicitly preserves human decision-making authority at defined points in every process.</p>
-        <ul>
-          <li>Adverse determinations&mdash;denials, reductions, terminations&mdash;require human review before they take effect.</li>
-          <li>Caseworkers must retain the authority to override agent determinations based on their professional judgment, with the override and its reasoning recorded in the audit trail.</li>
-          <li>Agent recommendations must be presented as recommendations, not as decisions. The interface must make clear that a human is making the final determination.</li>
-          <li>Systems must monitor for automation bias&mdash;the tendency of human reviewers to defer to agent recommendations without independent evaluation&mdash;and implement countermeasures.</li>
-        </ul>
-
-        <h3 id="continuous-review">6.4 Continuous Review</h3>
-        <p>Standards are not static. The systems they govern evolve, the populations they serve change, and the technology they regulate advances. Continuous review is a structural requirement, not a periodic exercise.</p>
-        <ul>
-          <li>Outcome data must be collected and analyzed on an ongoing basis to identify patterns of error, bias, or unintended consequences.</li>
-          <li>Affected communities must have a defined channel to report problems, request changes, and participate in standard revision.</li>
-          <li>Standards must be versioned and updated through a transparent process that includes public comment periods.</li>
-          <li>Each revision must document what changed, why it changed, and what evidence supported the change.</li>
-        </ul>
-
-        <blockquote>
-          <p>Technology changes. Populations change. Policy changes. The commitment to public value does not change&mdash;but the standards that protect it must evolve continuously.</p>
-        </blockquote>
-      </article>
-
-      <hr>
-
-      <!-- ============================================
-           STANDARDS DOMAINS
-           ============================================ -->
-
-      <section id="standards-domains">
-        <h2>Standards Domains</h2>
-        <p>The Agent Interface Standards operate across six domains. Each domain represents a category of requirements that cut across the six parts of the standard. Compliance requires meeting requirements in all domains simultaneously.</p>
-
-        <h3 id="domain-accessibility">Accessibility</h3>
-        <p>Agent interfaces must be accessible to the full range of people who interact with public services&mdash;including people with disabilities, people with limited English proficiency, people with low digital literacy, and people using assistive technologies.</p>
-        <ul>
-          <li>All agent-facing interfaces that produce public-facing outputs must comply with WCAG 2.1 AA standards at minimum.</li>
-          <li>Plain-language requirements apply to all human-readable outputs, including reasoning explanations, status updates, and handoff summaries.</li>
-          <li>Multi-language support must be provided where the served population includes significant non-English-speaking communities.</li>
-          <li>Alternative channels (phone, in-person, paper) must remain available and must provide equivalent service levels.</li>
-        </ul>
-
-        <h3 id="domain-security">Security and Privacy</h3>
-        <p>Agent interactions with public service systems involve sensitive personal data and consequential determinations. Security and privacy are not features&mdash;they are structural requirements.</p>
-        <ul>
-          <li>All data in transit between agents, systems, and users must be encrypted using current standards.</li>
-          <li>Agent identity and authorization must be verified at every interaction, not just at session initiation.</li>
-          <li>Personal data access must follow the principle of minimum necessary&mdash;agents receive only the data required for the specific action being performed.</li>
-          <li>Data retention must comply with applicable privacy regulations, and personal data must be purgeable when retention periods expire&mdash;except for audit records required for accountability.</li>
-          <li>Security incidents involving agent systems must be reported, investigated, and disclosed according to defined incident response protocols.</li>
-        </ul>
-
-        <h3 id="domain-transparency">Transparency</h3>
-        <p>The operation of agent systems in public service contexts must be transparent to oversight bodies, the public, and affected individuals.</p>
-        <ul>
-          <li>The use of AI agents in any public service process must be publicly disclosed, including the scope of agent involvement and the types of determinations agents participate in.</li>
-          <li>Aggregate performance data&mdash;processing times, error rates, escalation rates, outcome distributions&mdash;must be published on a regular schedule.</li>
-          <li>The policy rules that agents apply must be publicly available in both machine-readable and human-readable forms.</li>
-          <li>Audit mechanisms must be available to authorized oversight bodies, including legislative auditors, inspectors general, and designated external reviewers.</li>
-        </ul>
-
-        <h3 id="domain-interoperability">Interoperability</h3>
-        <p>Public services span multiple agencies, jurisdictions, and systems. Agent interfaces must support interoperability so that agents can operate across system boundaries without losing context or accountability.</p>
-        <ul>
-          <li>Action schemas, outcome types, and data formats must follow published standards to enable cross-system compatibility.</li>
-          <li>Handoff packages must be portable&mdash;a handoff from one agency's system must be readable and actionable by another agency's caseworkers or agents.</li>
-          <li>Policy version identifiers must be globally unique and resolvable across systems.</li>
-          <li>Audit trails must be linkable across system boundaries, so that a case that spans multiple agencies maintains a complete, unified record.</li>
-        </ul>
-
-        <h3 id="domain-user-experience">User Experience</h3>
-        <p>The person at the center of a public service interaction must experience a coherent, respectful process&mdash;regardless of whether agents, humans, or a combination are handling their case.</p>
-        <ul>
-          <li>People must never be required to re-submit information they have already provided, regardless of whether the recipient is an agent or a caseworker.</li>
-          <li>Status updates must be proactive, timely, and delivered through the person's preferred channel.</li>
-          <li>Error messages must be actionable&mdash;telling the person what went wrong, what they can do about it, and who to contact for help.</li>
-          <li>The overall experience must be designed as a unified journey, not a collection of disconnected system interactions.</li>
-        </ul>
-
-        <h3 id="domain-compliance">Compliance and Governance</h3>
-        <p>Agent systems operating in public service contexts must comply with all applicable laws, regulations, and institutional policies&mdash;and must be governed by structures that ensure ongoing compliance.</p>
-        <ul>
-          <li>Each deploying agency must designate an accountable officer responsible for the agent system's compliance with these standards.</li>
-          <li>Regular compliance audits must be conducted by parties independent of the team that built or operates the agent system.</li>
-          <li>Non-compliance findings must trigger defined remediation processes with deadlines and escalation paths.</li>
-          <li>Changes to agent systems&mdash;including model updates, policy rule changes, and schema modifications&mdash;must go through a defined change management process that includes compliance review.</li>
-          <li>Vendors and contractors involved in building or operating agent systems must be contractually bound to these standards and subject to compliance verification.</li>
-        </ul>
-      </section>
-
-      <hr>
+      <h3><a href="/guides/agent-standards/domains/">Standards Domains</a></h3>
+      <p>Cross-cutting requirements across accessibility, security, transparency, interoperability, user experience, and compliance.</p>
 
       <div class="background-section">
         <h3>About This Standard</h3>
-        <p>The Agent Interface Standards for Public Service Systems address a gap in current AI governance: the lack of specific, implementable technical standards for how autonomous agents interact with public infrastructure. Existing frameworks tend toward high-level principles or narrow technical specifications. This standard bridges the two&mdash;translating public value commitments into concrete interface requirements.</p>
+        <p>The Agent Experience Standards address a gap in current AI governance: the lack of specific, implementable technical standards for how autonomous agents interact with public infrastructure.</p>
         <ul>
-          <li>Parts One through Three define the interface layer: how policy is represented, how agents act, and how handoffs work.</li>
-          <li>Parts Four through Five define the accountability layer: how actions are recorded and how context is delivered.</li>
-          <li>Part Six defines the value layer: the principles that govern interpretation and application of the technical requirements.</li>
+          <li>Parts 1&ndash;3 define the interface layer: how policy is represented, how agents act, and how handoffs work.</li>
+          <li>Parts 4&ndash;5 define the accountability layer: how actions are recorded and how context is delivered.</li>
+          <li>Part 6 defines the value layer: the principles that govern interpretation and application of the technical requirements.</li>
           <li>The Standards Domains define cross-cutting requirements that apply across all six parts.</li>
         </ul>
         <p>This is a living document. It will be revised as implementations surface new requirements and as the technology and policy landscape evolves.</p>
       </div>
 
+      <nav class="page-nav">
+        <a class="next" href="/guides/agent-standards/policy-logic/">Next<span>Policy Logic</span></a>
+      </nav>
     </main>
   </div>
   <footer class="site-footer">

@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="/css/sovereign.css">
 </head>
-<body>
+<body class="has-sidebar">
 
   <header class="site-header">
     <a href="/" class="site-title">State Capacity AI</a>
     <div class="header-links">
-      <a href="mailto:contact@statecapacity.ai" class="desktop-only">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
       <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
     </div>
   </header>
@@ -22,19 +22,15 @@
 
   <div class="site-layout">
     <nav class="sidebar" aria-label="Site navigation">
-      <div class="sidebar-section">
-        <div class="sidebar-label">Doctrine</div>
-        <ul class="sidebar-nav">
-          <li><a href="/">Overview</a></li>
-        </ul>
-      </div>
+      <a href="/" class="sidebar-back">&larr; Home</a>
       <div class="sidebar-section">
         <div class="sidebar-label">Guides</div>
         <ul class="sidebar-nav">
-          <li><a href="/guides/disclosure/">AI Disclosure Standards</a></li>
-          <li><a href="/guides/agent-standards/">Agent Interface Standards</a></li>
-          <li><a href="/guides/judgment-routing/">Judgment Routing</a></li>
-          <li><a href="/guides/commons-license/">Parachute Commons License</a></li>
+          <li><a href="/guides/agent-standards/">Agent Experience Standards</a></li>
+          <li><a href="/guides/enablement-statements/">AI Enablement Statements</a></li>
+          <li><a href="/guides/taxonomy/">Decision-Grade Taxonomy</a></li>
+          <li><a href="/guides/practice-standards/">Practice Standards</a></li>
+          <li><a href="/guides/commons-license/">Parachute Commons</a></li>
         </ul>
       </div>
       <div class="sidebar-section">
@@ -49,7 +45,7 @@
 
     <main class="main-content">
       <h1>Experiments</h1>
-      <p class="lead">Working prototypes demonstrating the <a href="/guide/">five principles</a>. Not mockups&mdash;actual demonstrations of what context engineering design looks like in practice.</p>
+      <p class="lead">Working prototypes of <a href="/guide/">the five principles</a> in practice&mdash;actual demonstrations of context engineering design applied to real deployment scenarios.</p>
 
       <div id="001" class="experiment-card">
         <div class="experiment-meta">
@@ -57,14 +53,14 @@
           <span class="exp-badge in-progress">In Progress</span>
         </div>
         <h3>Context Legibility Dashboard</h3>
-        <p>A tool for making AI system assumptions, limits, and reasoning visible in public-facing systems. Designed for government benefits eligibility chatbots and similar high-stakes contexts.</p>
+        <p>A tool for surfacing AI system assumptions, limits, and reasoning in public-facing systems. Designed for government benefits eligibility chatbots and similar high-stakes contexts.</p>
         <h4>What it demonstrates</h4>
-        <p>Principle 3: Context Legibility. Shows what "nutrition labels for AI" could look like in practice&mdash;not for everyday users, but for oversight, advocacy, and critical moments.</p>
+        <p>Principle 3: Context Legibility. Shows what "nutrition labels for AI" look like in practice&mdash;built for oversight, advocacy, and critical moments.</p>
         <h4>Key features</h4>
         <ul>
-          <li>What information the system is using (and where it came from)</li>
-          <li>What assumptions it's making about the user's situation</li>
-          <li>What the system can and cannot do</li>
+          <li>Information sources the system uses and their provenance</li>
+          <li>Assumptions it makes about the user's situation</li>
+          <li>Explicit scope: what the system can and cannot do</li>
           <li>Step-by-step reasoning for decisions</li>
           <li>Controls for users to correct wrong assumptions</li>
         </ul>
@@ -77,12 +73,12 @@
           <span class="exp-badge planned">Planned</span>
         </div>
         <h3>Escalation Pattern Library</h3>
-        <p>A collection of design patterns for when AI systems should refuse tasks, escalate to humans, or admit uncertainty&mdash;with working examples for different contexts.</p>
+        <p>Design patterns for AI systems that refuse tasks, escalate to humans, and admit uncertainty&mdash;with working examples across contexts.</p>
         <h4>Planned patterns</h4>
         <ul>
           <li>The "I Don't Know" Button: Explicit uncertainty acknowledgment</li>
           <li>Confidence-based escalation: Automatic handoff at low confidence thresholds</li>
-          <li>Capability boundaries: Clear statements of what system cannot do</li>
+          <li>Capability boundaries: Clear statements of system scope</li>
           <li>Graceful refusal: Explaining why and suggesting alternatives</li>
         </ul>
         <a href="/guide/#principle-4" class="related-link">Back to Principle 4</a>
@@ -94,7 +90,7 @@
           <span class="exp-badge planned">Planned</span>
         </div>
         <h3>Disintermediation Case Studies</h3>
-        <p>Documentation and analysis of where AI mediation creates problems in real government and public service deployments&mdash;with design recommendations.</p>
+        <p>Analysis of where AI mediation creates problems in government and public service deployments, with design recommendations.</p>
         <h4>Planned case studies</h4>
         <ul>
           <li>Customer service chatbots and loss of human judgment</li>

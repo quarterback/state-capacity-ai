@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policy Logic — Agent Experience Standards — State Capacity AI</title>
+  <meta name="description" content="Policy as versioned interfaces: canonical representation, version control, and reasoning attachments for agent-driven public services.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body class="has-sidebar">
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+  <div class="sidebar-overlay"></div>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Agent Experience Standards</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/agent-standards/">Overview</a></li>
+          <li><a href="/guides/agent-standards/policy-logic/" class="active">Policy Logic</a></li>
+          <li><a href="/guides/agent-standards/action-surfaces/">Action Surfaces</a></li>
+          <li><a href="/guides/agent-standards/handoff-protocols/">Handoff Protocols</a></li>
+          <li><a href="/guides/agent-standards/audit-trails/">Audit Trails</a></li>
+          <li><a href="/guides/agent-standards/context-delivery/">Context Delivery</a></li>
+          <li><a href="/guides/agent-standards/public-value/">Public Value</a></li>
+          <li><a href="/guides/agent-standards/domains/">Standards Domains</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+
+      <span class="method-number">Part One</span>
+      <h1>Policy Logic as Versioned Interfaces</h1>
+      <p class="lead">Policy is the operating system of public services. Agents must treat it as a formal, versioned interface. Every rule an agent applies must be traceable to an authoritative source, at a specific version, at a specific point in time.</p>
+
+      <h2 id="canonical-representation">1.1 Canonical Representation of Policy</h2>
+      <p>Each agency or service provider shall publish a single authoritative expression of its policy rules for each program or service domain. This canonical representation serves as the sole source of truth for agent behavior.</p>
+
+      <h4>Requirements</h4>
+      <ul>
+        <li><strong>Machine-readable format:</strong> Policy rules must be expressed in a structured, parseable format that agents can consume directly.</li>
+        <li><strong>Human-readable companion:</strong> Every machine-readable policy expression must have a corresponding plain-language version accessible to caseworkers, applicants, and oversight bodies.</li>
+        <li><strong>Consistency guarantee:</strong> The machine-readable and human-readable versions must be generated from the same source or verified as equivalent. Divergence between the two is a compliance failure.</li>
+        <li><strong>Scope declaration:</strong> Each policy expression must declare its scope &mdash; what programs, populations, geographies, and time periods it covers.</li>
+        <li><strong>Dependency mapping:</strong> Where policy rules depend on external data sources (income thresholds, federal poverty levels, regulatory definitions), those dependencies must be explicitly declared with source references and update schedules.</li>
+      </ul>
+
+      <blockquote>
+        <p>Policy that cannot be read by both a machine and a person cannot be accountably enforced by either.</p>
+      </blockquote>
+
+      <h2 id="version-control">1.2 Version Control Requirements</h2>
+      <p>Policy changes over time. Agents must always know which version they are applying. Every determination must be permanently linked to the version that produced it.</p>
+
+      <h4>Requirements</h4>
+      <ul>
+        <li><strong>Unique version identifiers:</strong> Every policy update &mdash; substantive rule change, threshold adjustment, or clarification &mdash; must receive a unique version identifier.</li>
+        <li><strong>Determination anchoring:</strong> Agents must carry the policy version identifier in every determination, recommendation, or action they produce.</li>
+        <li><strong>Appeals and review references:</strong> Any appeal, review, or audit must be able to reference the exact policy version in effect at the time of the determination.</li>
+        <li><strong>Transition rules:</strong> When policy versions change, the canonical source must specify transition rules &mdash; whether pending cases are grandfathered, re-evaluated, or handled under specific transition logic.</li>
+        <li><strong>Rollback capability:</strong> Systems must retain prior policy versions in full and support re-evaluation of a case under a previous version for appeals, audits, or error correction.</li>
+      </ul>
+
+      <h2 id="reasoning-attachments">1.3 Reasoning Attachments</h2>
+      <p>Every action an agent takes must produce a reasoning file &mdash; a structured record of how the agent arrived at its determination. This is a core output of the system.</p>
+
+      <h4>Required elements</h4>
+      <ul>
+        <li><strong>Inputs received:</strong> The complete set of data inputs the agent used, including sources and timestamps.</li>
+        <li><strong>Policy version applied:</strong> The specific version identifier of the policy rules the agent followed.</li>
+        <li><strong>Rule path:</strong> The sequence of policy rules evaluated, including which branches were taken, which were bypassed, and why.</li>
+        <li><strong>Intermediate steps:</strong> Calculations, lookups, comparisons, or transformations the agent performed between receiving inputs and producing a determination.</li>
+        <li><strong>Confidence indicators:</strong> Where applicable, the agent's assessment of input quality, rule applicability, or determination certainty.</li>
+        <li><strong>Exclusions:</strong> Inputs the agent received but did not use, with an explanation of why they were excluded.</li>
+      </ul>
+
+      <div class="case-study">
+        <h5>Example: Benefits Eligibility Determination</h5>
+        <p>An agent evaluating benefits eligibility attaches a reasoning file showing: household income data (source: verified payroll records, retrieved 2024-03-15), policy version SNAP-2024-03-v2, rule path through household size calculation, income threshold comparison, and categorical eligibility check. The file notes that self-reported savings data was received but excluded pending verification, triggering an incomplete-information hold rather than a denial.</p>
+      </div>
+
+      <nav class="page-nav">
+        <a class="prev" href="/guides/agent-standards/">Previous<span>Overview</span></a>
+        <a class="next" href="/guides/agent-standards/action-surfaces/">Next<span>Action Surfaces</span></a>
+      </nav>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>State Capacity AI</p>
+    <div class="footer-links">
+      <a href="mailto:contact@statecapacity.ai">Contact</a>
+    </div>
+  </footer>
+  <script src="/js/nav.js"></script>
+</body>
+</html>

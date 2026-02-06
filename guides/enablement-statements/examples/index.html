@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worked Examples — AI Enablement Statements — State Capacity AI</title>
+  <meta name="description" content="Nine worked examples of AI Enablement Statements across public benefits, public safety, licensing, education, and housing.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body class="has-sidebar">
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+  <div class="sidebar-overlay"></div>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
+      <div class="sidebar-section">
+        <div class="sidebar-label">AI Enablement Statements</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/enablement-statements/">Overview</a></li>
+          <li><a href="/guides/enablement-statements/examples/" class="active">Worked Examples</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+
+      <h1>Worked Examples</h1>
+      <p class="lead">Nine real-world templates for disclosing AI authority across public services. Each includes the decision-grade level, system description, AI and human roles, contestability paths, and oversight mechanisms.</p>
+
+      <!-- ============================================
+           EXAMPLE 1: MEDICAID RECERTIFICATION
+           ============================================ -->
+
+      <article id="example-medicaid-recertification" class="principle-block">
+        <span class="method-number">Assistive</span>
+        <h2>Medicaid Recertification</h2>
+
+        <div class="case-study">
+          <h5>Summary</h5>
+          <p>Auto-renews coverage when no changes detected. Flags complex cases for worker review. 60% auto-renewed, 40% reviewed by a human. Coverage continues during review.</p>
+        </div>
+
+        <h4>Service</h4>
+        <p>Medicaid Expansion Eligibility Recertification</p>
+
+        <h4>Agency</h4>
+        <p>[State] Medicaid Program</p>
+
+        <h4>What This System Does</h4>
+        <p>Automated recertification every 6 months (federal requirement).</p>
+
+        <h4>AI Role</h4>
+        <ul>
+          <li>Checks databases for income, employment, and address changes</li>
+          <li>Auto-renews if no changes and still eligible</li>
+          <li>Flags data mismatches for worker review</li>
+        </ul>
+
+        <h4>Human Role</h4>
+        <ul>
+          <li>Workers review all flagged cases</li>
+          <li>Workers determine what additional information is needed</li>
+          <li>Workers make the final determination</li>
+        </ul>
+
+        <h4>For Members</h4>
+        <ul>
+          <li><strong>If auto-renewed:</strong> Confirmation notice, no action needed</li>
+          <li><strong>If flagged:</strong> Letter explaining what is needed, 30 days to respond</li>
+        </ul>
+
+        <h4>Contestability</h4>
+        <ul>
+          <li>Call your worker: [phone]</li>
+          <li>Submit reconsideration if terminated</li>
+          <li>90-day appeal window</li>
+        </ul>
+
+        <h4>Oversight</h4>
+        <ul>
+          <li>Monthly monitoring of auto-renewal and termination rates</li>
+          <li>Quarterly review for unnecessary documentation requests</li>
+          <li>Bias testing for disproportionate flagging</li>
+        </ul>
+      </article>
+
+      <hr>
+
+      <!-- ============================================
+           EXAMPLE 2: UNEMPLOYMENT FRAUD DETECTION
+           ============================================ -->
+
+      <article id="example-unemployment-fraud" class="principle-block">
+        <span class="method-number">Advisory</span>
+        <h2>Unemployment Fraud Detection</h2>
+
+        <div class="case-study">
+          <h5>Summary</h5>
+          <p>Generates risk scores (0&ndash;100). An investigator must find independent evidence before any action. The score alone cannot deny benefits. Claimants are notified before review begins.</p>
+        </div>
+
+        <h4>Service</h4>
+        <p>Unemployment Insurance Fraud Detection</p>
+
+        <h4>Agency</h4>
+        <p>[State] Employment Security Department</p>
+
+        <h4>What This System Does</h4>
+        <p>Flags claims for potential fraud investigation.</p>
+
+        <h4>AI Role (Advisory Only)</h4>
+        <ul>
+          <li>Generates risk score based on application patterns and data inconsistencies</li>
+          <li><strong>Score alone cannot deny benefits or trigger penalties</strong></li>
+        </ul>
+
+        <h4>Human Role</h4>
+        <ul>
+          <li>All high-risk scores reviewed by a fraud investigator</li>
+          <li>Investigator must document independent evidence</li>
+          <li>Action requires investigator findings, never the score alone</li>
+        </ul>
+
+        <h4>If Flagged</h4>
+        <ul>
+          <li>Written notice within 3 business days</li>
+          <li>Right to provide documentation before determination</li>
+          <li>Determination must cite investigator findings</li>
+        </ul>
+
+        <h4>Oversight</h4>
+        <ul>
+          <li>Independent audit every 6 months</li>
+          <li>False positive rate published quarterly (target &lt;5%)</li>
+          <li>System disabled if false positive rate exceeds 10%</li>
+        </ul>
+
+        <div class="case-study">
+          <h5>Safeguards from Michigan MiDAS Failure</h5>
+          <p>Michigan's MiDAS automated fraud detection produced a <strong>93% false positive rate</strong>, wrongly accusing tens of thousands of claimants. These safeguards directly address that failure:</p>
+        </div>
+        <ul>
+          <li><strong>The system flags; it does not decide.</strong> There are no automated denials.</li>
+          <li><strong>Every flagged case gets a trained investigator.</strong> Human review is mandatory.</li>
+          <li><strong>Claimants know before any adverse action.</strong> Notification precedes investigation.</li>
+        </ul>
+      </article>
+
+      <hr>
+
+      <!-- ============================================
+           EXAMPLE 3: SNAP DOCUMENTATION CHECK
+           ============================================ -->
+
+      <article id="example-snap-documentation" class="principle-block">
+        <span class="method-number">Advisory</span>
+        <h2>SNAP Documentation Check</h2>
+
+        <div class="case-study">
+          <h5>Summary</h5>
+          <p>Scans case files for missing documents. Worker decides if additional info is needed. The system does not determine eligibility, calculate benefits, or auto-deny applications.</p>
+        </div>
+
+        <h4>Service</h4>
+        <p>SNAP Error Rate Reduction</p>
+
+        <h4>Agency</h4>
+        <p>[State] Department of Human Services</p>
+
+        <h4>What This System Does</h4>
+        <p>Helps workers identify missing documentation before federal audits.</p>
+
+        <h4>AI Role</h4>
+        <ul>
+          <li>Scans for missing income verification, address docs, and signatures</li>
+          <li>Generates a checklist for worker review</li>
+        </ul>
+
+        <h4>Human Role</h4>
+        <ul>
+          <li>Worker reviews alerts and decides if additional docs are needed</li>
+          <li>Worker can mark alerts as inapplicable</li>
+          <li>Worker makes the final eligibility determination</li>
+        </ul>
+
+        <h4>For Applicants</h4>
+        <ul>
+          <li><strong>What may change:</strong> You may receive requests for additional documentation</li>
+          <li><strong>What stays the same:</strong> Eligibility criteria, benefit amounts, and timelines</li>
+        </ul>
+
+        <h4>Why This Exists</h4>
+        <p>Federal law (HR1) penalizes states for insufficient documentation. This helps workers complete case files to protect state SNAP funding.</p>
+
+        <h4>Limitations</h4>
+        <ul>
+          <li>Does not calculate benefit amounts</li>
+          <li>Does not determine eligibility</li>
+          <li>Does not auto-deny applications</li>
+          <li>Does not share data with immigration enforcement</li>
+        </ul>
+      </article>
+
+      <hr>
+
+      <!-- ============================================
+           EXAMPLE 4: CHILD WELFARE HOTLINE SCREENING
+           ============================================ -->
+
+      <article id="example-child-welfare" class="principle-block">
+        <span class="method-number">Advisory + Limited Determinative</span>
+        <h2>Child Welfare Hotline Screening</h2>
+
+        <div class="case-study">
+          <h5>Summary</h5>
+          <p>Generates risk scores (0&ndash;20). Scores of 18&ndash;20 trigger mandatory investigation. Below 18, the screener decides. The score supplements clinical judgment for 95% of calls.</p>
+        </div>
+
+        <h4>Service</h4>
+        <p>Child Welfare Hotline Screening</p>
+
+        <h4>Agency</h4>
+        <p>[County] Department of Human Services</p>
+
+        <h4>What This System Does</h4>
+        <p>Generates risk assessment scores for incoming hotline calls.</p>
+
+        <h4>AI Role</h4>
+        <ul>
+          <li>Scores 0&ndash;20 based on CPS history, child age, allegation type, and environmental factors</li>
+          <li><strong>Scores 18&ndash;20:</strong> Automatic face-to-face investigation within 24 hours (state law)</li>
+          <li><strong>Scores below 18:</strong> Score is one input among many; the screener decides</li>
+        </ul>
+
+        <h4>Human Role</h4>
+        <ul>
+          <li>Screeners review all calls</li>
+          <li>Screeners can upgrade response regardless of score</li>
+          <li>Supervisory review required to screen out calls scored above 15</li>
+        </ul>
+
+        <h4>Contestability</h4>
+        <ul>
+          <li>Request supervisor review during the call</li>
+          <li>Administrative review within 5 business days</li>
+          <li>Score and notes available through records request</li>
+        </ul>
+
+        <h4>Oversight</h4>
+        <ul>
+          <li>Weekly screener calibration sessions</li>
+          <li>Quarterly bias audit (race, zip code, reporter type)</li>
+          <li>Annual recalibration</li>
+          <li>Community advisory board reviews aggregate data</li>
+        </ul>
+      </article>
+
+      <hr>
+
+      <!-- ============================================
+           EXAMPLE 5: 911 CALL PRIORITIZATION
+           ============================================ -->
+
+      <article id="example-911-dispatch" class="principle-block">
+        <span class="method-number">Advisory</span>
+        <h2>911 Call Prioritization</h2>
+
+        <div class="case-study">
+          <h5>Summary</h5>
+          <p>Suggests priority level based on call keywords and location. Dispatcher makes the final determination and can override any suggestion. All life-threatening calls get immediate response regardless of system output.</p>
+        </div>
+
+        <h4>Service</h4>
+        <p>Emergency Call Dispatch</p>
+
+        <h4>Agency</h4>
+        <p>[City] 911 Communications</p>
+
+        <h4>What This System Does</h4>
+        <p>Assists dispatchers in prioritizing emergency response.</p>
+
+        <h4>AI Role</h4>
+        <ul>
+          <li>Analyzes call keywords, location, and historical patterns</li>
+          <li>Suggests priority level (1&ndash;5, with 1 being highest)</li>
+          <li>Flags potential life-threatening situations</li>
+        </ul>
+
+        <h4>Human Role</h4>
+        <ul>
+          <li>Dispatcher makes all final determinations</li>
+          <li>Can override any suggestion with no documentation requirement</li>
+          <li>Life-threatening calls get immediate response regardless of system input</li>
+        </ul>
+
+        <h4>For Callers</h4>
+        <p>The system helps speed up response. A trained dispatcher always decides what resources to send.</p>
+
+        <h4>Oversight</h4>
+        <ul>
+          <li>Weekly review of override rates</li>
+          <li>Monthly audit of response times by priority level</li>
+          <li>Quarterly review of cases where system suggestion differed significantly from dispatcher decision</li>
+        </ul>
+
+        <h4>Limitations</h4>
+        <ul>
+          <li>Cannot assess caller tone or urgency beyond keywords</li>
+          <li>May miss regional dialects or uncommon emergency descriptions</li>
+          <li>Dispatcher training emphasizes professional judgment over system output</li>
+        </ul>
+      </article>
+
+      <hr>
+
+      <!-- ============================================
+           EXAMPLE 6: BUSINESS LICENSE APPLICATION
+           ============================================ -->
+
+      <article id="example-business-license" class="principle-block">
+        <span class="method-number">Assistive</span>
+        <h2>Business License Application</h2>
+
+        <div class="case-study">
+          <h5>Summary</h5>
+          <p>Auto-approves when all requirements are verified. Flags incomplete or complex applications for reviewer. All edge cases get human review.</p>
+        </div>
+
+        <h4>Service</h4>
+        <p>Business License Application Processing</p>
+
+        <h4>Agency</h4>
+        <p>[City] Business Licensing Department</p>
+
+        <h4>What This System Does</h4>
+        <p>Processes routine business license applications.</p>
+
+        <h4>AI Role</h4>
+        <ul>
+          <li>Verifies business address, zoning compliance, and fee payment</li>
+          <li>Auto-approves when all requirements are met and there are no complications</li>
+          <li>Flags applications with zoning questions, special permit needs, or incomplete info</li>
+        </ul>
+
+        <h4>Human Role</h4>
+        <ul>
+          <li>Licensing specialist reviews all flagged applications</li>
+          <li>Specialist determines what additional documentation is needed</li>
+          <li>Specialist makes the final determination on complex cases</li>
+        </ul>
+
+        <h4>For Applicants</h4>
+        <ul>
+          <li><strong>Auto-approved:</strong> License issued within 24 hours</li>
+          <li><strong>Flagged:</strong> Email within 2 business days explaining next steps</li>
+        </ul>
+
+        <h4>Contestability</h4>
+        <ul>
+          <li>Request manual review: [email/phone]</li>
+          <li>Appeal denial: [process link]</li>
+          <li>All denials include specific reasons and required corrections</li>
+        </ul>
+
+        <h4>Oversight</h4>
+        <ul>
+          <li>Sample 5% of auto-approvals monthly for accuracy</li>
+          <li>Track approval/denial rates by business type and neighborhood</li>
+          <li>Quarterly bias review</li>
+        </ul>
+      </article>
+
+      <hr>
+
+      <!-- ============================================
+           EXAMPLE 7: SPECIAL EDUCATION SCREENING
+           ============================================ -->
+
+      <article id="example-special-education" class="principle-block">
+        <span class="method-number">Advisory</span>
+        <h2>Special Education Screening</h2>
+
+        <div class="case-study">
+          <h5>Summary</h5>
+          <p>Flags students who may need evaluation. The school team makes all decisions about assessment and services. The system identifies patterns; it does not diagnose or determine eligibility.</p>
+        </div>
+
+        <h4>Service</h4>
+        <p>Special Education Needs Identification</p>
+
+        <h4>Agency</h4>
+        <p>[District] Special Education Services</p>
+
+        <h4>What This System Does</h4>
+        <p>Helps identify students who may benefit from special education evaluation.</p>
+
+        <h4>AI Role</h4>
+        <ul>
+          <li>Analyzes attendance patterns, grades, and behavioral referrals</li>
+          <li>Flags students showing patterns associated with learning challenges</li>
+        </ul>
+
+        <h4>Human Role</h4>
+        <ul>
+          <li>Teachers or parents can request evaluation regardless of system flag</li>
+          <li>School team (teachers, specialists, parents) reviews all flagged cases</li>
+          <li>Licensed professionals conduct assessments and determine eligibility</li>
+        </ul>
+
+        <h4>For Families</h4>
+        <p>The system helps ensure students are identified early. Evaluation decisions involve you and the school team. Parent-requested evaluations proceed regardless of the system.</p>
+
+        <h4>Oversight</h4>
+        <ul>
+          <li>Monthly review of flagged students by special education coordinator</li>
+          <li>Annual bias audit by demographic group</li>
+          <li>Parent feedback collected on referral process</li>
+        </ul>
+
+        <h4>Limitations</h4>
+        <ul>
+          <li>This is a screening tool only</li>
+          <li>Flags indicate patterns worth investigating, not eligibility</li>
+          <li>Cannot override parent-requested evaluations</li>
+        </ul>
+      </article>
+
+      <hr>
+
+      <!-- ============================================
+           EXAMPLE 8: BUILDING INSPECTION PRIORITIZATION
+           ============================================ -->
+
+      <article id="example-building-inspection" class="principle-block">
+        <span class="method-number">Advisory</span>
+        <h2>Building Inspection Prioritization</h2>
+
+        <div class="case-study">
+          <h5>Summary</h5>
+          <p>Ranks properties for inspection based on risk factors. Inspector decides the final schedule and findings. The system helps prioritize limited resources. It does not determine pass/fail or penalties.</p>
+        </div>
+
+        <h4>Service</h4>
+        <p>Building Safety Inspection Scheduling</p>
+
+        <h4>Agency</h4>
+        <p>[City] Building and Safety Department</p>
+
+        <h4>What This System Does</h4>
+        <p>Helps prioritize which properties get inspected when.</p>
+
+        <h4>AI Role</h4>
+        <ul>
+          <li>Ranks properties based on building age, prior violations, complaint history, and neighborhood risk factors</li>
+          <li>Suggests inspection priority order</li>
+        </ul>
+
+        <h4>Human Role</h4>
+        <ul>
+          <li>Inspector can move urgent cases up in the queue</li>
+          <li>Inspector conducts all inspections and makes findings</li>
+          <li>Inspector determines violations and required corrections</li>
+        </ul>
+
+        <h4>For Property Owners</h4>
+        <ul>
+          <li>You can request an inspection regardless of system priority</li>
+          <li>System ranking does not affect inspection standards or outcomes</li>
+          <li>All violations and penalties are determined by a licensed inspector</li>
+        </ul>
+
+        <h4>Oversight</h4>
+        <ul>
+          <li>Monthly review: are high-priority properties actually higher risk?</li>
+          <li>Quarterly demographic analysis to prevent biased targeting</li>
+          <li>Annual review of inspection outcomes vs. system predictions</li>
+        </ul>
+
+        <h4>Transparency</h4>
+        <ul>
+          <li>Ranking factors publicly documented</li>
+          <li>Property owners can request their property's risk score</li>
+          <li>System logic published publicly</li>
+        </ul>
+      </article>
+
+      <hr>
+
+      <!-- ============================================
+           EXAMPLE 9: HOUSING ASSISTANCE ELIGIBILITY
+           ============================================ -->
+
+      <article id="example-housing-assistance" class="principle-block">
+        <span class="method-number">Assistive</span>
+        <h2>Housing Assistance Eligibility</h2>
+
+        <div class="case-study">
+          <h5>Summary</h5>
+          <p>Verifies income and household size. Auto-approves clear cases. Housing specialist reviews complex situations. Automatic approval only when income is verified and household composition is clear. All edge cases get human review.</p>
+        </div>
+
+        <h4>Service</h4>
+        <p>Section 8 Housing Choice Voucher Eligibility</p>
+
+        <h4>Agency</h4>
+        <p>[City] Housing Authority</p>
+
+        <h4>What This System Does</h4>
+        <p>Determines initial eligibility for housing assistance.</p>
+
+        <h4>AI Role</h4>
+        <ul>
+          <li>Verifies income through database checks (employment, tax records)</li>
+          <li>Confirms household size and composition</li>
+          <li><strong>Auto-approves when:</strong> income clearly below threshold, household verified, no complications</li>
+          <li><strong>Flags:</strong> income near threshold, household composition questions, special circumstances</li>
+        </ul>
+
+        <h4>Human Role</h4>
+        <ul>
+          <li>Housing specialist reviews all flagged applications</li>
+          <li>Specialist assesses special circumstances (medical expenses, childcare costs)</li>
+          <li>Specialist makes the final determination on complex cases</li>
+        </ul>
+
+        <h4>For Applicants</h4>
+        <ul>
+          <li><strong>If auto-approved:</strong> Notification within 5 days, move to waitlist</li>
+          <li><strong>If flagged:</strong> Specialist contacts you within 10 days for additional info</li>
+        </ul>
+
+        <h4>Contestability</h4>
+        <ul>
+          <li>Request manual review: [phone/email]</li>
+          <li>Provide additional documentation at any time</li>
+          <li>Appeal denial through formal process</li>
+          <li>Free legal assistance available at [organization]</li>
+        </ul>
+
+        <h4>Oversight</h4>
+        <ul>
+          <li>Sample auto-approvals for accuracy</li>
+          <li>Monitor denial rates by demographic group</li>
+          <li>Track how often manual review overturns auto-decisions</li>
+        </ul>
+
+        <h4>Limitations</h4>
+        <ul>
+          <li>Cannot verify unreported income</li>
+          <li>Cannot assess special hardship circumstances</li>
+          <li>May miss household composition changes</li>
+          <li>These situations require specialist review</li>
+        </ul>
+      </article>
+
+      <nav class="page-nav">
+        <a href="/guides/enablement-statements/" class="prev">Previous<span>Overview</span></a>
+        <span></span>
+      </nav>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>State Capacity AI</p>
+    <div class="footer-links"><a href="mailto:contact@statecapacity.ai">Contact</a></div>
+  </footer>
+  <script src="/js/nav.js"></script>
+</body>
+</html>
