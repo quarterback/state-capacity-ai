@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tools, templates, and resources for implementing agent-mediated public services standards">
+    <title>Resources - Agent-Mediated Public Services Standards</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
+        <div class="header-container">
+            <h1 class="site-title">
+                <a href="index.html">Agent Experience Standards</a>
+            </h1>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="standards.html">Standards</a></li>
+                    <li><a href="civic-standards.html">Civic Standards</a></li>
+                    <li><a href="implementation.html">Implementation</a></li>
+                    <li><a href="resources.html" class="active" aria-current="page">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <h1>Resources & Tools</h1>
+        
+        <div class="section-intro">
+            <p>Supporting materials to help you implement agent-mediated public services standards effectively. All resources are freely available and regularly updated.</p>
+        </div>
+
+        <section aria-labelledby="checklists">
+            <h2 id="checklists">Compliance Checklists</h2>
+            <p>Use these comprehensive checklists to assess and track standards compliance.</p>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Accessibility Checklist</h3>
+                    <p>Verify WCAG 2.1 AA compliance and universal accessibility features.</p>
+                    <ul>
+                        <li>WCAG 2.1 Level AA requirements</li>
+                        <li>Screen reader compatibility</li>
+                        <li>Keyboard navigation</li>
+                        <li>Multi-language support</li>
+                        <li>Cognitive accessibility</li>
+                    </ul>
+                    <p><a href="https://github.com/quarterback/mcp-agent-experience" class="button">Download Checklist</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>Security Checklist</h3>
+                    <p>Ensure robust security and privacy protections.</p>
+                    <ul>
+                        <li>Authentication mechanisms</li>
+                        <li>Data encryption (transit & rest)</li>
+                        <li>Privacy controls</li>
+                        <li>Audit logging</li>
+                        <li>Incident response</li>
+                    </ul>
+                    <p><a href="https://github.com/quarterback/mcp-agent-experience" class="button">Download Checklist</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>Interoperability Checklist</h3>
+                    <p>Validate API design and system integration standards.</p>
+                    <ul>
+                        <li>RESTful API compliance</li>
+                        <li>Standard data formats</li>
+                        <li>Protocol support</li>
+                        <li>API documentation</li>
+                        <li>Version management</li>
+                    </ul>
+                    <p><a href="https://github.com/quarterback/mcp-agent-experience" class="button">Download Checklist</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>User Experience Checklist</h3>
+                    <p>Assess interaction design and usability standards.</p>
+                    <ul>
+                        <li>Conversation design quality</li>
+                        <li>Task completion support</li>
+                        <li>Error handling</li>
+                        <li>Performance metrics</li>
+                        <li>Escalation paths</li>
+                    </ul>
+                    <p><a href="https://github.com/quarterback/mcp-agent-experience" class="button">Download Checklist</a></p>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="templates">
+            <h2 id="templates">Document Templates</h2>
+            <p>Starter templates for common documentation needs.</p>
+
+            <article class="card">
+                <h3>Privacy Notice Template</h3>
+                <p>GDPR and CCPA-compliant privacy notice template for agent services. Includes sections for data collection, usage, sharing, retention, and user rights.</p>
+                <p><a href="https://github.com/quarterback/mcp-agent-experience" class="button-secondary">View Template</a></p>
+            </article>
+
+            <article class="card">
+                <h3>API Documentation Template</h3>
+                <p>Comprehensive API documentation structure following OpenAPI specification. Includes endpoint descriptions, request/response examples, error codes, and authentication details.</p>
+                <p><a href="https://github.com/quarterback/mcp-agent-experience" class="button-secondary">View Template</a></p>
+            </article>
+
+            <article class="card">
+                <h3>Accessibility Statement Template</h3>
+                <p>Template for publishing your service's accessibility conformance and providing contact information for accessibility issues.</p>
+                <p><a href="https://github.com/quarterback/mcp-agent-experience" class="button-secondary">View Template</a></p>
+            </article>
+
+            <article class="card">
+                <h3>Incident Response Plan Template</h3>
+                <p>Framework for responding to security incidents, including roles, procedures, communication plans, and post-incident review processes.</p>
+                <p><a href="https://github.com/quarterback/mcp-agent-experience" class="button-secondary">View Template</a></p>
+            </article>
+        </section>
+
+        <section aria-labelledby="code-examples">
+            <h2 id="code-examples">Code Examples</h2>
+            <p>Reference implementations demonstrating standards compliance.</p>
+
+            <h3>Authentication Example</h3>
+            <p>OAuth 2.0 implementation with MFA support:</p>
+<pre><code>// Example OAuth 2.0 token endpoint
+POST /oauth/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=authorization_code&
+code={authorization_code}&
+redirect_uri={redirect_uri}&
+client_id={client_id}&
+client_secret={client_secret}&
+mfa_token={mfa_token}
+
+Response:
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIs...",
+  "token_type": "Bearer",
+  "expires_in": 3600,
+  "refresh_token": "tGzv3JOkF0XG5Qx2TlKW",
+  "scope": "read write"
+}
+</code></pre>
+
+            <h3>Accessible Form Example</h3>
+            <p>WCAG-compliant form with proper labels and error handling:</p>
+<pre><code>&lt;form&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="full-name"&gt;
+      Full Name &lt;span aria-label="required"&gt;*&lt;/span&gt;
+    &lt;/label&gt;
+    &lt;input 
+      type="text" 
+      id="full-name" 
+      name="fullName"
+      required
+      aria-required="true"
+      aria-describedby="name-help name-error"
+    &gt;
+    &lt;small id="name-help"&gt;Enter your legal name&lt;/small&gt;
+    &lt;div id="name-error" role="alert" aria-live="polite"&gt;
+      &lt;!-- Error message appears here --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+
+            <h3>API Error Response Example</h3>
+            <p>Standardized error response format:</p>
+<pre><code>{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Invalid request parameters",
+    "details": [
+      {
+        "field": "email",
+        "message": "Email address is required"
+      },
+      {
+        "field": "phone",
+        "message": "Phone number format is invalid"
+      }
+    ],
+    "timestamp": "2025-12-08T17:54:22Z",
+    "requestId": "req_abc123"
+  }
+}
+</code></pre>
+
+            <p><a href="https://github.com/quarterback/mcp-agent-experience" class="button">View Full Code Repository</a></p>
+        </section>
+
+        <section aria-labelledby="testing-tools">
+            <h2 id="testing-tools">Testing Tools</h2>
+            <p>Recommended tools for validating standards compliance.</p>
+
+            <h3>Accessibility Testing</h3>
+            <ul>
+                <li><strong>axe DevTools:</strong> Browser extension for automated accessibility testing</li>
+                <li><strong>WAVE:</strong> Web accessibility evaluation tool</li>
+                <li><strong>Pa11y:</strong> Automated accessibility testing tool</li>
+                <li><strong>NVDA:</strong> Free screen reader for testing</li>
+                <li><strong>Lighthouse:</strong> Automated testing in Chrome DevTools</li>
+            </ul>
+
+            <h3>Security Testing</h3>
+            <ul>
+                <li><strong>OWASP ZAP:</strong> Web application security scanner</li>
+                <li><strong>Burp Suite:</strong> Security testing toolkit</li>
+                <li><strong>Snyk:</strong> Vulnerability scanning for dependencies</li>
+                <li><strong>SSL Labs:</strong> SSL/TLS configuration testing</li>
+                <li><strong>Mozilla Observatory:</strong> Security and privacy testing</li>
+            </ul>
+
+            <h3>Performance Testing</h3>
+            <ul>
+                <li><strong>Apache JMeter:</strong> Load testing tool</li>
+                <li><strong>k6:</strong> Modern load testing framework</li>
+                <li><strong>Lighthouse:</strong> Performance metrics and auditing</li>
+                <li><strong>WebPageTest:</strong> Website performance testing</li>
+            </ul>
+
+            <h3>API Testing</h3>
+            <ul>
+                <li><strong>Postman:</strong> API development and testing platform</li>
+                <li><strong>Swagger/OpenAPI:</strong> API documentation and testing</li>
+                <li><strong>REST Assured:</strong> Java DSL for REST API testing</li>
+                <li><strong>Newman:</strong> Command-line collection runner for Postman</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="frameworks">
+            <h2 id="frameworks">Development Frameworks</h2>
+            <p>Recommended frameworks with strong accessibility and security features.</p>
+
+            <div class="card-grid">
+                <article class="card">
+                    <h3>React</h3>
+                    <p>Popular framework with excellent accessibility support through React Aria and other libraries.</p>
+                    <ul>
+                        <li>Built-in ARIA support</li>
+                        <li>Active accessibility community</li>
+                        <li>Rich ecosystem of accessible components</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Vue.js</h3>
+                    <p>Progressive framework with accessibility guides and tools.</p>
+                    <ul>
+                        <li>Official accessibility guide</li>
+                        <li>eslint-plugin-vuejs-accessibility</li>
+                        <li>Strong community support</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Angular</h3>
+                    <p>Enterprise framework with built-in accessibility features.</p>
+                    <ul>
+                        <li>Angular CDK accessibility utilities</li>
+                        <li>Material Design components</li>
+                        <li>TypeScript for type safety</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Node.js</h3>
+                    <p>Backend framework with extensive security libraries.</p>
+                    <ul>
+                        <li>Helmet for security headers</li>
+                        <li>Passport for authentication</li>
+                        <li>Express for RESTful APIs</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="training">
+            <h2 id="training">Training Materials</h2>
+            <p>Educational resources for teams implementing standards.</p>
+
+            <article class="card">
+                <h3>Accessibility Training</h3>
+                <ul>
+                    <li><strong>WebAIM:</strong> Comprehensive accessibility training and resources</li>
+                    <li><strong>Deque University:</strong> Professional accessibility courses</li>
+                    <li><strong>W3C WAI:</strong> Web accessibility initiative tutorials</li>
+                    <li><strong>A11ycasts:</strong> Video series on accessibility topics</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>Security Training</h3>
+                <ul>
+                    <li><strong>OWASP:</strong> Web application security training</li>
+                    <li><strong>SANS:</strong> Information security courses</li>
+                    <li><strong>Coursera:</strong> Cybersecurity specializations</li>
+                    <li><strong>HackerOne:</strong> Bug bounty training</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>API Design Training</h3>
+                <ul>
+                    <li><strong>RESTful API Design:</strong> Best practices courses</li>
+                    <li><strong>OpenAPI Specification:</strong> Documentation training</li>
+                    <li><strong>API Security:</strong> Specialized security training</li>
+                    <li><strong>GraphQL:</strong> Alternative API approach</li>
+                </ul>
+            </article>
+        </section>
+
+        <section aria-labelledby="case-studies">
+            <h2 id="case-studies">Case Studies</h2>
+            <p>Real-world implementations of agent-mediated public services.</p>
+
+            <article class="card">
+                <h3>Health Services Portal</h3>
+                <p>Major city implemented agent-mediated appointment scheduling with 95% accessibility compliance and 40% reduction in call center volume.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul>
+                    <li>Multi-language support (5 languages)</li>
+                    <li>Screen reader optimization</li>
+                    <li>SMS and email confirmation options</li>
+                    <li>Integration with 12 health systems</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>Benefits Application System</h3>
+                <p>State agency deployed agent-assisted benefits application reducing processing time from 45 to 15 days.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul>
+                    <li>Step-by-step guidance</li>
+                    <li>Document upload with validation</li>
+                    <li>Real-time eligibility checking</li>
+                    <li>Save and resume functionality</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>Tax Filing Service</h3>
+                <p>Federal tax agency implemented agent-mediated filing support serving 2 million users in first year.</p>
+                <p><strong>Key Features:</strong></p>
+                <ul>
+                    <li>Conversational interface</li>
+                    <li>Automatic form population</li>
+                    <li>Secure document storage</li>
+                    <li>Multi-factor authentication</li>
+                </ul>
+            </article>
+        </section>
+
+        <section aria-labelledby="community">
+            <h2 id="community">Community Resources</h2>
+            <p>Connect with others implementing agent-mediated public services.</p>
+
+            <h3>Forums & Discussion</h3>
+            <ul>
+                <li><strong>GitHub Discussions:</strong> Technical questions and implementation discussions</li>
+                <li><strong>Standards Working Groups:</strong> Participate in standards development</li>
+                <li><strong>Monthly Community Calls:</strong> Share experiences and learn from others</li>
+            </ul>
+
+            <h3>Contributing</h3>
+            <p>Help improve these standards and resources:</p>
+            <ul>
+                <li>Submit issues and suggestions on GitHub</li>
+                <li>Contribute code examples and templates</li>
+                <li>Share your implementation experiences</li>
+                <li>Help review proposed standard updates</li>
+                <li>Translate materials to other languages</li>
+            </ul>
+
+            <p><a href="https://github.com/quarterback/mcp-agent-experience" class="button">Join on GitHub</a></p>
+        </section>
+
+        <section aria-labelledby="support">
+            <h2 id="support">Getting Support</h2>
+            <p>Need help implementing these standards?</p>
+            
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Technical Assistance</h3>
+                    <p>Get help with technical implementation questions, architecture decisions, and troubleshooting.</p>
+                    <p><a href="contact.html" class="button-secondary">Request Support</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>Consulting Services</h3>
+                    <p>Engage experts to guide your implementation, conduct audits, or provide training.</p>
+                    <p><a href="contact.html" class="button-secondary">Inquire About Services</a></p>
+                </article>
+
+                <article class="card">
+                    <h3>Pilot Programs</h3>
+                    <p>Participate in supported pilot programs with additional resources and guidance.</p>
+                    <p><a href="contact.html" class="button-secondary">Apply for Pilot</a></p>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="stay-updated">
+            <h2 id="stay-updated">Stay Updated</h2>
+            <p>Standards and resources evolve regularly. Stay informed about updates:</p>
+            <ul>
+                <li><strong>GitHub Releases:</strong> Subscribe to release notifications</li>
+                <li><strong>Newsletter:</strong> Monthly updates on standards and resources</li>
+                <li><strong>RSS Feed:</strong> Automatically receive updates</li>
+                <li><strong>Social Media:</strong> Follow for announcements and tips</li>
+            </ul>
+            <p><a href="contact.html" class="button">Subscribe to Updates</a></p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Standards</h3>
+                <ul>
+                    <li><a href="standards.html#accessibility">Accessibility</a></li>
+                    <li><a href="standards.html#security">Security & Privacy</a></li>
+                    <li><a href="standards.html#transparency">Transparency</a></li>
+                    <li><a href="standards.html#interoperability">Interoperability</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="implementation.html">Implementation Guide</a></li>
+                    <li><a href="resources.html">Tools & Templates</a></li>
+                    <li><a href="about.html">About This Initiative</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="https://github.com/quarterback/mcp-agent-experience">GitHub Repository</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Agent Experience Standards Initiative. Open source under the MIT License.</p>
+        </div>
+    </footer>
+</body>
+</html>
