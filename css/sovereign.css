@@ -779,77 +779,16 @@ tr:nth-child(even) {
 }
 
 /* ============================================
-   FOOTER
+   BOTTOM BADGE (shields.io style)
    ============================================ */
 
-.site-footer {
-  border-top: 1px solid var(--border);
+.site-badge {
   padding: 1.5rem 2.5rem;
-  transition: background-color 0.2s ease;
-}
-
-.footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-badge {
-  margin-top: 1rem;
-  padding-top: 1rem;
   border-top: 1px solid var(--border);
 }
 
-.disclosure-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 0.35rem 0.65rem;
-  text-decoration: none;
-  transition: border-color 0.15s ease;
-}
-
-.disclosure-badge:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.disclosure-badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #22c55e;
-  flex-shrink: 0;
-}
-
-.has-sidebar .site-footer {
+.has-sidebar .site-badge {
   margin-left: 240px;
-}
-
-.site-footer p {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-.site-footer a {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  color: var(--accent);
-}
-
-.footer-links {
-  display: flex;
-  gap: 1rem;
 }
 
 /* ============================================
@@ -880,17 +819,12 @@ tr:nth-child(even) {
     padding: 1.5rem 1.25rem;
   }
 
-  .has-sidebar .site-footer {
+  .has-sidebar .site-badge {
     margin-left: 0;
   }
 
-  .site-footer {
+  .site-badge {
     padding: 1.5rem 1.25rem;
-  }
-
-  .footer-row {
-    flex-direction: column;
-    gap: 0.4rem;
   }
 
   pre {
@@ -952,7 +886,7 @@ tr:nth-child(even) {
   .sidebar-overlay,
   .sidebar-toggle,
   .theme-toggle,
-  .site-footer,
+  .site-badge,
   .page-nav {
     display: none;
   }
