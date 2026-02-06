@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="/css/sovereign.css">
 </head>
-<body>
+<body class="has-sidebar">
 
   <header class="site-header">
     <a href="/" class="site-title">State Capacity AI</a>
     <div class="header-links">
-      <a href="mailto:contact@statecapacity.ai" class="desktop-only">Contact</a>
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
       <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
     </div>
   </header>
@@ -22,19 +22,15 @@
 
   <div class="site-layout">
     <nav class="sidebar" aria-label="Site navigation">
-      <div class="sidebar-section">
-        <div class="sidebar-label">Doctrine</div>
-        <ul class="sidebar-nav">
-          <li><a href="/">Overview</a></li>
-        </ul>
-      </div>
+      <a href="/" class="sidebar-back">&larr; Home</a>
       <div class="sidebar-section">
         <div class="sidebar-label">Guides</div>
         <ul class="sidebar-nav">
-          <li><a href="/guides/disclosure/">AI Disclosure Standards</a></li>
-          <li><a href="/guides/agent-standards/">Agent Interface Standards</a></li>
-          <li><a href="/guides/judgment-routing/">Judgment Routing</a></li>
-          <li><a href="/guides/commons-license/">Parachute Commons License</a></li>
+          <li><a href="/guides/agent-standards/">Agent Experience Standards</a></li>
+          <li><a href="/guides/enablement-statements/">AI Enablement Statements</a></li>
+          <li><a href="/guides/taxonomy/">Decision-Grade Taxonomy</a></li>
+          <li><a href="/guides/practice-standards/">Practice Standards</a></li>
+          <li><a href="/guides/commons-license/">Parachute Commons</a></li>
         </ul>
       </div>
       <div class="sidebar-section">
@@ -49,36 +45,36 @@
 
     <main class="main-content">
       <h1>Five Principles of Context Engineering Design</h1>
-      <p class="lead">Context engineering isn't just about managing tokens and retrieval. It's about designing the systems AI models enter, the assumptions they carry, and the consequences they create.</p>
+      <p class="lead">Context engineering encompasses the full environment AI models enter&mdash;the systems, assumptions, and consequences they create.</p>
 
       <div class="principle-block">
         <span class="principle-block-number">01</span>
-        <h3>Context as Environment, Not Just Input</h3>
-        <p>Where is this system being deployed? What assumptions does it carry? What power does it hold? Context isn't just what's in the window&mdash;it's the environment the system enters.</p>
+        <h3>Context as Environment</h3>
+        <p>Where is this system deployed? What assumptions does it carry? What power does it hold? Context extends beyond the token window into the full environment the system enters.</p>
       </div>
 
       <div class="principle-block">
         <span class="principle-block-number">02</span>
         <h3>Disintermediation Analysis</h3>
-        <p>When does AI mediation separate people from relationships, capabilities, and decision-making? Not just "is the agent working?" but "is mediation helping or hurting?"</p>
+        <p>Evaluate whether AI mediation strengthens or weakens direct relationships, capabilities, and decision-making.</p>
       </div>
 
       <div class="principle-block">
         <span class="principle-block-number">03</span>
         <h3>System Accountability</h3>
-        <p>Who has to live with the outcome when the system gets it wrong? Not just "did the agent complete the task?" but "was the outcome right for the person?"</p>
+        <p>Identify who bears the consequences when the system gets it wrong. Evaluate whether outcomes serve the affected person, beyond whether the agent completed its task.</p>
       </div>
 
       <div class="principle-block">
         <span class="principle-block-number">04</span>
         <h3>Escalation &amp; Refusal Design</h3>
-        <p>How do systems recognize their limits and know when to stop? Not just "can the agent handle edge cases?" but "can it admit when it can't?"</p>
+        <p>Systems must recognize their limits, refuse tasks beyond their competence, and escalate to human judgment when needed.</p>
       </div>
 
       <div class="principle-block">
         <span class="principle-block-number">05</span>
         <h3>Capability Preservation</h3>
-        <p>How do we ensure AI enhances rather than erodes human capability? Not just "is the interface intuitive?" but "are people learning or losing skills?"</p>
+        <p>Measure whether people gain or lose skills when AI mediates their tasks. Design for human growth alongside AI efficiency.</p>
       </div>
 
       <hr>

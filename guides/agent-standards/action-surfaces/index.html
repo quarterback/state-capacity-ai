@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Action Surfaces — Agent Experience Standards — State Capacity AI</title>
+  <meta name="description" content="Defined action surfaces for agent interaction with public service systems: action types, context requirements, outcome rules, and escalation conditions.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body class="has-sidebar">
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+  <div class="sidebar-overlay"></div>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Agent Experience Standards</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/agent-standards/">Overview</a></li>
+          <li><a href="/guides/agent-standards/policy-logic/">Policy Logic</a></li>
+          <li><a href="/guides/agent-standards/action-surfaces/" class="active">Action Surfaces</a></li>
+          <li><a href="/guides/agent-standards/handoff-protocols/">Handoff Protocols</a></li>
+          <li><a href="/guides/agent-standards/audit-trails/">Audit Trails</a></li>
+          <li><a href="/guides/agent-standards/context-delivery/">Context Delivery</a></li>
+          <li><a href="/guides/agent-standards/public-value/">Public Value</a></li>
+          <li><a href="/guides/agent-standards/domains/">Standards Domains</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+
+      <span class="method-number">Part Two</span>
+      <h1>Action Surfaces for Agent Interaction</h1>
+      <p class="lead">Agents need clearly defined surfaces through which they interact with public service systems. These surfaces define what agents can do, what context they must provide, what outcomes are possible, and when they must escalate.</p>
+
+      <h2 id="action-types">2.1 Definition of Action Types</h2>
+      <p>Every action an agent may perform must be formally defined with a complete schema.</p>
+
+      <h4>Core action types</h4>
+      <ul>
+        <li><strong>Data retrieval:</strong> Requesting information from system records, external data sources, or prior case history. Schema specifies what data is requested, authorization basis, purpose limitation, and retention rules.</li>
+        <li><strong>Form submission:</strong> Submitting structured data on behalf of an applicant or case. Schema specifies required fields, validation rules, data format requirements, and confirmation mechanisms.</li>
+        <li><strong>Case record updates:</strong> Modifying existing case records with new information, status changes, or annotations. Schema specifies modifiable fields, what constitutes a material change, and what triggers review.</li>
+        <li><strong>Scheduling:</strong> Creating, modifying, or canceling appointments, deadlines, or procedural dates. Schema specifies scheduling constraints, notification requirements, and cancellation rules.</li>
+        <li><strong>Procedural steps:</strong> Advancing a case through defined stages &mdash; initiating reviews, triggering notifications, requesting verifications, or closing completed steps. Schema specifies preconditions, required documentation, and downstream effects.</li>
+      </ul>
+
+      <h4>Schema requirements for each action type</h4>
+      <ul>
+        <li>Complete field definitions with data types, constraints, and validation rules</li>
+        <li>Required versus optional field designation</li>
+        <li>Authorization requirements specifying who or what may invoke the action</li>
+        <li>Rate limiting and abuse prevention parameters</li>
+        <li>Idempotency requirements &mdash; whether the action can be safely retried</li>
+        <li>Side effects &mdash; what other system states change as a result</li>
+      </ul>
+
+      <h2 id="context-requirements">2.2 Context Requirements</h2>
+      <p>Every agent action must include mandatory context. Actions submitted without complete context must be rejected.</p>
+
+      <h4>Mandatory context for all actions</h4>
+      <ul>
+        <li><strong>Identity:</strong> Verified identity of the person on whose behalf the agent acts, the agent's own identity, and the deploying operator or organization.</li>
+        <li><strong>Case identifiers:</strong> All relevant case numbers, application IDs, or record references that scope the action to a specific matter.</li>
+        <li><strong>Data provenance:</strong> For every data element submitted, the source, retrieval time, and verification method.</li>
+        <li><strong>Consent record:</strong> Evidence that the person has authorized this specific action or class of actions, including scope and duration.</li>
+        <li><strong>Action justification:</strong> A reference to the policy rule, procedural requirement, or user request that triggered this action.</li>
+      </ul>
+
+      <h2 id="outcome-rules">2.3 Outcome Rules</h2>
+      <p>Every action must resolve to one of a defined set of outcomes. Systems must produce clear, unambiguous states.</p>
+
+      <h4>Standard outcome types</h4>
+      <ul>
+        <li><strong>Success:</strong> The action completed as requested. Full confirmation returned with resulting state changes documented.</li>
+        <li><strong>Incomplete information:</strong> The action cannot be completed because required data is missing or unverified. Response specifies exactly what is needed and how to provide it.</li>
+        <li><strong>Policy restriction:</strong> The action is prohibited under current policy rules. Response cites the specific rule, version, and triggering conditions.</li>
+        <li><strong>Human review required:</strong> The action falls within a category that requires human judgment before proceeding. Response specifies the reason and what the review will evaluate.</li>
+        <li><strong>Procedural hold:</strong> The action is valid but must wait for a prior step, a deadline, or an external event. Response specifies the hold condition and expected timeline.</li>
+        <li><strong>System error:</strong> The action failed due to a technical issue unrelated to policy or data. Response includes error classification and retry guidance.</li>
+      </ul>
+
+      <h2 id="escalation-conditions">2.4 Escalation Conditions</h2>
+      <p>Certain conditions must always trigger escalation to a human decision-maker. Agents must route these conditions to a person.</p>
+
+      <h4>Mandatory escalation triggers</h4>
+      <ul>
+        <li><strong>Ambiguous information:</strong> Data inputs are contradictory, internally inconsistent, or cannot be resolved through defined verification procedures.</li>
+        <li><strong>User distress signals:</strong> The person expresses distress, confusion, or frustration beyond normal difficulty, or indicates they do not understand what is happening.</li>
+        <li><strong>Rights-related determinations:</strong> Any action that would deny, terminate, reduce, or materially alter a person's access to benefits, services, or legal rights.</li>
+        <li><strong>Hardship signals:</strong> Available information suggests the person is experiencing housing instability, medical emergency, domestic violence, or other conditions requiring immediate human intervention.</li>
+        <li><strong>Novel conditions:</strong> The agent encounters a combination of circumstances with no applicable policy rules or action schemas.</li>
+        <li><strong>Repeated failures:</strong> Prior agent actions on the same case have failed or been reversed, suggesting the case requires human assessment.</li>
+      </ul>
+
+      <blockquote>
+        <p>Escalation is the system working correctly &mdash; recognizing the boundary between what machines should handle and what requires human judgment.</p>
+      </blockquote>
+
+      <nav class="page-nav">
+        <a class="prev" href="/guides/agent-standards/policy-logic/">Previous<span>Policy Logic</span></a>
+        <a class="next" href="/guides/agent-standards/handoff-protocols/">Next<span>Handoff Protocols</span></a>
+      </nav>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>State Capacity AI</p>
+    <div class="footer-links">
+      <a href="mailto:contact@statecapacity.ai">Contact</a>
+    </div>
+  </footer>
+  <script src="/js/nav.js"></script>
+</body>
+</html>

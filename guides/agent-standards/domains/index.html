@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standards Domains — Agent Experience Standards — State Capacity AI</title>
+  <meta name="description" content="Cross-cutting standards domains: accessibility, security, transparency, interoperability, user experience, and compliance.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body class="has-sidebar">
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+  <div class="sidebar-overlay"></div>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Agent Experience Standards</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/agent-standards/">Overview</a></li>
+          <li><a href="/guides/agent-standards/policy-logic/">Policy Logic</a></li>
+          <li><a href="/guides/agent-standards/action-surfaces/">Action Surfaces</a></li>
+          <li><a href="/guides/agent-standards/handoff-protocols/">Handoff Protocols</a></li>
+          <li><a href="/guides/agent-standards/audit-trails/">Audit Trails</a></li>
+          <li><a href="/guides/agent-standards/context-delivery/">Context Delivery</a></li>
+          <li><a href="/guides/agent-standards/public-value/">Public Value</a></li>
+          <li><a href="/guides/agent-standards/domains/" class="active">Standards Domains</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+
+      <h1>Standards Domains</h1>
+      <p class="lead">The Agent Experience Standards operate across six domains. Each domain represents a category of requirements that cuts across all six parts of the standard. Compliance requires meeting requirements in all domains simultaneously.</p>
+
+      <h2 id="domain-accessibility">Accessibility</h2>
+      <p>Agent interfaces must be accessible to the full range of people who interact with public services &mdash; including people with disabilities, limited English proficiency, low digital literacy, and those using assistive technologies.</p>
+      <ul>
+        <li>All agent-facing interfaces that produce public-facing outputs must comply with WCAG 2.1 AA standards at minimum.</li>
+        <li>Plain-language requirements apply to all human-readable outputs, including reasoning explanations, status updates, and handoff summaries.</li>
+        <li>Multi-language support must be provided where the served population includes significant non-English-speaking communities.</li>
+        <li>Alternative channels (phone, in-person, paper) must remain available and provide equivalent service levels.</li>
+      </ul>
+
+      <h2 id="domain-security">Security and Privacy</h2>
+      <p>Agent interactions with public service systems involve sensitive personal data and consequential determinations. Security and privacy are structural requirements.</p>
+      <ul>
+        <li>All data in transit between agents, systems, and users must be encrypted using current standards.</li>
+        <li>Agent identity and authorization must be verified at every interaction, at session initiation and throughout.</li>
+        <li>Personal data access must follow the principle of minimum necessary &mdash; agents receive only the data required for the specific action being performed.</li>
+        <li>Data retention must comply with applicable privacy regulations. Personal data must be purgeable when retention periods expire, except for audit records required for accountability.</li>
+        <li>Security incidents involving agent systems must be reported, investigated, and disclosed according to defined incident response protocols.</li>
+      </ul>
+
+      <h2 id="domain-transparency">Transparency</h2>
+      <p>Agent systems operating in public service contexts must be transparent to oversight bodies, the public, and affected individuals.</p>
+      <ul>
+        <li>The use of AI agents in any public service process must be publicly disclosed, including the scope of agent involvement and the types of determinations agents participate in.</li>
+        <li>Aggregate performance data &mdash; processing times, error rates, escalation rates, outcome distributions &mdash; must be published on a regular schedule.</li>
+        <li>The policy rules that agents apply must be publicly available in both machine-readable and human-readable forms.</li>
+        <li>Audit mechanisms must be available to authorized oversight bodies, including legislative auditors, inspectors general, and designated external reviewers.</li>
+      </ul>
+
+      <h2 id="domain-interoperability">Interoperability</h2>
+      <p>Public services span multiple agencies, jurisdictions, and systems. Agent interfaces must support interoperability so agents can operate across system boundaries without losing context or accountability.</p>
+      <ul>
+        <li>Action schemas, outcome types, and data formats must follow published standards to enable cross-system compatibility.</li>
+        <li>Handoff packages must be portable &mdash; a handoff from one agency's system must be readable and actionable by another agency's caseworkers or agents.</li>
+        <li>Policy version identifiers must be globally unique and resolvable across systems.</li>
+        <li>Audit trails must be linkable across system boundaries, so a case spanning multiple agencies maintains a complete, unified record.</li>
+      </ul>
+
+      <h2 id="domain-user-experience">User Experience</h2>
+      <p>The person at the center of a public service interaction must experience a coherent, respectful process &mdash; regardless of whether agents, humans, or a combination are handling their case.</p>
+      <ul>
+        <li>People must never be required to re-submit information they have already provided, regardless of whether the recipient is an agent or a caseworker.</li>
+        <li>Status updates must be proactive, timely, and delivered through the person's preferred channel.</li>
+        <li>Error messages must be actionable &mdash; telling the person what went wrong, what they can do, and who to contact for help.</li>
+        <li>The overall experience must be designed as a unified journey across all system interactions.</li>
+      </ul>
+
+      <h2 id="domain-compliance">Compliance and Governance</h2>
+      <p>Agent systems operating in public service contexts must comply with all applicable laws, regulations, and institutional policies &mdash; and must be governed by structures that ensure ongoing compliance.</p>
+      <ul>
+        <li>Each deploying agency must designate an accountable officer responsible for the agent system's compliance with these standards.</li>
+        <li>Regular compliance audits must be conducted by parties independent of the team that built or operates the agent system.</li>
+        <li>Non-compliance findings must trigger defined remediation processes with deadlines and escalation paths.</li>
+        <li>Changes to agent systems &mdash; including model updates, policy rule changes, and schema modifications &mdash; must go through a defined change management process that includes compliance review.</li>
+        <li>Vendors and contractors involved in building or operating agent systems must be contractually bound to these standards and subject to compliance verification.</li>
+      </ul>
+
+      <nav class="page-nav">
+        <a class="prev" href="/guides/agent-standards/public-value/">Previous<span>Public Value</span></a>
+        <a class="next" href="/">Back<span>All Guides</span></a>
+      </nav>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>State Capacity AI</p>
+    <div class="footer-links">
+      <a href="mailto:contact@statecapacity.ai">Contact</a>
+    </div>
+  </footer>
+  <script src="/js/nav.js"></script>
+</body>
+</html>

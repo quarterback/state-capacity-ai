@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audit Trails — Agent Experience Standards — State Capacity AI</title>
+  <meta name="description" content="Audit trail requirements for public accountability: reasoning history, version anchoring, temporal records, and rights review.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body class="has-sidebar">
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+  <div class="sidebar-overlay"></div>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Agent Experience Standards</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/agent-standards/">Overview</a></li>
+          <li><a href="/guides/agent-standards/policy-logic/">Policy Logic</a></li>
+          <li><a href="/guides/agent-standards/action-surfaces/">Action Surfaces</a></li>
+          <li><a href="/guides/agent-standards/handoff-protocols/">Handoff Protocols</a></li>
+          <li><a href="/guides/agent-standards/audit-trails/" class="active">Audit Trails</a></li>
+          <li><a href="/guides/agent-standards/context-delivery/">Context Delivery</a></li>
+          <li><a href="/guides/agent-standards/public-value/">Public Value</a></li>
+          <li><a href="/guides/agent-standards/domains/">Standards Domains</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+
+      <span class="method-number">Part Four</span>
+      <h1>Audit Trails for Public Accountability</h1>
+      <p class="lead">Public service systems must be accountable to the people they serve. Audit trails are a core system output that enables oversight, correction, and trust.</p>
+
+      <h2 id="reasoning-history">4.1 Complete Reasoning History</h2>
+      <p>Every action an agent takes must create an audit entry. These entries are append-only, immutable, and permanently retained.</p>
+
+      <h4>Audit entry requirements</h4>
+      <ul>
+        <li><strong>Action identifier:</strong> A unique identifier for the action, linked to the case, the agent, and the operator.</li>
+        <li><strong>Reasoning record:</strong> The full reasoning attachment (Section 1.3) including inputs, rule path, intermediate steps, and determination.</li>
+        <li><strong>Policy version:</strong> The specific policy version applied, with a reference to the canonical source.</li>
+        <li><strong>Input values:</strong> The actual data values used in the determination &mdash; the values themselves as they existed at the time of processing.</li>
+        <li><strong>Intermediate decisions:</strong> Branch points, threshold comparisons, or conditional evaluations that shaped the final outcome, recorded with both the condition tested and the result.</li>
+        <li><strong>Outcome:</strong> The final determination or action taken, classified under the standard outcome types (Section 2.3).</li>
+      </ul>
+
+      <h2 id="version-anchoring">4.2 Policy Version Anchoring</h2>
+      <p>Each determination in the audit trail must reference the specific policy version that governed it. This anchoring must be permanent &mdash; even when policy is subsequently updated, the audit record retains its original version reference.</p>
+
+      <h4>Anchoring requirements</h4>
+      <ul>
+        <li>Every audit entry includes the policy version identifier as a mandatory field.</li>
+        <li>Policy version references are immutable once written &mdash; they cannot be updated to point to newer versions.</li>
+        <li>The audit system must be capable of retrieving the full text of any referenced policy version on demand.</li>
+        <li>When multiple policy versions apply to different aspects of a single determination, each is recorded separately with its scope of application.</li>
+      </ul>
+
+      <h2 id="temporal-record">4.3 Temporal Record</h2>
+      <p>Time is a critical dimension of accountability. Every event in the system must be precisely timestamped and permanently stored.</p>
+
+      <h4>Temporal requirements</h4>
+      <ul>
+        <li><strong>Timestamps on everything:</strong> Every action, input, determination, handoff, communication, and system event receives a timestamp at the point of occurrence, using a consistent time standard.</li>
+        <li><strong>Permanent storage:</strong> Audit records are retained permanently. Retention periods, where required by policy, must be measured in decades. Records may never be deleted, overwritten, or summarized in ways that lose detail.</li>
+        <li><strong>Sequence integrity:</strong> The chronological ordering of events must be preserved and verifiable. Systems must detect and flag any events recorded out of sequence.</li>
+        <li><strong>Clock synchronization:</strong> All system components must use synchronized time sources to ensure timestamp consistency across distributed systems.</li>
+      </ul>
+
+      <h2 id="rights-review">4.4 Rights Review Path</h2>
+      <p>Any person affected by an agent determination has the right to request a full explanation of how that determination was reached. The audit trail must support this right.</p>
+
+      <h4>Rights review requirements</h4>
+      <ul>
+        <li><strong>Request mechanism:</strong> Any person may request an explanation of any determination that affects them. The mechanism must be accessible, documented, and available through multiple channels.</li>
+        <li><strong>Full reasoning path:</strong> In response to a request, the system must reconstruct and present the complete reasoning path &mdash; from inputs through policy rules to the determination.</li>
+        <li><strong>Plain-language explanation:</strong> The reconstructed reasoning path must be translatable into a plain-language explanation that a non-technical person can understand.</li>
+        <li><strong>Timeliness:</strong> Explanations must be provided within defined timeframes, calibrated to the urgency of the matter. Adverse determinations require faster response times.</li>
+        <li><strong>Correction mechanism:</strong> Where the explanation reveals an error in inputs, rule application, or system behavior, a defined correction process must be initiated.</li>
+      </ul>
+
+      <blockquote>
+        <p>An audit trail must be understandable by the person it affects. It serves the public.</p>
+      </blockquote>
+
+      <nav class="page-nav">
+        <a class="prev" href="/guides/agent-standards/handoff-protocols/">Previous<span>Handoff Protocols</span></a>
+        <a class="next" href="/guides/agent-standards/context-delivery/">Next<span>Context Delivery</span></a>
+      </nav>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>State Capacity AI</p>
+    <div class="footer-links">
+      <a href="mailto:contact@statecapacity.ai">Contact</a>
+    </div>
+  </footer>
+  <script src="/js/nav.js"></script>
+</body>
+</html>

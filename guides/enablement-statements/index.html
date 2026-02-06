@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Enablement Statements — State Capacity AI</title>
+  <meta name="description" content="A public-facing disclosure template for algorithmic authority in government services. Template fields, guidance, and implementation steps.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body class="has-sidebar">
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+  <div class="sidebar-overlay"></div>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
+      <div class="sidebar-section">
+        <div class="sidebar-label">AI Enablement Statements</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/enablement-statements/" class="active">Overview</a></li>
+          <li><a href="/guides/enablement-statements/examples/">Worked Examples</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+
+      <h1>AI Enablement Statements</h1>
+      <p class="lead">A public-facing disclosure template that makes algorithmic authority visible in government services. One page. Ten fields. Publish it where people use your service.</p>
+
+      <!-- ============================================
+           THE DISCLOSURE GAP
+           ============================================ -->
+
+      <h2 id="disclosure-gap">The Disclosure Gap</h2>
+
+      <blockquote>
+        <p>The algorithm sees you. You should see the algorithm.</p>
+      </blockquote>
+
+      <div class="intro-box">
+        <p>When banks use algorithms to deny credit, federal law requires disclosure. The Fair Credit Reporting Act mandates specific reasons for denial, a copy of the report used, contact information to dispute errors, and your rights in plain language. This applies even when AI makes the decision.</p>
+        <p><strong>When government uses algorithms to make decisions about people's lives, no equivalent requirement exists.</strong></p>
+      </div>
+
+      <p>AI is already operating across public services with no disclosure that AI was involved, no explanation of what data was used, no clear path to challenge errors, and no accountability when the system is wrong.</p>
+
+      <h3 id="where-ai-operates">Where AI Operates Without Disclosure</h3>
+
+      <div class="case-study">
+        <h5>Public Benefits</h5>
+        <p>Medicaid eligibility, SNAP approvals, unemployment fraud detection, housing assistance screening.</p>
+      </div>
+
+      <div class="case-study">
+        <h5>Public Safety</h5>
+        <p>Predictive policing, bail and parole risk scores, 911 call prioritization, emergency response routing.</p>
+      </div>
+
+      <div class="case-study">
+        <h5>Licensing, Education, Healthcare</h5>
+        <p>Business license approvals, building permits, inspection prioritization, school discipline, special education placement, hospital bed allocation, prior authorization.</p>
+      </div>
+
+      <h3 id="why-now">Why This Matters Now</h3>
+
+      <p>Compliance pressure is forcing rapid AI deployment. HR1 requires states to cut Medicaid error rates or face federal funding clawbacks. States are turning to AI to meet impossible timelines.</p>
+
+      <p>Agencies deploy untested vendor systems. Caseworkers defend decisions they do not understand. People lose benefits due to unidentified errors. Private-sector AI tools are imported into public services with no public accountability infrastructure.</p>
+
+      <p>The AI Enablement Statement fills this gap: a lightweight standard agencies can implement under pressure. A template to fill out, publish, and make authority visible.</p>
+
+      <hr>
+
+      <!-- ============================================
+           WHAT IS AN ENABLEMENT STATEMENT
+           ============================================ -->
+
+      <h2 id="what-is-it">What Is an Enablement Statement?</h2>
+
+      <p>A one-page public notice&mdash;like <strong>a nutrition label for algorithmic authority</strong>. It tells people what the AI does, where humans remain in the loop, how to challenge a decision, and how the system is monitored for errors.</p>
+
+      <p>It gives people a clear view of how decisions are made. It protects workers by stating boundaries. It forces teams to plan oversight before launch.</p>
+
+      <hr>
+
+      <!-- ============================================
+           TEMPLATE FIELDS
+           ============================================ -->
+
+      <h2 id="template">Template Fields</h2>
+
+      <p>Every AI Enablement Statement includes these ten sections.</p>
+
+      <table class="pure-table pure-table-horizontal" style="width:100%; margin: 1.5rem 0;">
+        <thead>
+          <tr>
+            <th style="width:30%">Field</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Service</strong></td>
+            <td>Name of the service</td>
+          </tr>
+          <tr>
+            <td><strong>Agency</strong></td>
+            <td>Responsible agency or department</td>
+          </tr>
+          <tr>
+            <td><strong>Purpose and context</strong></td>
+            <td>Why this system exists now</td>
+          </tr>
+          <tr>
+            <td><strong>AI role</strong></td>
+            <td>What the system does and when</td>
+          </tr>
+          <tr>
+            <td><strong>Human role</strong></td>
+            <td>Who decides and why</td>
+          </tr>
+          <tr>
+            <td><strong>Contestability</strong></td>
+            <td>How a person asks for review</td>
+          </tr>
+          <tr>
+            <td><strong>Oversight</strong></td>
+            <td>Audits, cadence, triggers</td>
+          </tr>
+          <tr>
+            <td><strong>Limitations</strong></td>
+            <td>What the system cannot do</td>
+          </tr>
+          <tr>
+            <td><strong>Data sources</strong></td>
+            <td>What feeds the system</td>
+          </tr>
+          <tr>
+            <td><strong>Contact</strong></td>
+            <td>Where to report errors</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <!-- ============================================
+           HOW TO WRITE ONE
+           ============================================ -->
+
+      <h2 id="how-to-write">How to Write One</h2>
+
+      <ol>
+        <li><strong>Classify your system.</strong> Determine the decision-grade level: Advisory (AI suggests, human decides), Assistive (AI handles routine cases, human handles exceptions), or Determinative (AI makes binding decisions, human reviews on appeal).</li>
+        <li><strong>Draft the statement</strong> using the ten template fields above.</li>
+        <li><strong>Be specific.</strong> Use real numbers, real contact info, real processes.</li>
+        <li><strong>Be honest.</strong> If accuracy is unknown, say so. If humans rubber-stamp outputs, do not claim meaningful review.</li>
+        <li><strong>Publish it</strong> where people use your service&mdash;on your <code>/ai</code> or <code>/transparency</code> page.</li>
+      </ol>
+
+      <p>Choose the <a href="/guides/enablement-statements/examples/">worked example</a> closest to your use case. Keep the section structure. Change the content to match your system.</p>
+
+      <div class="callout">
+        <p><strong>The stronger the authority, the stronger the disclosure.</strong> Systems that cross from Assistive to Determinative require additional public disclosure, audit mechanisms, and human appeal paths.</p>
+      </div>
+
+      <hr>
+
+      <!-- ============================================
+           WHO THIS IS FOR
+           ============================================ -->
+
+      <h2 id="who-this-is-for">Who This Is For</h2>
+
+      <table class="pure-table pure-table-horizontal" style="width:100%; margin: 1.5rem 0;">
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>How to Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>State/Local CIOs and CDOs</td>
+            <td>Adopt as lightweight policy standard</td>
+          </tr>
+          <tr>
+            <td>Agency Digital Teams</td>
+            <td>Use templates for transparency</td>
+          </tr>
+          <tr>
+            <td>Procurement Staff</td>
+            <td>Require Enablement Statements in contracts</td>
+          </tr>
+          <tr>
+            <td>Program Leadership</td>
+            <td>Classify systems and set disclosure requirements</td>
+          </tr>
+          <tr>
+            <td>Advocates and Researchers</td>
+            <td>Evaluate government AI; push for adoption</td>
+          </tr>
+          <tr>
+            <td>Vendors</td>
+            <td>Complete Enablement Statements; demonstrate compliance</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="background-section">
+        <h3>About This Guide</h3>
+        <p>These disclosure standards are designed for real-world deployment under real-world constraints. They are released into the public domain (CC0) so any agency, vendor, or advocate can use, adapt, and build on them.</p>
+        <p>Every real-world implementation makes these templates more useful. Every improvement makes them more actionable.</p>
+      </div>
+
+      <nav class="page-nav">
+        <span></span>
+        <a href="/guides/enablement-statements/examples/" class="next">Next<span>Worked Examples</span></a>
+      </nav>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>State Capacity AI</p>
+    <div class="footer-links"><a href="mailto:contact@statecapacity.ai">Contact</a></div>
+  </footer>
+  <script src="/js/nav.js"></script>
+</body>
+</html>

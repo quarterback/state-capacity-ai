@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decision-Grade Taxonomy — State Capacity AI</title>
+  <meta name="description" content="A three-level classification system for AI authority in public services. Match disclosure and oversight requirements to the level of algorithmic decision-making power.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body class="has-sidebar">
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+  <div class="sidebar-overlay"></div>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Decision-Grade Taxonomy</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/taxonomy/" class="active">Overview</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Related</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/enablement-statements/">Enablement Statements</a></li>
+          <li><a href="/guides/practice-standards/">Practice Standards</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+
+      <h1>Decision-Grade AI Taxonomy</h1>
+      <p class="lead">A three-level classification system for AI authority in public services. The level determines how much disclosure and oversight a system requires.</p>
+
+      <h2 id="why-classify">Why Classification Matters</h2>
+
+      <p>Every AI system in public services exercises a specific level of authority. Some systems highlight information for a human decision-maker. Others execute routine decisions independently. A few issue binding determinations with legal consequences.</p>
+
+      <p>Each level carries different obligations. Stronger authority demands stronger disclosure, more rigorous oversight, and clearer appeal paths. Classification answers a direct question: <strong>how much power does this system hold over people?</strong></p>
+
+      <h2 id="three-levels">The Three Levels</h2>
+
+      <table class="pure-table pure-table-horizontal" style="width:100%; margin: 1.5rem 0;">
+        <thead>
+          <tr>
+            <th>Level</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>Advisory</strong></td>
+            <td>AI suggests or highlights information. A human decides everything.</td>
+            <td>Risk scores, checklists, flagging</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Assistive</strong></td>
+            <td>AI completes routine decisions when all criteria are met. A human handles complexity and exceptions.</td>
+            <td>Auto-approvals, renewals</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Determinative</strong></td>
+            <td>AI makes binding decisions. A human reviews only on appeal. <strong>High risk.</strong></td>
+            <td>Mandatory investigations, automated denials</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="level-1">Level 1: Advisory</h2>
+
+      <p>The AI provides information, suggestions, or risk scores. A human decision-maker reviews this input alongside other evidence and makes the final call.</p>
+
+      <p><strong>Authority:</strong> The system informs. It holds zero decision-making power.</p>
+
+      <p><strong>Disclosure requirement:</strong> A public statement explaining what the system flags, what data it uses, and how staff incorporate its output into decisions.</p>
+
+      <p><strong>Oversight requirement:</strong> Regular accuracy reviews, false-positive monitoring, and bias audits on a published schedule.</p>
+
+      <h2 id="level-2">Level 2: Assistive</h2>
+
+      <p>The AI executes straightforward decisions when all criteria are clearly met. Complex cases, edge cases, and exceptions go to a human reviewer.</p>
+
+      <p><strong>Authority:</strong> The system decides routine cases within defined boundaries. A human decides everything else.</p>
+
+      <p><strong>Disclosure requirement:</strong> A public statement covering what the system decides, the criteria for automatic action, how cases get routed to human review, and how to request manual review of any automated outcome.</p>
+
+      <p><strong>Oversight requirement:</strong> Sampling of automated decisions for accuracy, tracking of override rates, demographic analysis of outcomes, and published performance metrics.</p>
+
+      <h2 id="level-3">Level 3: Determinative</h2>
+
+      <p>The AI issues binding decisions with legal or material consequences. Human review happens only when someone appeals.</p>
+
+      <p><strong>Authority:</strong> The system holds direct power over outcomes. This is the highest-risk category.</p>
+
+      <p><strong>Disclosure requirement:</strong> Full public documentation of decision logic, data sources, accuracy rates, and error remediation procedures. Every affected person receives plain-language notice of the AI's role and their right to appeal.</p>
+
+      <p><strong>Oversight requirement:</strong> Continuous monitoring, independent audits, published accuracy thresholds with automatic remedies when exceeded, and accessible appeal processes with guaranteed human review.</p>
+
+      <h2 id="applying">Applying the Taxonomy</h2>
+
+      <p>To classify a system, answer these questions:</p>
+
+      <ol>
+        <li><strong>Who makes the final decision?</strong> If always a human: Level 1. If the system decides routine cases: Level 2. If the system decides and humans review only on appeal: Level 3.</li>
+        <li><strong>What happens when the system acts?</strong> If the output is a suggestion: Level 1. If the output triggers automatic action within defined criteria: Level 2. If the output carries binding legal effect: Level 3.</li>
+        <li><strong>How does someone get human review?</strong> If human review is the default: Level 1. If human review is available on request: Level 2. If human review requires a formal appeal: Level 3.</li>
+      </ol>
+
+      <h2 id="disclosure-scales">Disclosure Scales with Authority</h2>
+
+      <p>The taxonomy establishes a direct relationship: <strong>the stronger the authority, the stronger the disclosure.</strong></p>
+
+      <table class="pure-table pure-table-horizontal" style="width:100%; margin: 1.5rem 0;">
+        <thead>
+          <tr>
+            <th>Requirement</th>
+            <th>Advisory</th>
+            <th>Assistive</th>
+            <th>Determinative</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Public disclosure statement</td>
+            <td>Required</td>
+            <td>Required</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <td>Individual notice to affected people</td>
+            <td>Recommended</td>
+            <td>Required</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <td>Plain-language explanation of AI role</td>
+            <td>Required</td>
+            <td>Required</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <td>Published accuracy metrics</td>
+            <td>Recommended</td>
+            <td>Required</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <td>Independent audit</td>
+            <td>Recommended</td>
+            <td>Recommended</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <td>Automatic remedies for threshold breaches</td>
+            <td>&mdash;</td>
+            <td>Recommended</td>
+            <td>Required</td>
+          </tr>
+          <tr>
+            <td>Guaranteed human appeal</td>
+            <td>&mdash;</td>
+            <td>Required</td>
+            <td>Required</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Classify every AI system in your agency. Publish the classification. Match oversight to authority. When a system crosses from assistive to determinative, strengthen disclosure, add audit mechanisms, and ensure accessible appeal paths.</p>
+
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>State Capacity AI</p>
+    <div class="footer-links"><a href="mailto:contact@statecapacity.ai">Contact</a></div>
+  </footer>
+  <script src="/js/nav.js"></script>
+</body>
+</html>

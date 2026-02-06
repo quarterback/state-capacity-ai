@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context Delivery — Agent Experience Standards — State Capacity AI</title>
+  <meta name="description" content="Context delivery requirements for agents: structured data access, machine documentation, stable patterns, and consent flows.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body class="has-sidebar">
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+  <div class="sidebar-overlay"></div>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Agent Experience Standards</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/agent-standards/">Overview</a></li>
+          <li><a href="/guides/agent-standards/policy-logic/">Policy Logic</a></li>
+          <li><a href="/guides/agent-standards/action-surfaces/">Action Surfaces</a></li>
+          <li><a href="/guides/agent-standards/handoff-protocols/">Handoff Protocols</a></li>
+          <li><a href="/guides/agent-standards/audit-trails/">Audit Trails</a></li>
+          <li><a href="/guides/agent-standards/context-delivery/" class="active">Context Delivery</a></li>
+          <li><a href="/guides/agent-standards/public-value/">Public Value</a></li>
+          <li><a href="/guides/agent-standards/domains/">Standards Domains</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+
+      <span class="method-number">Part Five</span>
+      <h1>Context Delivery Requirements</h1>
+      <p class="lead">Agents can only act correctly if they receive the right context in the right form. This section specifies how public service systems must deliver context to agents &mdash; structured data, documentation, interaction patterns, and consent flows.</p>
+
+      <h2 id="structured-data">5.1 Structured Data Access</h2>
+      <p>Agents require access to case data, reference data, and system state. This access must be formally structured through defined interfaces.</p>
+
+      <h4>Data access requirements</h4>
+      <ul>
+        <li><strong>Clearly defined schemas:</strong> Every data source an agent may access must publish a formal schema describing its structure, field definitions, data types, and update frequency.</li>
+        <li><strong>Ownership declaration:</strong> Each data element must have a declared owner &mdash; the system, agency, or individual responsible for its accuracy and currency.</li>
+        <li><strong>Sensitivity classification:</strong> Data must be classified by sensitivity level, with access controls that enforce need-to-know and purpose limitations appropriate to each level.</li>
+        <li><strong>Consent linkage:</strong> Access to personal data must be linked to specific consent records. Agents must have a valid, current consent authorization covering the intended use before accessing personal data.</li>
+        <li><strong>Freshness indicators:</strong> Every data element must carry metadata indicating when it was last updated, verified, or confirmed, so agents can assess currency.</li>
+      </ul>
+
+      <h2 id="machine-documentation">5.2 Machine-Oriented Documentation</h2>
+      <p>Agents need documentation designed for machine consumption &mdash; structured, parseable, and directly actionable.</p>
+
+      <h4>Documentation requirements</h4>
+      <ul>
+        <li><strong>Step sequences:</strong> Procedural documentation must be expressed as ordered sequences of discrete steps, with preconditions, actions, and postconditions for each step.</li>
+        <li><strong>Common cases:</strong> Documentation must include the most frequent case patterns with expected inputs, processing paths, and outcomes.</li>
+        <li><strong>Worked examples:</strong> Each action type and procedure must include concrete examples with sample inputs and expected outputs, covering both typical and edge cases.</li>
+        <li><strong>Error guidance:</strong> For every defined error condition, documentation must specify the cause, the correct agent response, and the recovery path.</li>
+        <li><strong>Decision trees:</strong> Complex policy logic must be represented as traversable decision structures.</li>
+      </ul>
+
+      <h2 id="stable-patterns">5.3 Stable Interaction Patterns</h2>
+      <p>Agent effectiveness depends on predictable, stable interaction patterns. Frequent changes to interfaces, schemas, or procedures create failure modes that harm the people agents serve.</p>
+
+      <h4>Stability requirements</h4>
+      <ul>
+        <li><strong>Predictable patterns:</strong> Interaction surfaces must follow consistent patterns across action types. Agents that learn one pattern should be able to predict the structure of others.</li>
+        <li><strong>Reduced friction:</strong> Unnecessary complexity &mdash; redundant fields, inconsistent naming, ambiguous status codes &mdash; must be identified and eliminated.</li>
+        <li><strong>Deprecation protocol:</strong> When interaction patterns change, the old pattern must remain available for a defined transition period with clear migration guidance.</li>
+        <li><strong>Change notification:</strong> Agents and their operators must receive advance notice of interface changes, with sufficient lead time to adapt.</li>
+        <li><strong>Backward compatibility:</strong> New versions of interaction surfaces should maintain backward compatibility wherever possible, using versioned endpoints rather than breaking changes.</li>
+      </ul>
+
+      <h2 id="consent-authorization">5.4 Consent and Authorization Flow</h2>
+      <p>Consent is a structured flow that must be explicit, informed, scoped, and recorded.</p>
+
+      <h4>Consent flow requirements</h4>
+      <ul>
+        <li><strong>Explicit consent:</strong> The person must affirmatively authorize the agent to act on their behalf. Implicit consent, inferred consent, or opt-out models are insufficient for public service interactions.</li>
+        <li><strong>Identity confirmation:</strong> Before any agent action, the identity of the person on whose behalf the agent acts must be confirmed through defined verification procedures.</li>
+        <li><strong>Scope limitation:</strong> Consent must specify what actions the agent is authorized to take, what data it may access, and for what duration. Open-ended authorizations are invalid.</li>
+        <li><strong>Revocation mechanism:</strong> The person must be able to revoke consent at any time, through any channel. Revocation takes effect immediately for all future actions.</li>
+        <li><strong>Complete record:</strong> Every consent grant, modification, and revocation must be recorded with timestamps, the specific scope authorized, and the identity verification method used.</li>
+      </ul>
+
+      <nav class="page-nav">
+        <a class="prev" href="/guides/agent-standards/audit-trails/">Previous<span>Audit Trails</span></a>
+        <a class="next" href="/guides/agent-standards/public-value/">Next<span>Public Value</span></a>
+      </nav>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>State Capacity AI</p>
+    <div class="footer-links">
+      <a href="mailto:contact@statecapacity.ai">Contact</a>
+    </div>
+  </footer>
+  <script src="/js/nav.js"></script>
+</body>
+</html>

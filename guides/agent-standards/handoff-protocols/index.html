@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handoff Protocols — Agent Experience Standards — State Capacity AI</title>
+  <meta name="description" content="Protocols for transitions between agents and caseworkers: triggers, handoff packages, caseworker response paths, and context restoration.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body class="has-sidebar">
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <button class="theme-toggle" aria-label="Toggle theme">Dark</button>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+  <div class="sidebar-overlay"></div>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Guide navigation">
+      <a href="/" class="sidebar-back">&larr; All Guides</a>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Agent Experience Standards</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/agent-standards/">Overview</a></li>
+          <li><a href="/guides/agent-standards/policy-logic/">Policy Logic</a></li>
+          <li><a href="/guides/agent-standards/action-surfaces/">Action Surfaces</a></li>
+          <li><a href="/guides/agent-standards/handoff-protocols/" class="active">Handoff Protocols</a></li>
+          <li><a href="/guides/agent-standards/audit-trails/">Audit Trails</a></li>
+          <li><a href="/guides/agent-standards/context-delivery/">Context Delivery</a></li>
+          <li><a href="/guides/agent-standards/public-value/">Public Value</a></li>
+          <li><a href="/guides/agent-standards/domains/">Standards Domains</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+
+      <span class="method-number">Part Three</span>
+      <h1>Handoff Protocols Between Agents and Caseworkers</h1>
+      <p class="lead">The transition between agent processing and human judgment is one of the highest-risk moments in a public service interaction. Poor handoffs lose context, waste time, and force people to repeat themselves. This section specifies the protocol for every handoff.</p>
+
+      <h2 id="handoff-triggers">3.1 Triggers for Handoff</h2>
+      <p>Handoffs from agent to caseworker are initiated under the following conditions.</p>
+
+      <h4>Standard triggers</h4>
+      <ul>
+        <li><strong>Uncertainty thresholds:</strong> The agent's confidence in its determination falls below a defined threshold. Thresholds must be set per action type and calibrated against outcome data.</li>
+        <li><strong>Procedural transitions:</strong> The case has reached a stage where policy or regulation requires human review &mdash; such as final eligibility determinations, adverse actions, or discretionary decisions.</li>
+        <li><strong>Legal significance:</strong> The next action carries legal consequences &mdash; denial of rights, imposition of obligations, or creation of binding commitments.</li>
+        <li><strong>User request:</strong> The person involved explicitly requests human review. This trigger is unconditional and may never be deflected, delayed, or discouraged by the agent.</li>
+      </ul>
+
+      <h2 id="handoff-package">3.2 The Handoff Package</h2>
+      <p>When a handoff occurs, the agent must transmit a complete handoff package to the receiving caseworker. Incomplete handoffs are a protocol violation.</p>
+
+      <h4>Four required elements</h4>
+      <ol>
+        <li><strong>Reasoning file:</strong> The full reasoning attachment (as specified in Section 1.3) for all agent actions taken on this case, including the reasoning for initiating the handoff.</li>
+        <li><strong>Data inputs:</strong> The complete set of data the agent received, used, and excluded &mdash; with provenance, timestamps, and verification status for each element.</li>
+        <li><strong>Policy version:</strong> The exact policy version(s) applied, including any version transitions during processing.</li>
+        <li><strong>Full action history with timestamps:</strong> A chronological record of every action the agent took or attempted, including outcomes, errors, and escalation events.</li>
+      </ol>
+
+      <h2 id="caseworker-response">3.3 Caseworker Response Path</h2>
+      <p>Handoff packages enter a queue that presents the caseworker with a complete case overview. The caseworker can proceed directly from the agent's work.</p>
+
+      <h4>Caseworker response options</h4>
+      <ul>
+        <li><strong>Proceed:</strong> The caseworker reviews the package and advances the case &mdash; approving the agent's recommendation, making a different determination, or taking the next procedural step.</li>
+        <li><strong>Request additional data:</strong> The caseworker identifies information gaps and initiates specific requests to the applicant, external sources, or back to the agent for further processing on a defined subtask.</li>
+        <li><strong>Return with instructions:</strong> The caseworker determines the case can resume agent processing with specific instructions, constraints, or clarifications that resolve the triggering condition.</li>
+      </ul>
+
+      <h2 id="context-restoration">3.4 Restoration of Context</h2>
+      <p>When a case transitions between agent and caseworker in either direction, the receiving party must have sufficient context to act without requiring the person to re-explain their situation.</p>
+
+      <h4>Context restoration requirements</h4>
+      <ul>
+        <li><strong>Human-readable summary:</strong> A plain-language narrative of the case status: what has been done, what triggered the transition, and what remains. Generated from structured handoff data, written for a human reader.</li>
+        <li><strong>Clear next steps:</strong> An explicit statement of what the receiving party is expected to do, with relevant deadlines, requirements, and decision points identified.</li>
+        <li><strong>Record of completed actions:</strong> A simplified timeline showing what has already been accomplished, so that steps are preserved and work is carried forward.</li>
+        <li><strong>Contact and communication history:</strong> A record of all communications with the person involved &mdash; what they were told, what they submitted, what questions remain unanswered.</li>
+      </ul>
+
+      <div class="case-study">
+        <h5>The Repeat-Yourself Problem</h5>
+        <p>The most common failure in agent-to-human handoffs forces the person to re-explain their situation from scratch. This signals that the system does not value their time, does not retain what they have provided, and cannot handle their case coherently. The handoff protocol exists to eliminate this failure mode entirely.</p>
+      </div>
+
+      <nav class="page-nav">
+        <a class="prev" href="/guides/agent-standards/action-surfaces/">Previous<span>Action Surfaces</span></a>
+        <a class="next" href="/guides/agent-standards/audit-trails/">Next<span>Audit Trails</span></a>
+      </nav>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>State Capacity AI</p>
+    <div class="footer-links">
+      <a href="mailto:contact@statecapacity.ai">Contact</a>
+    </div>
+  </footer>
+  <script src="/js/nav.js"></script>
+</body>
+</html>
