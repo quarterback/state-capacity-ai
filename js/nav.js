@@ -55,12 +55,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function getPreferred() {
     var stored = localStorage.getItem('theme');
     if (stored) return stored;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'dark';
   }
 
   function applyTheme(theme) {
-    if (theme === 'dark') {
-      html.setAttribute('data-theme', 'dark');
+    if (theme === 'light') {
+      html.setAttribute('data-theme', 'light');
     } else {
       html.removeAttribute('data-theme');
     }
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (themeBtn) {
     themeBtn.addEventListener('click', function () {
-      var current = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      var current = html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
       var next = current === 'dark' ? 'light' : 'dark';
       localStorage.setItem('theme', next);
       applyTheme(next);
