@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>II. The Interface — State Capacity AI</title>
+  <meta name="description" content="Designing agent-to-human boundaries that prioritize human context over machine speed.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <a href="https://blog.ronbronson.com" class="desktop-only">Writing</a>
+      <a href="mailto:contact@statecapacity.ai" class="desktop-only">Contact</a>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay"></div>
+
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Site navigation">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Doctrine</div>
+        <ul class="sidebar-nav">
+          <li><a href="/">Overview</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Methods</div>
+        <ul class="sidebar-nav">
+          <li><a href="/methods/inventory/">I. The Inventory</a></li>
+          <li><a href="/methods/interface/" class="active">II. The Interface</a></li>
+          <li><a href="/methods/protocol/">III. The Protocol</a></li>
+          <li><a href="/methods/shield/">IV. The Shield</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Research</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guide/">Principles Guide</a></li>
+          <li><a href="/experiments/">Experiments</a></li>
+          <li><a href="/framework/">Framework</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">External</div>
+        <ul class="sidebar-nav">
+          <li><a href="https://blog.ronbronson.com">Writing</a></li>
+          <li><a href="https://bsky.app/profile/ronbronson.bsky.social">Bluesky</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <span class="method-number">Method II</span>
+      <h1>The Interface</h1>
+
+      <blockquote>
+        <p>The boundary between an agent and a human is not a UX problem. It is a sovereignty problem. Every interface decision either preserves or erodes the human's ability to understand, override, and remain in command.</p>
+      </blockquote>
+
+      <h2>The Problem of Delegation</h2>
+      <p>Most agent interfaces optimize for speed and convenience. They treat the human as a consumer of outputs&mdash;someone who reviews what the machine produced and clicks "approve." The interface becomes a rubber stamp.</p>
+      <p>When the interface hides reasoning, compresses context, or defaults to automation, it doesn't just save time. It removes the human from the decision loop. The person is still nominally "in charge," but they lack the information, the framing, and the cognitive engagement to exercise real judgment.</p>
+      <p>This is disintermediation by design. The interface <em>looks</em> collaborative, but the human is a passenger.</p>
+
+      <h2>The Method of Capacity</h2>
+      <p>Agent Experience (AX) design flips the default. Instead of optimizing for agent throughput, it optimizes for human comprehension. The interface is designed so that the human always has enough context to meaningfully evaluate, override, or redirect the agent's action.</p>
+
+      <h3>Core interface principles</h3>
+      <ul>
+        <li><strong>Context surfacing:</strong> The agent must expose <em>why</em> it is recommending an action, not just <em>what</em> it recommends. Reasoning must be visible at the point of decision.</li>
+        <li><strong>Pace control:</strong> The human sets the tempo. Agents should not auto-execute in high-stakes contexts. There should be deliberate friction before irreversible actions.</li>
+        <li><strong>Override affordance:</strong> Every agent action must have a clear, accessible mechanism for the human to say "no" or "not like that." Override should not require technical expertise.</li>
+        <li><strong>State transparency:</strong> The human must always know what the agent has done, what it is doing, and what it plans to do next. No silent background operations in consequential workflows.</li>
+      </ul>
+
+      <h3>The MCP agent experience model</h3>
+      <p>The Model Context Protocol (MCP) provides a structured layer for agent-to-human communication. Rather than treating the interface as a chat window or a dashboard, MCP defines explicit channels for context exchange&mdash;ensuring the human and the agent are operating from the same information at the same time.</p>
+      <p>This matters because the failure mode is not "the agent did the wrong thing." The failure mode is "the human didn't know enough to catch it."</p>
+
+      <a href="https://github.com/statecapacity/mcp-agent-experience" class="artifact-box">
+        <div>
+          <div class="artifact-label">Source Artifact</div>
+          <div class="artifact-name">statecapacity/mcp-agent-experience</div>
+        </div>
+        <span class="artifact-link">View on GitHub</span>
+      </a>
+
+      <hr>
+      <p><a href="/methods/inventory/">&larr; Previous: I. The Inventory</a> &nbsp;&middot;&nbsp; <a href="/methods/protocol/">Next: III. The Protocol &rarr;</a></p>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>State Capacity AI &mdash; A public research lab by <a href="https://blog.ronbronson.com">Ron Bronson</a></p>
+    <div class="footer-links">
+      <a href="https://bsky.app/profile/ronbronson.bsky.social">Bluesky</a>
+      <a href="https://blog.ronbronson.com/rss.xml">RSS</a>
+    </div>
+  </footer>
+
+  <script src="/js/nav.js"></script>
+</body>
+</html>

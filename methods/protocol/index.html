@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>III. The Protocol — State Capacity AI</title>
+  <meta name="description" content="Implementing hard-stops and human-in-the-loop triggers for high-stakes agentic actions.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <a href="https://blog.ronbronson.com" class="desktop-only">Writing</a>
+      <a href="mailto:contact@statecapacity.ai" class="desktop-only">Contact</a>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
+    </div>
+  </header>
+
+  <div class="sidebar-overlay"></div>
+
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Site navigation">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Doctrine</div>
+        <ul class="sidebar-nav">
+          <li><a href="/">Overview</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Methods</div>
+        <ul class="sidebar-nav">
+          <li><a href="/methods/inventory/">I. The Inventory</a></li>
+          <li><a href="/methods/interface/">II. The Interface</a></li>
+          <li><a href="/methods/protocol/" class="active">III. The Protocol</a></li>
+          <li><a href="/methods/shield/">IV. The Shield</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Research</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guide/">Principles Guide</a></li>
+          <li><a href="/experiments/">Experiments</a></li>
+          <li><a href="/framework/">Framework</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">External</div>
+        <ul class="sidebar-nav">
+          <li><a href="https://blog.ronbronson.com">Writing</a></li>
+          <li><a href="https://bsky.app/profile/ronbronson.bsky.social">Bluesky</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <span class="method-number">Method III</span>
+      <h1>The Protocol</h1>
+
+      <blockquote>
+        <p>An agent that cannot refuse is not a tool. It is an uncontrolled process. Judgment routing is the discipline of defining exactly where human authority begins and machine execution ends.</p>
+      </blockquote>
+
+      <h2>The Problem of Delegation</h2>
+      <p>Agentic systems are designed to complete tasks. Their value proposition is autonomy&mdash;give them a goal, and they figure out the steps. This works until the steps involve consequences the agent cannot evaluate: legal liability, ethical judgment, political sensitivity, or irreversible harm.</p>
+      <p>The standard response is "human-in-the-loop." But most human-in-the-loop implementations are theater. The human receives a notification, sees a summary the agent wrote about its own work, and clicks approve. There is no genuine decision point because the human lacks the context to disagree.</p>
+      <p>Judgment routing is not human-in-the-loop. It is the architecture that determines <em>which</em> decisions require a loop, <em>what information</em> the human needs to make that decision real, and <em>what happens</em> when the human says no.</p>
+
+      <h2>The Method of Capacity</h2>
+      <p>The Protocol defines a routing system for agentic decisions. Every action the agent can take is classified by consequence tier, and each tier has explicit rules for how much autonomy the agent retains.</p>
+
+      <h3>Consequence tiers</h3>
+      <ul>
+        <li><strong>Tier 0 &mdash; Reversible, low-stakes:</strong> Agent executes autonomously. Examples: formatting, summarization, data retrieval.</li>
+        <li><strong>Tier 1 &mdash; Reversible, moderate-stakes:</strong> Agent executes with notification. Human can review and undo. Examples: scheduling, draft communications.</li>
+        <li><strong>Tier 2 &mdash; Irreversible or high-stakes:</strong> Agent proposes, human approves. Execution is blocked until explicit authorization. Examples: financial transactions, public communications, personnel actions.</li>
+        <li><strong>Tier 3 &mdash; Judgment-dependent:</strong> Agent refuses and escalates. The decision requires contextual judgment that cannot be reliably modeled. Examples: legal interpretation, ethical dilemmas, precedent-setting decisions.</li>
+      </ul>
+
+      <h3>Hard stops</h3>
+      <p>A hard stop is not a warning. It is a structural barrier that prevents the agent from proceeding. Hard stops are triggered by:</p>
+      <ul>
+        <li>Confidence below a defined threshold</li>
+        <li>Actions that cross consequence tier boundaries</li>
+        <li>Requests that conflict with explicit policy constraints</li>
+        <li>Novel situations that fall outside the agent's training distribution</li>
+      </ul>
+      <p>When a hard stop fires, the agent does not retry. It surfaces the decision to a human with full context: what it was trying to do, why it stopped, what information the human needs to proceed.</p>
+
+      <h3>Refusal as a feature</h3>
+      <p>Systems that never say "I can't" are systems that have no limits. The Protocol treats refusal as a core capability, not a failure state. An agent that refuses an action it shouldn't take is <em>working correctly</em>. An agent that proceeds when it shouldn't is the one that's broken.</p>
+
+      <a href="https://github.com/statecapacity/judgment-routing" class="artifact-box">
+        <div>
+          <div class="artifact-label">Source Artifact</div>
+          <div class="artifact-name">statecapacity/judgment-routing</div>
+        </div>
+        <span class="artifact-link">View on GitHub</span>
+      </a>
+
+      <hr>
+      <p><a href="/methods/interface/">&larr; Previous: II. The Interface</a> &nbsp;&middot;&nbsp; <a href="/methods/shield/">Next: IV. The Shield &rarr;</a></p>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>State Capacity AI &mdash; A public research lab by <a href="https://blog.ronbronson.com">Ron Bronson</a></p>
+    <div class="footer-links">
+      <a href="https://bsky.app/profile/ronbronson.bsky.social">Bluesky</a>
+      <a href="https://blog.ronbronson.com/rss.xml">RSS</a>
+    </div>
+  </footer>
+
+  <script src="/js/nav.js"></script>
+</body>
+</html>
