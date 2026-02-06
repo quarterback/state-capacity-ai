@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive standards for agent-mediated public services covering accessibility, security, transparency, interoperability, and user experience">
+    <title>Standards - Agent-Mediated Public Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
+        <div class="header-container">
+            <h1 class="site-title">
+                <a href="index.html">Agent Experience Standards</a>
+            </h1>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="standards.html" class="active" aria-current="page">Standards</a></li>
+                    <li><a href="civic-standards.html">Civic Standards</a></li>
+                    <li><a href="implementation.html">Implementation</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <h1>Agent-Mediated Public Services Standards</h1>
+        
+        <div class="section-intro">
+            <p>These comprehensive standards establish baseline requirements for AI agents interacting with government services. Standards are organized into six core domains, each with specific requirements categorized by priority level.</p>
+        </div>
+
+        <section aria-labelledby="priority-levels">
+            <h2 id="priority-levels">Priority Levels</h2>
+            <p><span class="badge badge-success">ESSENTIAL</span> Must be implemented - non-negotiable requirements</p>
+            <p><span class="badge">RECOMMENDED</span> Should be implemented - important but may have alternatives</p>
+            <p><span class="badge-secondary">OPTIONAL</span> Nice to have - enhances experience but not critical</p>
+        </section>
+
+        <nav aria-labelledby="standards-nav">
+            <h2 id="standards-nav">Standards Overview</h2>
+            <ul>
+                <li><a href="#accessibility">1. Accessibility Standards</a></li>
+                <li><a href="#security">2. Security & Privacy Standards</a></li>
+                <li><a href="#transparency">3. Transparency Standards</a></li>
+                <li><a href="#interoperability">4. Interoperability Standards</a></li>
+                <li><a href="#user-experience">5. User Experience Standards</a></li>
+                <li><a href="#compliance">6. Compliance & Governance Standards</a></li>
+            </ul>
+        </nav>
+
+        <section id="accessibility" aria-labelledby="accessibility-title">
+            <h2 id="accessibility-title">1. Accessibility Standards</h2>
+            <p>Ensuring agent services are usable by all citizens, including those with disabilities.</p>
+
+            <h3>1.1 WCAG Compliance</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>All agent interfaces must meet WCAG 2.1 Level AA standards</li>
+                <li>Provide text alternatives for non-text content</li>
+                <li>Ensure keyboard accessibility for all functions</li>
+                <li>Maintain sufficient color contrast ratios (4.5:1 for normal text)</li>
+                <li>Support screen reader compatibility</li>
+            </ul>
+
+            <h3>1.2 Multi-Modal Interaction</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Support multiple input methods: voice, text, touch, keyboard</li>
+                <li>Provide visual and auditory feedback for actions</li>
+                <li>Enable adjustment of text size and spacing</li>
+                <li>Support both synchronous and asynchronous communication</li>
+            </ul>
+
+            <h3>1.3 Language Support</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Provide services in all officially supported languages</li>
+                <li>Enable language preference selection and persistence</li>
+                <li>Offer plain language alternatives to technical terms</li>
+                <li>Support right-to-left languages where applicable</li>
+                <li>Provide translation for key documents and forms</li>
+            </ul>
+
+            <h3>1.4 Cognitive Accessibility</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Use clear, simple language (target 8th grade reading level)</li>
+                <li>Break complex processes into manageable steps</li>
+                <li>Provide progress indicators for multi-step interactions</li>
+                <li>Offer contextual help and explanations</li>
+                <li>Allow sufficient time for reading and responding</li>
+                <li>Minimize memory burden by showing relevant information</li>
+            </ul>
+
+            <h3>1.5 Assistive Technology Support</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Test compatibility with major screen readers (JAWS, NVDA, VoiceOver)</li>
+                <li>Support voice control systems</li>
+                <li>Work with screen magnification tools</li>
+                <li>Enable high contrast and dark mode options</li>
+                <li>Respect operating system accessibility settings</li>
+            </ul>
+        </section>
+
+        <section id="security" aria-labelledby="security-title">
+            <h2 id="security-title">2. Security & Privacy Standards</h2>
+            <p>Protecting citizen data and maintaining secure agent interactions.</p>
+
+            <h3>2.1 Authentication & Authorization</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Implement multi-factor authentication for sensitive services</li>
+                <li>Support multiple authentication methods (biometric, token, password)</li>
+                <li>Use secure session management with appropriate timeouts</li>
+                <li>Implement role-based access control</li>
+                <li>Log authentication attempts and monitor for suspicious activity</li>
+            </ul>
+
+            <h3>2.2 Data Protection</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Encrypt all data in transit using TLS 1.3 or higher</li>
+                <li>Encrypt sensitive data at rest using industry-standard algorithms</li>
+                <li>Implement data minimization - collect only necessary information</li>
+                <li>Establish clear data retention and deletion policies</li>
+                <li>Segregate data by sensitivity level</li>
+                <li>Conduct regular security audits and penetration testing</li>
+            </ul>
+
+            <h3>2.3 Privacy by Design</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Obtain explicit consent before collecting personal data</li>
+                <li>Provide clear privacy notices in plain language</li>
+                <li>Enable citizens to view, correct, and delete their data</li>
+                <li>Implement privacy-preserving analytics (anonymization, aggregation)</li>
+                <li>Limit data sharing to authorized purposes only</li>
+                <li>Conduct privacy impact assessments for new services</li>
+            </ul>
+
+            <h3>2.4 Secure Agent Communication</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Verify agent identity through digital signatures or certificates</li>
+                <li>Use secure protocols for agent-to-service communication</li>
+                <li>Implement rate limiting to prevent abuse</li>
+                <li>Monitor for anomalous agent behavior</li>
+                <li>Maintain audit logs of agent actions</li>
+            </ul>
+
+            <h3>2.5 Incident Response</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Establish incident response procedures</li>
+                <li>Provide breach notification within required timeframes</li>
+                <li>Maintain incident response team and contact procedures</li>
+                <li>Conduct post-incident reviews and implement improvements</li>
+                <li>Coordinate with relevant authorities on security matters</li>
+            </ul>
+        </section>
+
+        <section id="transparency" aria-labelledby="transparency-title">
+            <h2 id="transparency-title">3. Transparency Standards</h2>
+            <p>Ensuring citizens understand how agents work and make decisions.</p>
+
+            <h3>3.1 Agent Identification</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Clearly identify when citizens are interacting with an agent vs. human</li>
+                <li>Disclose agent capabilities and limitations</li>
+                <li>Provide information about the agent's operating organization</li>
+                <li>Enable access to human assistance when needed</li>
+            </ul>
+
+            <h3>3.2 Decision Explanation</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Explain the basis for agent recommendations or decisions</li>
+                <li>Identify key factors influencing outcomes</li>
+                <li>Provide appeals process for contested decisions</li>
+                <li>Document decision-making logic and algorithms</li>
+                <li>Enable review by human supervisors when appropriate</li>
+            </ul>
+
+            <h3>3.3 Data Usage Disclosure</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Clearly state what data is collected and why</li>
+                <li>Explain how data will be used, stored, and shared</li>
+                <li>Identify third parties with data access</li>
+                <li>Provide opt-out options where feasible</li>
+                <li>Disclose data retention periods</li>
+            </ul>
+
+            <h3>3.4 Performance Transparency</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Publish accuracy rates and error types</li>
+                <li>Report on service availability and response times</li>
+                <li>Disclose known limitations or failure modes</li>
+                <li>Share user satisfaction metrics</li>
+                <li>Provide regular public reports on service performance</li>
+            </ul>
+
+            <h3>3.5 Change Notification</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Notify users of significant changes to agent capabilities</li>
+                <li>Announce policy or procedure updates</li>
+                <li>Provide advance notice of service disruptions</li>
+                <li>Maintain change logs for transparency</li>
+            </ul>
+        </section>
+
+        <section id="interoperability" aria-labelledby="interoperability-title">
+            <h2 id="interoperability-title">4. Interoperability Standards</h2>
+            <p>Enabling agents to work seamlessly across different systems and services.</p>
+
+            <h3>4.1 Data Standards</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Use standardized data formats (JSON, XML) for information exchange</li>
+                <li>Implement common data schemas for citizen information</li>
+                <li>Support standard date, time, and location formats</li>
+                <li>Use consistent identifiers across systems</li>
+                <li>Maintain data quality through validation rules</li>
+            </ul>
+
+            <h3>4.2 API Standards</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Provide RESTful APIs following industry best practices</li>
+                <li>Use consistent naming conventions and endpoint structures</li>
+                <li>Implement standard HTTP status codes</li>
+                <li>Provide comprehensive API documentation</li>
+                <li>Version APIs to maintain backward compatibility</li>
+                <li>Support standard authentication mechanisms (OAuth 2.0, OpenID Connect)</li>
+            </ul>
+
+            <h3>4.3 Protocol Support</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Support MCP (Model Context Protocol) for agent interactions</li>
+                <li>Implement standard messaging protocols</li>
+                <li>Enable webhook notifications for asynchronous events</li>
+                <li>Support standard error handling and retry mechanisms</li>
+            </ul>
+
+            <h3>4.4 Cross-Agency Integration</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Enable data sharing agreements between agencies</li>
+                <li>Support federated identity management</li>
+                <li>Implement standard consent mechanisms for data sharing</li>
+                <li>Provide transaction tracking across agency boundaries</li>
+                <li>Establish common service registries</li>
+            </ul>
+
+            <h3>4.5 Legacy System Integration</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Provide adapter layers for legacy systems</li>
+                <li>Support batch and real-time integration patterns</li>
+                <li>Implement data transformation services</li>
+                <li>Maintain fallback procedures when integration fails</li>
+            </ul>
+        </section>
+
+        <section id="user-experience" aria-labelledby="ux-title">
+            <h2 id="ux-title">5. User Experience Standards</h2>
+            <p>Creating intuitive, efficient interactions that serve citizen needs.</p>
+
+            <h3>5.1 Conversation Design</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Use natural, conversational language</li>
+                <li>Provide clear prompts and instructions</li>
+                <li>Handle common variations in user input</li>
+                <li>Offer contextual help and suggestions</li>
+                <li>Gracefully handle errors and misunderstandings</li>
+                <li>Enable correction of previous responses</li>
+            </ul>
+
+            <h3>5.2 Task Completion</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Support task saving and resumption</li>
+                <li>Provide clear progress indicators</li>
+                <li>Minimize required steps to complete tasks</li>
+                <li>Offer shortcuts for frequent actions</li>
+                <li>Send confirmation for completed actions</li>
+                <li>Enable transaction history review</li>
+            </ul>
+
+            <h3>5.3 Error Handling</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Provide clear, actionable error messages</li>
+                <li>Suggest specific fixes for common errors</li>
+                <li>Prevent errors through input validation</li>
+                <li>Offer help when users appear stuck</li>
+                <li>Maintain context during error recovery</li>
+            </ul>
+
+            <h3>5.4 Performance</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Respond to user input within 2 seconds</li>
+                <li>Provide feedback for longer operations</li>
+                <li>Optimize for low-bandwidth scenarios</li>
+                <li>Cache frequently accessed information</li>
+                <li>Maintain 99.9% uptime for critical services</li>
+            </ul>
+
+            <h3>5.5 Personalization</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Remember user preferences and settings</li>
+                <li>Adapt to individual communication styles</li>
+                <li>Learn from past interactions to improve service</li>
+                <li>Provide relevant suggestions based on context</li>
+                <li>Enable customization of interface elements</li>
+            </ul>
+
+            <h3>5.6 Escalation</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Provide clear path to human assistance</li>
+                <li>Transfer context when escalating to humans</li>
+                <li>Set appropriate expectations for response times</li>
+                <li>Enable callback or scheduling options</li>
+                <li>Maintain continuity across channels</li>
+            </ul>
+        </section>
+
+        <section id="compliance" aria-labelledby="compliance-title">
+            <h2 id="compliance-title">6. Compliance & Governance Standards</h2>
+            <p>Ensuring adherence to legal, regulatory, and policy requirements.</p>
+
+            <h3>6.1 Legal Compliance</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Comply with relevant privacy laws (GDPR, CCPA, etc.)</li>
+                <li>Meet accessibility requirements (Section 508, ADA)</li>
+                <li>Adhere to data protection regulations</li>
+                <li>Follow records retention requirements</li>
+                <li>Implement required reporting mechanisms</li>
+            </ul>
+
+            <h3>6.2 Quality Assurance</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Establish testing protocols for agent behaviors</li>
+                <li>Conduct regular bias and fairness audits</li>
+                <li>Monitor for discrimination or unequal treatment</li>
+                <li>Test with diverse user populations</li>
+                <li>Implement continuous improvement processes</li>
+            </ul>
+
+            <h3>6.3 Documentation</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Maintain comprehensive technical documentation</li>
+                <li>Document data flows and system architecture</li>
+                <li>Keep user guides current and accessible</li>
+                <li>Record decisions and their rationale</li>
+                <li>Provide API and integration documentation</li>
+            </ul>
+
+            <h3>6.4 Training & Support</h3>
+            <p><span class="badge">RECOMMENDED</span></p>
+            <ul>
+                <li>Train staff on agent capabilities and limitations</li>
+                <li>Provide resources for troubleshooting</li>
+                <li>Establish support channels for users</li>
+                <li>Create materials for citizen education</li>
+                <li>Offer guidance for special circumstances</li>
+            </ul>
+
+            <h3>6.5 Monitoring & Evaluation</h3>
+            <p><span class="badge badge-success">ESSENTIAL</span></p>
+            <ul>
+                <li>Track key performance indicators</li>
+                <li>Monitor user satisfaction and feedback</li>
+                <li>Measure accessibility and inclusivity</li>
+                <li>Evaluate cost-effectiveness</li>
+                <li>Report on outcomes to stakeholders</li>
+                <li>Conduct regular reviews and updates</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="implementation">
+            <h2 id="implementation">Implementation Guidance</h2>
+            <p>Ready to implement these standards? Visit our <a href="implementation.html">Implementation Guide</a> for step-by-step instructions, best practices, and practical examples.</p>
+            <p>Need tools and templates? Check our <a href="resources.html">Resources</a> section for checklists, code samples, and assessment frameworks.</p>
+            <p><a href="implementation.html" class="button">Start Implementing</a></p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Standards</h3>
+                <ul>
+                    <li><a href="standards.html#accessibility">Accessibility</a></li>
+                    <li><a href="standards.html#security">Security & Privacy</a></li>
+                    <li><a href="standards.html#transparency">Transparency</a></li>
+                    <li><a href="standards.html#interoperability">Interoperability</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="implementation.html">Implementation Guide</a></li>
+                    <li><a href="resources.html">Tools & Templates</a></li>
+                    <li><a href="about.html">About This Initiative</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="https://github.com/quarterback/mcp-agent-experience">GitHub Repository</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Agent Experience Standards Initiative. Open source under the MIT License.</p>
+        </div>
+    </footer>
+</body>
+</html>

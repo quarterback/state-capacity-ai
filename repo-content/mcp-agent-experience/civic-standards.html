@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MCP Civic Standards - Extensions for policy-aware agent interactions in government services">
+    <title>MCP Civic Standards - Agent-Mediated Public Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header role="banner">
+        <div class="header-container">
+            <h1 class="site-title">
+                <a href="index.html">Agent Experience Standards</a>
+            </h1>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="standards.html">Standards</a></li>
+                    <li><a href="civic-standards.html" class="active" aria-current="page">Civic Standards</a></li>
+                    <li><a href="implementation.html">Implementation</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <h1>MCP Civic Standards v1.0</h1>
+        
+        <div class="section-intro">
+            <p><strong>Model Context Protocol (MCP) Civic Extensions</strong> provide a structured framework for implementing policy-aware agent interactions in government and public service environments. These extensions ensure that AI agents can reliably interact with civic systems while maintaining transparency, accountability, and compliance with regulatory requirements.</p>
+        </div>
+
+        <nav class="toc" aria-labelledby="toc-heading">
+            <h2 id="toc-heading">Table of Contents</h2>
+            <ul>
+                <li><a href="#executive-summary">Executive Summary</a></li>
+                <li><a href="#part-1">Part I: Domain Requirements Analysis</a></li>
+                <li><a href="#part-2">Part II: MCP Civic Extensions – Core Primitives</a>
+                    <ul>
+                        <li><a href="#policy-resources">Policy-Aware Resource Schema</a></li>
+                        <li><a href="#determination-tools">Determination Tool Specifications</a></li>
+                        <li><a href="#audit-logs">Audit Log Schema</a></li>
+                    </ul>
+                </li>
+                <li><a href="#part-3">Part III: Implementation Patterns</a></li>
+                <li><a href="#part-4">Part IV: Governance and Security Requirements</a></li>
+                <li><a href="#part-5">Part V: Testing and Validation Framework</a></li>
+                <li><a href="#part-6">Part VI: Deployment and Operations</a></li>
+                <li><a href="#part-7">Part VII: Future Directions and Open Questions</a></li>
+                <li><a href="#part-8">Part VIII: Reference Implementation</a></li>
+                <li><a href="#appendix-a">Appendix A: Complete Schema Definitions</a></li>
+                <li><a href="#appendix-b">Appendix B: Sample Policy Document</a></li>
+                <li><a href="#appendix-c">Appendix C: Testing Checklist</a></li>
+            </ul>
+        </nav>
+
+        <section id="executive-summary" aria-labelledby="exec-summary-title">
+            <h2 id="exec-summary-title">Executive Summary</h2>
+            <p>Government services increasingly interact with AI agents acting on behalf of citizens. The MCP Civic Standards extend the Model Context Protocol to support:</p>
+            <ul>
+                <li><strong>Policy-Aware Resources</strong>: Structured representation of eligibility rules, procedural requirements, and regulatory constraints</li>
+                <li><strong>Transparent Determinations</strong>: Tools that produce auditable decisions with full reasoning chains</li>
+                <li><strong>Accountability</strong>: Complete audit trails linking every action to policy versions and user consent</li>
+                <li><strong>Human Handoff</strong>: Clear protocols for escalating to human caseworkers when needed</li>
+                <li><strong>Equity</strong>: Ensuring agent-mediated paths provide the same rights as traditional channels</li>
+            </ul>
+            <p>These standards build on the base MCP specification while adding civic-specific requirements for transparency, fairness, and regulatory compliance.</p>
+        </section>
+
+        <section id="part-1" aria-labelledby="part-1-title">
+            <h2 id="part-1-title">Part I: Domain Requirements Analysis</h2>
+            
+            <h3>1.1 Regulatory Context</h3>
+            <p>Public service systems must operate under strict regulatory frameworks including:</p>
+            <ul>
+                <li>Administrative Procedure Act (APA) requirements for notice and comment</li>
+                <li>Due process protections under the Fifth and Fourteenth Amendments</li>
+                <li>Privacy regulations (Privacy Act, GDPR, CCPA)</li>
+                <li>Accessibility requirements (Section 508, ADA)</li>
+                <li>Records retention and FOIA compliance</li>
+            </ul>
+
+            <h3>1.2 Key Stakeholders</h3>
+            <p>MCP Civic Standards must serve multiple constituencies:</p>
+            <ul>
+                <li><strong>Citizens</strong>: Require clear, accessible interactions with predictable outcomes</li>
+                <li><strong>Caseworkers</strong>: Need complete context when agents escalate cases</li>
+                <li><strong>Agency Administrators</strong>: Must ensure policy compliance and audit readiness</li>
+                <li><strong>Oversight Bodies</strong>: Require transparency into agent decision-making</li>
+                <li><strong>Agent Developers</strong>: Need clear interfaces and testing frameworks</li>
+            </ul>
+
+            <h3>1.3 Critical Requirements</h3>
+            <p>Unlike commercial applications, civic systems require:</p>
+            <ul>
+                <li><strong>Explainability</strong>: Every decision must be reconstructible with full reasoning</li>
+                <li><strong>Version Control</strong>: Policy changes must be tracked and tied to specific determinations</li>
+                <li><strong>Non-Discrimination</strong>: Agents must not introduce or amplify bias</li>
+                <li><strong>Human Review</strong>: Citizens must have access to human judgment for important decisions</li>
+                <li><strong>Data Minimization</strong>: Collect only necessary information with proper consent</li>
+            </ul>
+        </section>
+
+        <section id="part-2" aria-labelledby="part-2-title">
+            <h2 id="part-2-title">Part II: MCP Civic Extensions – Core Primitives</h2>
+            
+            <h3 id="policy-resources">2.1 Policy-Aware Resource Schema</h3>
+            <p>Civic MCP servers expose policy documents as structured resources with version tracking and eligibility logic:</p>
+            
+            <pre><code>{
+  "resource": {
+    "uri": "civic://benefits.gov/snap/eligibility/v2.3",
+    "type": "policy-document",
+    "metadata": {
+      "version": "2.3.0",
+      "effectiveDate": "2024-01-15T00:00:00Z",
+      "supersedes": "v2.2.0",
+      "authority": "7 CFR Part 273",
+      "jurisdiction": "federal",
+      "lastModified": "2024-01-10T18:30:00Z",
+      "reviewedBy": "policy-team@benefits.gov",
+      "approvedBy": "director@benefits.gov"
+    },
+    "content": {
+      "programName": "Supplemental Nutrition Assistance Program (SNAP)",
+      "purpose": "Provide food assistance to low-income individuals and families",
+      "eligibilityRules": [
+        {
+          "ruleId": "income-test",
+          "description": "Gross monthly income must be at or below 130% of federal poverty line",
+          "logic": {
+            "operator": "lessThanOrEqual",
+            "left": "household.grossMonthlyIncome",
+            "right": {
+              "calculation": "multiply",
+              "values": ["povertyGuideline", 1.30]
+            }
+          },
+          "requiredDocuments": ["income-verification", "household-composition"]
+        },
+        {
+          "ruleId": "resource-test",
+          "description": "Household countable resources must not exceed limits",
+          "logic": {
+            "operator": "and",
+            "conditions": [
+              {
+                "operator": "lessThanOrEqual",
+                "left": "household.liquidResources",
+                "right": 2750
+              },
+              {
+                "operator": "or",
+                "conditions": [
+                  {"operator": "equal", "left": "household.hasElderlyOrDisabled", "right": false},
+                  {
+                    "operator": "lessThanOrEqual",
+                    "left": "household.liquidResources",
+                    "right": 4250
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "determinationProcess": {
+        "steps": ["intake", "verification", "calculation", "review", "notification"],
+        "escalationTriggers": [
+          "incomplete-documentation",
+          "conflicting-information",
+          "hardship-indicator",
+          "user-requests-human"
+        ]
+      }
+    }
+  }
+}</code></pre>
+
+            <h3 id="determination-tools">2.2 Determination Tool Specifications</h3>
+            <p>MCP Civic tools execute policy logic and produce auditable determinations:</p>
+
+            <pre><code>{
+  "tool": {
+    "name": "determine_eligibility",
+    "description": "Evaluate eligibility for a benefit program based on policy rules",
+    "inputSchema": {
+      "type": "object",
+      "required": ["policyVersion", "applicantData", "consentToken"],
+      "properties": {
+        "policyVersion": {
+          "type": "string",
+          "description": "Specific version of policy to apply (e.g., 'v2.3.0')"
+        },
+        "applicantData": {
+          "type": "object",
+          "description": "Applicant information required by policy",
+          "properties": {
+            "householdSize": {"type": "integer", "minimum": 1},
+            "grossMonthlyIncome": {"type": "number", "minimum": 0},
+            "liquidResources": {"type": "number", "minimum": 0},
+            "hasElderlyOrDisabled": {"type": "boolean"},
+            "state": {"type": "string", "pattern": "^[A-Z]{2}$"}
+          }
+        },
+        "consentToken": {
+          "type": "string",
+          "description": "Verified user consent for this determination"
+        },
+        "requestingAgent": {
+          "type": "object",
+          "properties": {
+            "agentId": {"type": "string"},
+            "agentVersion": {"type": "string"},
+            "userIdentity": {"type": "string"}
+          }
+        }
+      }
+    },
+    "outputSchema": {
+      "type": "object",
+      "required": ["determination", "reasoning", "auditLog"],
+      "properties": {
+        "determination": {
+          "type": "object",
+          "properties": {
+            "eligible": {"type": "boolean"},
+            "estimatedBenefit": {"type": "number"},
+            "effectiveDate": {"type": "string", "format": "date"},
+            "expirationDate": {"type": "string", "format": "date"},
+            "conditions": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          }
+        },
+        "reasoning": {
+          "type": "object",
+          "description": "Complete reasoning chain for transparency",
+          "properties": {
+            "policyVersionApplied": {"type": "string"},
+            "rulesEvaluated": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ruleId": {"type": "string"},
+                  "result": {"type": "boolean"},
+                  "inputValues": {"type": "object"},
+                  "calculationSteps": {"type": "array"}
+                }
+              }
+            },
+            "dataSourcesUsed": {"type": "array", "items": {"type": "string"}},
+            "assumptionsMade": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "auditLog": {
+          "type": "object",
+          "properties": {
+            "determinationId": {"type": "string", "format": "uuid"},
+            "timestamp": {"type": "string", "format": "date-time"},
+            "policyVersion": {"type": "string"},
+            "agentIdentity": {"type": "object"},
+            "userConsent": {"type": "string"},
+            "computeHash": {"type": "string"}
+          }
+        },
+        "nextSteps": {
+          "type": "array",
+          "description": "Required actions or available options",
+          "items": {
+            "type": "object",
+            "properties": {
+              "action": {"type": "string"},
+              "description": {"type": "string"},
+              "required": {"type": "boolean"},
+              "deadline": {"type": "string", "format": "date"}
+            }
+          }
+        },
+        "escalationRequired": {
+          "type": "boolean",
+          "description": "Whether human review is needed"
+        }
+      }
+    }
+  }
+}</code></pre>
+
+            <h3 id="audit-logs">2.3 Audit Log Schema</h3>
+            <p>Every agent action generates a permanent audit record:</p>
+
+            <pre><code>{
+  "auditLog": {
+    "logId": "550e8400-e29b-41d4-a716-446655440000",
+    "timestamp": "2024-03-15T14:32:18.742Z",
+    "action": "eligibility_determination",
+    "actor": {
+      "type": "agent",
+      "agentId": "civic-agent-v2.1",
+      "actingOnBehalfOf": {
+        "userId": "user-12345",
+        "consentTimestamp": "2024-03-15T14:30:00.000Z",
+        "consentVersion": "v1.2"
+      }
+    },
+    "resource": {
+      "type": "policy-document",
+      "uri": "civic://benefits.gov/snap/eligibility/v2.3",
+      "version": "2.3.0"
+    },
+    "inputs": {
+      "dataProvided": {
+        "householdSize": 3,
+        "grossMonthlyIncome": 2400,
+        "liquidResources": 1500,
+        "hasElderlyOrDisabled": false,
+        "state": "CA"
+      },
+      "dataSources": [
+        {
+          "source": "user-provided",
+          "fields": ["householdSize", "state"]
+        },
+        {
+          "source": "verified-income-db",
+          "fields": ["grossMonthlyIncome"],
+          "verificationId": "inc-ver-789"
+        }
+      ]
+    },
+    "outputs": {
+      "determination": {
+        "eligible": true,
+        "estimatedBenefit": 658.00,
+        "confidence": "high"
+      },
+      "reasoning": {
+        "rulesApplied": ["income-test", "resource-test"],
+        "allRulesPassed": true,
+        "calculationMethod": "standard-deduction-model"
+      }
+    },
+    "metadata": {
+      "processingTimeMs": 234,
+      "serverVersion": "mcp-civic-1.0",
+      "computeHash": "sha256:a3c9f8...",
+      "integritySignature": "sig:rsa-pss:..."
+    },
+    "retention": {
+      "retentionPolicy": "7-years",
+      "archiveDate": "2031-03-15",
+      "complianceFramework": ["31-USC-3512", "44-USC-3101"]
+    }
+  }
+}</code></pre>
+        </section>
+
+        <section id="part-3" aria-labelledby="part-3-title">
+            <h2 id="part-3-title">Part III: Implementation Patterns</h2>
+            
+            <h3>3.1 Basic Eligibility Check</h3>
+            <p>Python example showing a simple agent using MCP Civic tools:</p>
+
+            <pre><code>import mcp
+from datetime import datetime
+
+async def check_snap_eligibility(client, applicant_data, consent_token):
+    """
+    Check SNAP eligibility using MCP Civic determination tool.
+    
+    Args:
+        client: MCP client instance
+        applicant_data: Dictionary with applicant information
+        consent_token: Verified user consent
+    
+    Returns:
+        Dictionary with determination result and reasoning
+    """
+    # Get the current policy version
+    policy = await client.read_resource(
+        "civic://benefits.gov/snap/eligibility/latest"
+    )
+    
+    # Execute determination tool
+    result = await client.call_tool(
+        "determine_eligibility",
+        {
+            "policyVersion": policy["metadata"]["version"],
+            "applicantData": applicant_data,
+            "consentToken": consent_token,
+            "requestingAgent": {
+                "agentId": "snap-assistant-v1",
+                "agentVersion": "1.2.0",
+                "userIdentity": applicant_data.get("userId")
+            }
+        }
+    )
+    
+    # Check if escalation is needed
+    if result["escalationRequired"]:
+        await escalate_to_human(result)
+        return {
+            "status": "escalated",
+            "message": "Your case requires human review. A caseworker will contact you within 2 business days.",
+            "escalationId": result["auditLog"]["determinationId"]
+        }
+    
+    # Return determination with human-readable explanation
+    return {
+        "status": "complete",
+        "eligible": result["determination"]["eligible"],
+        "benefit": result["determination"]["estimatedBenefit"],
+        "explanation": generate_explanation(result["reasoning"]),
+        "nextSteps": result["nextSteps"],
+        "determinationId": result["auditLog"]["determinationId"]
+    }
+
+def generate_explanation(reasoning):
+    """Convert technical reasoning to plain language."""
+    rules = reasoning["rulesEvaluated"]
+    explanations = []
+    
+    for rule in rules:
+        if rule["result"]:
+            explanations.append(f"✓ {rule['ruleId']}: Requirements met")
+        else:
+            explanations.append(f"✗ {rule['ruleId']}: Requirements not met")
+    
+    return "\n".join(explanations)</code></pre>
+
+            <h3>3.2 Multi-Step Application Process</h3>
+            <p>Handling complex workflows with state management:</p>
+
+            <pre><code>class SnapApplicationAgent:
+    """Agent for managing SNAP application workflow."""
+    
+    def __init__(self, mcp_client):
+        self.client = mcp_client
+        self.application_state = {}
+    
+    async def start_application(self, user_id, consent_token):
+        """Initialize new SNAP application."""
+        # Create application record
+        self.application_state = {
+            "applicationId": generate_uuid(),
+            "userId": user_id,
+            "status": "in_progress",
+            "step": "intake",
+            "startTime": datetime.utcnow().isoformat(),
+            "consentToken": consent_token,
+            "auditTrail": []
+        }
+        
+        # Log application start
+        await self._log_action("application_started", {
+            "applicationId": self.application_state["applicationId"]
+        })
+        
+        return {
+            "applicationId": self.application_state["applicationId"],
+            "message": "Application started. Let's gather some information.",
+            "nextStep": "collect_household_info"
+        }
+    
+    async def collect_household_info(self, household_data):
+        """Collect and validate household information."""
+        # Validate data against schema
+        policy = await self.client.read_resource(
+            "civic://benefits.gov/snap/eligibility/latest"
+        )
+        
+        validation_result = await self.client.call_tool(
+            "validate_data",
+            {
+                "schema": policy["content"]["dataSchemas"]["household"],
+                "data": household_data
+            }
+        )
+        
+        if not validation_result["valid"]:
+            return {
+                "status": "validation_error",
+                "errors": validation_result["errors"],
+                "message": "Please correct the following information."
+            }
+        
+        # Store validated data
+        self.application_state["householdInfo"] = household_data
+        self.application_state["step"] = "collect_income"
+        
+        await self._log_action("household_info_collected", {
+            "fields": list(household_data.keys())
+        })
+        
+        return {
+            "status": "success",
+            "nextStep": "collect_income",
+            "message": "Household information saved. Now let's review your income."
+        }
+    
+    async def submit_for_determination(self):
+        """Submit complete application for eligibility determination."""
+        if not self._is_complete():
+            return {
+                "status": "incomplete",
+                "missingFields": self._get_missing_fields()
+            }
+        
+        # Perform determination
+        result = await check_snap_eligibility(
+            self.client,
+            self._prepare_applicant_data(),
+            self.application_state["consentToken"]
+        )
+        
+        # Update application status
+        self.application_state["status"] = "determined"
+        self.application_state["determination"] = result
+        self.application_state["completedTime"] = datetime.utcnow().isoformat()
+        
+        await self._log_action("determination_completed", {
+            "determinationId": result.get("determinationId"),
+            "eligible": result.get("eligible")
+        })
+        
+        return result
+    
+    async def _log_action(self, action, details):
+        """Log action to audit trail."""
+        log_entry = {
+            "timestamp": datetime.utcnow().isoformat(),
+            "action": action,
+            "details": details
+        }
+        self.application_state["auditTrail"].append(log_entry)
+        
+        # Also log to MCP server
+        await self.client.call_tool(
+            "log_action",
+            {
+                "applicationId": self.application_state.get("applicationId"),
+                "logEntry": log_entry
+            }
+        )
+    
+    def _is_complete(self):
+        """Check if all required information is collected."""
+        required = ["householdInfo", "incomeInfo", "resourceInfo"]
+        return all(field in self.application_state for field in required)
+    
+    def _get_missing_fields(self):
+        """Return list of missing required fields."""
+        required = ["householdInfo", "incomeInfo", "resourceInfo"]
+        return [field for field in required if field not in self.application_state]
+    
+    def _prepare_applicant_data(self):
+        """Combine all collected data into applicant data structure."""
+        return {
+            "householdSize": self.application_state["householdInfo"]["size"],
+            "grossMonthlyIncome": self.application_state["incomeInfo"]["monthly"],
+            "liquidResources": self.application_state["resourceInfo"]["liquid"],
+            "hasElderlyOrDisabled": self.application_state["householdInfo"]["hasElderly"],
+            "state": self.application_state["householdInfo"]["state"],
+            "userId": self.application_state["userId"]
+        }</code></pre>
+
+            <h3>3.3 Human Handoff Pattern</h3>
+            <p>Escalating to human caseworkers with complete context:</p>
+
+            <pre><code>async def escalate_to_human(determination_result):
+    """
+    Create handoff package for human caseworker.
+    
+    Packages all agent reasoning, inputs, and context for seamless
+    transition to human review.
+    """
+    handoff_package = {
+        "handoffId": generate_uuid(),
+        "timestamp": datetime.utcnow().isoformat(),
+        "priority": determine_priority(determination_result),
+        "reason": determine_escalation_reason(determination_result),
+        
+        # Complete agent context
+        "agentContext": {
+            "determinationId": determination_result["auditLog"]["determinationId"],
+            "policyVersion": determination_result["reasoning"]["policyVersionApplied"],
+            "dataProvided": determination_result["auditLog"]["inputs"]["dataProvided"],
+            "rulesEvaluated": determination_result["reasoning"]["rulesEvaluated"],
+            "agentRecommendation": determination_result.get("agentRecommendation")
+        },
+        
+        # User-friendly summary for caseworker
+        "summary": {
+            "applicantId": determination_result["auditLog"]["actor"]["actingOnBehalfOf"]["userId"],
+            "programRequested": "SNAP",
+            "issuesIdentified": extract_issues(determination_result),
+            "documentsNeeded": extract_missing_documents(determination_result),
+            "userRequest": determination_result.get("userMessage")
+        },
+        
+        # Action history
+        "actionHistory": determination_result["auditLog"]["metadata"].get("priorActions", []),
+        
+        # Required caseworker actions
+        "requiredActions": [
+            {
+                "action": "review_documentation",
+                "description": "Verify income documentation",
+                "priority": "high"
+            },
+            {
+                "action": "make_determination",
+                "description": "Final eligibility determination",
+                "priority": "high"
+            },
+            {
+                "action": "notify_applicant",
+                "description": "Send determination notice",
+                "priority": "medium"
+            }
+        ]
+    }
+    
+    # Submit to caseworker queue
+    await submit_to_queue(handoff_package)
+    
+    # Send notification to applicant
+    await notify_applicant(
+        determination_result["auditLog"]["actor"]["actingOnBehalfOf"]["userId"],
+        {
+            "message": "Your application requires human review.",
+            "expectedTime": "2 business days",
+            "handoffId": handoff_package["handoffId"]
+        }
+    )
+    
+    return handoff_package
+
+def determine_priority(result):
+    """Determine priority level for human review."""
+    if "urgent" in result.get("flags", []):
+        return "urgent"
+    if "hardship" in result.get("flags", []):
+        return "high"
+    return "normal"
+
+def determine_escalation_reason(result):
+    """Extract primary reason for escalation."""
+    if result.get("incompleteData"):
+        return "incomplete_documentation"
+    if result.get("conflictingData"):
+        return "conflicting_information"
+    if result.get("userRequestedHuman"):
+        return "user_requested"
+    return "policy_requires_review"</code></pre>
+        </section>
+
+        <section id="part-4" aria-labelledby="part-4-title">
+            <h2 id="part-4-title">Part IV: Governance and Security Requirements</h2>
+            
+            <h3>4.1 Policy Version Control</h3>
+            <ul>
+                <li>Every policy change receives a semantic version number (major.minor.patch)</li>
+                <li>Breaking changes increment major version</li>
+                <li>Policy documents are immutable once published</li>
+                <li>Historical versions must remain accessible for audit purposes</li>
+                <li>Version metadata includes effective dates, authority citations, and approval records</li>
+            </ul>
+
+            <h3>4.2 Data Governance</h3>
+            <ul>
+                <li><strong>Data Minimization</strong>: Collect only information required by policy</li>
+                <li><strong>Purpose Limitation</strong>: Use data only for stated determination purposes</li>
+                <li><strong>Consent Management</strong>: Obtain and track explicit user consent</li>
+                <li><strong>Access Controls</strong>: Role-based access with audit logging</li>
+                <li><strong>Retention Schedules</strong>: Automated enforcement of retention policies</li>
+                <li><strong>Right to Explanation</strong>: Users can request full reasoning for any determination</li>
+            </ul>
+
+            <h3>4.3 Security Controls</h3>
+            <ul>
+                <li><strong>Authentication</strong>: Multi-factor authentication for sensitive operations</li>
+                <li><strong>Authorization</strong>: Agents must present valid credentials and user consent</li>
+                <li><strong>Encryption</strong>: TLS 1.3+ for transport, AES-256 for data at rest</li>
+                <li><strong>Integrity</strong>: Cryptographic hashes for audit logs and determinations</li>
+                <li><strong>Non-Repudiation</strong>: Digital signatures for critical actions</li>
+                <li><strong>Rate Limiting</strong>: Prevent abuse and ensure fair access</li>
+            </ul>
+
+            <h3>4.4 Fairness and Bias Mitigation</h3>
+            <ul>
+                <li>Regular audits for disparate impact across protected classes</li>
+                <li>Testing with diverse scenarios and edge cases</li>
+                <li>Monitoring for statistical anomalies in outcomes</li>
+                <li>Human review of system-wide patterns</li>
+                <li>Transparent reporting of outcome distributions</li>
+            </ul>
+
+            <h3>4.5 Oversight and Accountability</h3>
+            <ul>
+                <li>Designated agency official responsible for MCP implementation</li>
+                <li>Regular compliance reviews and audits</li>
+                <li>Public reporting on agent usage and outcomes</li>
+                <li>Incident response procedures for errors or security events</li>
+                <li>Clear escalation paths for policy questions</li>
+            </ul>
+        </section>
+
+        <section id="part-5" aria-labelledby="part-5-title">
+            <h2 id="part-5-title">Part V: Testing and Validation Framework</h2>
+            
+            <h3>5.1 Unit Testing</h3>
+            <p>Test individual policy rules in isolation:</p>
+            <ul>
+                <li>Verify rule logic with known inputs and expected outputs</li>
+                <li>Test boundary conditions (income exactly at limit, etc.)</li>
+                <li>Validate error handling for invalid inputs</li>
+                <li>Confirm correct handling of missing optional data</li>
+            </ul>
+
+            <h3>5.2 Integration Testing</h3>
+            <p>Test complete determination workflows:</p>
+            <ul>
+                <li>End-to-end application processing</li>
+                <li>Handoff to human caseworkers</li>
+                <li>Audit log generation and integrity</li>
+                <li>Policy version transitions</li>
+                <li>Multi-program interactions</li>
+            </ul>
+
+            <h3>5.3 Compliance Testing</h3>
+            <p>Verify adherence to regulatory requirements:</p>
+            <ul>
+                <li>WCAG 2.1 AA accessibility compliance</li>
+                <li>Privacy protection mechanisms</li>
+                <li>Records retention enforcement</li>
+                <li>Due process protections</li>
+                <li>Non-discrimination requirements</li>
+            </ul>
+
+            <h3>5.4 Performance Testing</h3>
+            <ul>
+                <li>Response time under normal load (&lt; 2 seconds)</li>
+                <li>Behavior under high load (graceful degradation)</li>
+                <li>Audit log write performance</li>
+                <li>Resource utilization monitoring</li>
+            </ul>
+
+            <h3>5.5 Security Testing</h3>
+            <ul>
+                <li>Penetration testing for vulnerabilities</li>
+                <li>Authentication and authorization bypass attempts</li>
+                <li>Input validation and injection attacks</li>
+                <li>Encryption verification</li>
+                <li>Audit log tampering resistance</li>
+            </ul>
+
+            <h3>5.6 User Acceptance Testing</h3>
+            <ul>
+                <li>Testing with actual caseworkers and applicants</li>
+                <li>Usability assessment for diverse populations</li>
+                <li>Accessibility evaluation with assistive technologies</li>
+                <li>Clarity of explanations and notifications</li>
+                <li>Handoff process effectiveness</li>
+            </ul>
+        </section>
+
+        <section id="part-6" aria-labelledby="part-6-title">
+            <h2 id="part-6-title">Part VI: Deployment and Operations</h2>
+            
+            <h3>6.1 Pre-Deployment Checklist</h3>
+            <ul>
+                <li>All policy documents reviewed and approved by legal</li>
+                <li>Complete test coverage with passing results</li>
+                <li>Security assessment completed and risks mitigated</li>
+                <li>Privacy impact assessment approved</li>
+                <li>Accessibility audit completed with WCAG 2.1 AA conformance</li>
+                <li>Caseworker training completed</li>
+                <li>Incident response procedures documented</li>
+                <li>Monitoring and alerting configured</li>
+            </ul>
+
+            <h3>6.2 Deployment Process</h3>
+            <ul>
+                <li>Staged rollout (pilot → limited → full)</li>
+                <li>Blue-green deployment for zero downtime</li>
+                <li>Automated rollback procedures</li>
+                <li>Version compatibility verification</li>
+                <li>Post-deployment smoke testing</li>
+            </ul>
+
+            <h3>6.3 Operational Monitoring</h3>
+            <ul>
+                <li>System availability and uptime tracking</li>
+                <li>Response time and performance metrics</li>
+                <li>Error rates and failure patterns</li>
+                <li>Audit log generation and integrity checks</li>
+                <li>Usage patterns and volume trends</li>
+                <li>Outcome distributions for fairness monitoring</li>
+            </ul>
+
+            <h3>6.4 Incident Management</h3>
+            <ul>
+                <li>Automated alerts for system failures</li>
+                <li>On-call procedures and escalation paths</li>
+                <li>Incident categorization and prioritization</li>
+                <li>Root cause analysis for significant incidents</li>
+                <li>Post-incident reviews and improvement plans</li>
+            </ul>
+
+            <h3>6.5 Continuous Improvement</h3>
+            <ul>
+                <li>Regular review of user feedback</li>
+                <li>Analysis of escalation patterns</li>
+                <li>Policy effectiveness evaluation</li>
+                <li>Technology updates and patches</li>
+                <li>Performance optimization</li>
+            </ul>
+        </section>
+
+        <section id="part-7" aria-labelledby="part-7-title">
+            <h2 id="part-7-title">Part VII: Future Directions and Open Questions</h2>
+            
+            <h3>7.1 Cross-Agency Interoperability</h3>
+            <p>Open Questions:</p>
+            <ul>
+                <li>How can agents navigate determinations that span multiple agencies?</li>
+                <li>What standards are needed for federated identity and consent?</li>
+                <li>How should policy conflicts between jurisdictions be resolved?</li>
+                <li>What role should a central policy registry play?</li>
+            </ul>
+
+            <h3>7.2 Machine Learning Integration</h3>
+            <p>Open Questions:</p>
+                <ul>
+                <li>When is ML appropriate vs. rule-based logic?</li>
+                <li>How can ML models satisfy explainability requirements?</li>
+                <li>What testing is sufficient to ensure fairness?</li>
+                <li>How should model updates be versioned and tracked?</li>
+            </ul>
+
+            <h3>7.3 International Applicability</h3>
+            <p>Open Questions:</p>
+            <ul>
+                <li>How do MCP Civic Standards adapt to different legal systems?</li>
+                <li>What modifications are needed for GDPR vs. CCPA vs. other frameworks?</li>
+                <li>How can multi-lingual support be standardized?</li>
+                <li>What role should international standards bodies play?</li>
+            </ul>
+
+            <h3>7.4 Advanced Verification</h3>
+            <p>Emerging Technologies:</p>
+            <ul>
+                <li>Formal verification of policy logic</li>
+                <li>Zero-knowledge proofs for privacy-preserving determinations</li>
+                <li>Blockchain for tamper-evident audit logs</li>
+                <li>Differential privacy for outcome analysis</li>
+            </ul>
+        </section>
+
+        <section id="part-8" aria-labelledby="part-8-title">
+            <h2 id="part-8-title">Part VIII: Reference Implementation</h2>
+            
+            <h3>8.1 Sample MCP Server</h3>
+            <p>A reference implementation is available at:</p>
+            <p><code>github.com/civic-mcp/reference-server</code></p>
+            
+            <p>Key features:</p>
+            <ul>
+                <li>Full implementation of policy-aware resources</li>
+                <li>Determination tools with reasoning chains</li>
+                <li>Audit logging with cryptographic integrity</li>
+                <li>Handoff protocol for human escalation</li>
+                <li>Sample policies for common benefit programs</li>
+            </ul>
+
+            <h3>8.2 Sample Agent Client</h3>
+            <p>Reference agent demonstrating best practices:</p>
+            <p><code>github.com/civic-mcp/reference-agent</code></p>
+            
+            <p>Demonstrates:</p>
+            <ul>
+                <li>Policy version checking and compatibility</li>
+                <li>Consent management</li>
+                <li>Multi-step workflow handling</li>
+                <li>Graceful degradation and error recovery</li>
+                <li>Human handoff with context preservation</li>
+            </ul>
+
+            <h3>8.3 Testing Harness</h3>
+            <p>Automated testing framework:</p>
+            <p><code>github.com/civic-mcp/test-harness</code></p>
+            
+            <p>Includes:</p>
+            <ul>
+                <li>Policy rule test generators</li>
+                <li>Compliance verification suite</li>
+                <li>Fairness audit tools</li>
+                <li>Performance benchmarking</li>
+                <li>Sample test scenarios for common programs</li>
+            </ul>
+        </section>
+
+        <section id="appendix-a" aria-labelledby="appendix-a-title">
+            <h2 id="appendix-a-title">Appendix A: Complete Schema Definitions</h2>
+            
+            <h3>A.1 Policy Document Schema</h3>
+            <p>JSON Schema for policy documents is available at:</p>
+            <p><code>civic://schemas/policy-document/v1.0</code></p>
+
+            <h3>A.2 Determination Result Schema</h3>
+            <p>JSON Schema for determination results is available at:</p>
+            <p><code>civic://schemas/determination-result/v1.0</code></p>
+
+            <h3>A.3 Audit Log Schema</h3>
+            <p>JSON Schema for audit logs is available at:</p>
+            <p><code>civic://schemas/audit-log/v1.0</code></p>
+
+            <h3>A.4 Handoff Package Schema</h3>
+            <p>JSON Schema for human handoff packages is available at:</p>
+            <p><code>civic://schemas/handoff-package/v1.0</code></p>
+        </section>
+
+        <section id="appendix-b" aria-labelledby="appendix-b-title">
+            <h2 id="appendix-b-title">Appendix B: Sample Policy Document</h2>
+            
+            <p>A complete sample policy document for SNAP eligibility is provided to demonstrate the full structure and capabilities of policy-aware resources.</p>
+            
+            <p>This sample includes:</p>
+            <ul>
+                <li>Complete eligibility rule set with nested conditions</li>
+                <li>Benefit calculation formulas</li>
+                <li>Required documentation specifications</li>
+                <li>Verification procedures</li>
+                <li>Escalation triggers</li>
+                <li>State-specific variations</li>
+            </ul>
+            
+            <p>Available at: <code>civic://examples/snap-policy-complete/v1.0</code></p>
+        </section>
+
+        <section id="appendix-c" aria-labelledby="appendix-c-title">
+            <h2 id="appendix-c-title">Appendix C: Testing Checklist</h2>
+            
+            <h3>C.1 Pre-Production Testing</h3>
+            <ul>
+                <li>☐ Unit tests pass with 100% coverage of policy rules</li>
+                <li>☐ Integration tests verify end-to-end workflows</li>
+                <li>☐ WCAG 2.1 AA accessibility verified</li>
+                <li>☐ Privacy controls tested (consent, data minimization, right to explanation)</li>
+                <li>☐ Security assessment completed with no high-severity findings</li>
+                <li>☐ Performance meets SLA requirements (&lt;2s response time)</li>
+                <li>☐ Audit log integrity verified with cryptographic checks</li>
+                <li>☐ Handoff process tested with actual caseworkers</li>
+                <li>☐ Fairness audit shows no disparate impact</li>
+                <li>☐ User acceptance testing completed with diverse population</li>
+            </ul>
+
+            <h3>C.2 Deployment Checklist</h3>
+            <ul>
+                <li>☐ Rollback procedures documented and tested</li>
+                <li>☐ Monitoring and alerting configured</li>
+                <li>☐ Incident response team trained</li>
+                <li>☐ Caseworker training completed</li>
+                <li>☐ Public documentation published</li>
+                <li>☐ Privacy notices updated</li>
+                <li>☐ Legal review approved</li>
+                <li>☐ Stakeholder communication sent</li>
+            </ul>
+
+            <h3>C.3 Post-Deployment Monitoring</h3>
+            <ul>
+                <li>☐ Daily system health checks</li>
+                <li>☐ Weekly outcome distribution analysis</li>
+                <li>☐ Monthly fairness audits</li>
+                <li>☐ Quarterly policy effectiveness review</li>
+                <li>☐ Annual comprehensive security assessment</li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="related-resources">
+            <h2 id="related-resources">Related Resources</h2>
+            <p>For more information on implementing these standards:</p>
+            <ul>
+                <li><a href="standards.html">Core Standards</a> - General agent-mediated service standards</li>
+                <li><a href="implementation.html">Implementation Guide</a> - Step-by-step implementation instructions</li>
+                <li><a href="resources.html">Resources</a> - Tools, templates, and code samples</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Standards</h3>
+                <ul>
+                    <li><a href="standards.html#accessibility">Accessibility</a></li>
+                    <li><a href="standards.html#security">Security & Privacy</a></li>
+                    <li><a href="standards.html#transparency">Transparency</a></li>
+                    <li><a href="standards.html#interoperability">Interoperability</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="implementation.html">Implementation Guide</a></li>
+                    <li><a href="resources.html">Tools & Templates</a></li>
+                    <li><a href="about.html">About This Initiative</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="https://github.com/quarterback/mcp-agent-experience">GitHub Repository</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Agent Experience Standards Initiative. Open source under the MIT License.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,71 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Context Engineering Design Principles — State Capacity AI</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Framework — State Capacity AI</title>
+  <meta name="description" content="Five Principles of Context Engineering Design — overview.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="/css/sovereign.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1><a href="/">State Capacity AI</a></h1>
-            <nav>
-                <a href="/framework">Framework</a>
-                <a href="/experiments">Experiments</a>
-                <a href="https://blog.ronbronson.com">Blog</a>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-<section class="hero">
-    <div class="hero-content">
-        <h2>Five Principles of Context Engineering Design</h2>
-        <p class="lead">Context engineering isn't just about managing tokens and retrieval. It's about designing the systems AI models enter, the assumptions they carry, and the consequences they create.</p>
+  <header class="site-header">
+    <a href="/" class="site-title">State Capacity AI</a>
+    <div class="header-links">
+      <a href="mailto:contact@statecapacity.ai" class="desktop-only">Contact</a>
+      <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
     </div>
-</section>
+  </header>
 
-        <section class="principles">
-            <div class="container-narrow">
-                <article class="principle-card">
-                    <div class="principle-number">01</div>
-                    <h4>Context as Environment, Not Just Input</h4>
-                    <p>Where is this system being deployed? What assumptions does it carry? What power does it hold? Context isn't just what's in the window—it's the environment the system enters.</p>
-                </article>
+  <div class="sidebar-overlay"></div>
 
-                <article class="principle-card">
-                    <div class="principle-number">02</div>
-                    <h4>Disintermediation Analysis</h4>
-                    <p>When does AI mediation separate people from relationships, capabilities, and decision-making? Not just "is the agent working?" but "is mediation helping or hurting?"</p>
-                </article>
+  <div class="site-layout">
+    <nav class="sidebar" aria-label="Site navigation">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Doctrine</div>
+        <ul class="sidebar-nav">
+          <li><a href="/">Overview</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Guides</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guides/disclosure/">AI Disclosure Standards</a></li>
+          <li><a href="/guides/agent-standards/">Agent Interface Standards</a></li>
+          <li><a href="/guides/judgment-routing/">Judgment Routing</a></li>
+          <li><a href="/guides/commons-license/">Parachute Commons License</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-label">Research</div>
+        <ul class="sidebar-nav">
+          <li><a href="/guide/">Design Principles</a></li>
+          <li><a href="/experiments/">Experiments</a></li>
+          <li><a href="/framework/" class="active">Framework</a></li>
+        </ul>
+      </div>
+    </nav>
 
-                <article class="principle-card">
-                    <div class="principle-number">03</div>
-                    <h4>System Accountability</h4>
-                    <p>Who has to live with the outcome when the system gets it wrong? Not just "did the agent complete the task?" but "was the outcome right for the person?"</p>
-                </article>
+    <main class="main-content">
+      <h1>Five Principles of Context Engineering Design</h1>
+      <p class="lead">Context engineering isn't just about managing tokens and retrieval. It's about designing the systems AI models enter, the assumptions they carry, and the consequences they create.</p>
 
-                <article class="principle-card">
-                    <div class="principle-number">04</div>
-                    <h4>Escalation & Refusal Design</h4>
-                    <p>How do systems recognize their limits and know when to stop? Not just "can the agent handle edge cases?" but "can it admit when it can't?"</p>
-                </article>
+      <div class="principle-block">
+        <span class="principle-block-number">01</span>
+        <h3>Context as Environment, Not Just Input</h3>
+        <p>Where is this system being deployed? What assumptions does it carry? What power does it hold? Context isn't just what's in the window&mdash;it's the environment the system enters.</p>
+      </div>
 
-                <article class="principle-card">
-                    <div class="principle-number">05</div>
-                    <h4>Capability Preservation</h4>
-                    <p>How do we ensure AI enhances rather than erodes human capability? Not just "is the interface intuitive?" but "are people learning or losing skills?"</p>
-                </article>
-            </div>
-        </section>
+      <div class="principle-block">
+        <span class="principle-block-number">02</span>
+        <h3>Disintermediation Analysis</h3>
+        <p>When does AI mediation separate people from relationships, capabilities, and decision-making? Not just "is the agent working?" but "is mediation helping or hurting?"</p>
+      </div>
 
+      <div class="principle-block">
+        <span class="principle-block-number">03</span>
+        <h3>System Accountability</h3>
+        <p>Who has to live with the outcome when the system gets it wrong? Not just "did the agent complete the task?" but "was the outcome right for the person?"</p>
+      </div>
+
+      <div class="principle-block">
+        <span class="principle-block-number">04</span>
+        <h3>Escalation &amp; Refusal Design</h3>
+        <p>How do systems recognize their limits and know when to stop? Not just "can the agent handle edge cases?" but "can it admit when it can't?"</p>
+      </div>
+
+      <div class="principle-block">
+        <span class="principle-block-number">05</span>
+        <h3>Capability Preservation</h3>
+        <p>How do we ensure AI enhances rather than erodes human capability? Not just "is the interface intuitive?" but "are people learning or losing skills?"</p>
+      </div>
+
+      <hr>
+      <p><a href="/guide/">Read the full Design Principles guide</a> for detailed explanations, case studies, and practical applications of each principle.</p>
     </main>
+  </div>
 
-    <footer>
-        <div class="container">
-            <p>By <a href="https://blog.ronbronson.com">Ron Bronson</a></p>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <p>State Capacity AI</p>
+    <div class="footer-links">
+      <a href="mailto:contact@statecapacity.ai">Contact</a>
+    </div>
+  </footer>
+
+  <script src="/js/nav.js"></script>
 </body>
 </html>
