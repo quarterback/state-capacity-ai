@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>III. The Protocol — State Capacity AI</title>
-  <meta name="description" content="Implementing hard-stops and human-in-the-loop triggers for high-stakes agentic actions.">
+  <title>II. The Protocol — State Capacity AI</title>
+  <meta name="description" content="Judgment routing and delegated authority infrastructure for agentic AI systems.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="/css/sovereign.css">
 </head>
@@ -13,7 +13,7 @@
   <header class="site-header">
     <a href="/" class="site-title">State Capacity AI</a>
     <div class="header-links">
-      <a href="https://blog.ronbronson.com" class="desktop-only">Writing</a>
+      <a href="https://github.com/State-Capacity-AI" class="desktop-only">GitHub</a>
       <a href="mailto:contact@statecapacity.ai" class="desktop-only">Contact</a>
       <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
     </div>
@@ -32,10 +32,9 @@
       <div class="sidebar-section">
         <div class="sidebar-label">Methods</div>
         <ul class="sidebar-nav">
-          <li><a href="/methods/inventory/">I. The Inventory</a></li>
-          <li><a href="/methods/interface/">II. The Interface</a></li>
-          <li><a href="/methods/protocol/" class="active">III. The Protocol</a></li>
-          <li><a href="/methods/shield/">IV. The Shield</a></li>
+          <li><a href="/methods/interface/">I. The Interface</a></li>
+          <li><a href="/methods/protocol/" class="active">II. The Protocol</a></li>
+          <li><a href="/methods/shield/">III. The Shield</a></li>
         </ul>
       </div>
       <div class="sidebar-section">
@@ -49,67 +48,78 @@
       <div class="sidebar-section">
         <div class="sidebar-label">External</div>
         <ul class="sidebar-nav">
-          <li><a href="https://blog.ronbronson.com">Writing</a></li>
-          <li><a href="https://bsky.app/profile/ronbronson.bsky.social">Bluesky</a></li>
+          <li><a href="https://github.com/State-Capacity-AI">GitHub</a></li>
         </ul>
       </div>
     </nav>
 
     <main class="main-content">
-      <span class="method-number">Method III</span>
+      <span class="method-number">Method II</span>
       <h1>The Protocol</h1>
 
       <blockquote>
-        <p>An agent that cannot refuse is not a tool. It is an uncontrolled process. Judgment routing is the discipline of defining exactly where human authority begins and machine execution ends.</p>
+        <p>We're building AI systems that make consequential decisions about people's lives, and we have no shared infrastructure for making those decisions legible, bounded, or accountable. The Judgment Router is that infrastructure.</p>
       </blockquote>
 
       <h2>The Problem of Delegation</h2>
       <p>Agentic systems are designed to complete tasks. Their value proposition is autonomy&mdash;give them a goal, and they figure out the steps. This works until the steps involve consequences the agent cannot evaluate: legal liability, ethical judgment, political sensitivity, or irreversible harm.</p>
       <p>The standard response is "human-in-the-loop." But most human-in-the-loop implementations are theater. The human receives a notification, sees a summary the agent wrote about its own work, and clicks approve. There is no genuine decision point because the human lacks the context to disagree.</p>
-      <p>Judgment routing is not human-in-the-loop. It is the architecture that determines <em>which</em> decisions require a loop, <em>what information</em> the human needs to make that decision real, and <em>what happens</em> when the human says no.</p>
+
+      <h3>The 90/10 problem</h3>
+      <p>Routine decisions&mdash;the 90%&mdash;work fine with automation. But the remaining 10% carry outsized institutional risk. These are the edge cases, the novel situations, the judgment calls that define whether an institution is trustworthy. Without infrastructure to identify and route these decisions differently, the 10% gets processed with the same automation as the 90%.</p>
+
+      <h3>The authority problem</h3>
+      <p>In paper workflows, decision authority was traceable. Jan reviewed the application, escalated to Bill, who got sign-off from Steve. In agentic systems, this chain vanishes. The model made a recommendation, the system acted on it, and nobody can reconstruct who authorized what.</p>
 
       <h2>The Method of Capacity</h2>
-      <p>The Protocol defines a routing system for agentic decisions. Every action the agent can take is classified by consequence tier, and each tier has explicit rules for how much autonomy the agent retains.</p>
+      <p>The Judgment Router is middleware that sits between agent recommendations and action execution. It evaluates every proposed action against four signals before deciding how to proceed.</p>
 
-      <h3>Consequence tiers</h3>
+      <h3>The four signals</h3>
       <ul>
-        <li><strong>Tier 0 &mdash; Reversible, low-stakes:</strong> Agent executes autonomously. Examples: formatting, summarization, data retrieval.</li>
-        <li><strong>Tier 1 &mdash; Reversible, moderate-stakes:</strong> Agent executes with notification. Human can review and undo. Examples: scheduling, draft communications.</li>
-        <li><strong>Tier 2 &mdash; Irreversible or high-stakes:</strong> Agent proposes, human approves. Execution is blocked until explicit authorization. Examples: financial transactions, public communications, personnel actions.</li>
-        <li><strong>Tier 3 &mdash; Judgment-dependent:</strong> Agent refuses and escalates. The decision requires contextual judgment that cannot be reliably modeled. Examples: legal interpretation, ethical dilemmas, precedent-setting decisions.</li>
+        <li><strong>Uncertainty:</strong> Data ambiguity or conflicting requirements. When the inputs are unclear, the system slows down rather than guessing.</li>
+        <li><strong>Stakes:</strong> Fiscal impact, downstream risk, stakeholder scope. A $50 decision and a $50,000 decision do not get the same treatment.</li>
+        <li><strong>Authority:</strong> Required sign-off level vs. current delegation. The system knows what it's allowed to do and what requires human authorization.</li>
+        <li><strong>Novelty:</strong> Familiar patterns vs. unprecedented scenarios. When a situation falls outside known parameters, the system flags it rather than extrapolating.</li>
       </ul>
 
-      <h3>Hard stops</h3>
-      <p>A hard stop is not a warning. It is a structural barrier that prevents the agent from proceeding. Hard stops are triggered by:</p>
+      <h3>Routing paths</h3>
+      <p>Based on signal evaluation, actions route through one of four paths:</p>
       <ul>
-        <li>Confidence below a defined threshold</li>
-        <li>Actions that cross consequence tier boundaries</li>
-        <li>Requests that conflict with explicit policy constraints</li>
-        <li>Novel situations that fall outside the agent's training distribution</li>
+        <li><strong>Fast Path:</strong> Immediate execution. Low uncertainty, low stakes, within authority, familiar pattern.</li>
+        <li><strong>Slow Path:</strong> Verification needed. Elevated on one or more signals but within recoverable bounds.</li>
+        <li><strong>Human Escalation:</strong> High-stakes or authority-exceeding. The action is blocked until a human with appropriate authority reviews and approves.</li>
+        <li><strong>Specialist Referral:</strong> Domain mismatch. The system recognizes it is not the right decision-maker and routes to someone who is.</li>
       </ul>
-      <p>When a hard stop fires, the agent does not retry. It surfaces the decision to a human with full context: what it was trying to do, why it stopped, what information the human needs to proceed.</p>
+
+      <h3>Three core artifacts</h3>
+      <p>The framework defines three machine-readable artifacts that make delegated authority explicit:</p>
+      <ul>
+        <li><strong>Strategic Context Documents:</strong> Human-readable YAML defining organizational priorities, constraints, authority levels, financial limits, communication limits, and escalation contacts.</li>
+        <li><strong>Authority Envelopes:</strong> Machine-readable JSON containers that agents carry during execution. Scoped to specific tasks with granted authorities, time limits, and mandatory escalation triggers.</li>
+        <li><strong>Decision Receipts:</strong> Structured audit trails documenting what action was proposed, how it was evaluated against authority boundaries and priority weights, and whether it was approved, escalated, or blocked.</li>
+      </ul>
 
       <h3>Refusal as a feature</h3>
       <p>Systems that never say "I can't" are systems that have no limits. The Protocol treats refusal as a core capability, not a failure state. An agent that refuses an action it shouldn't take is <em>working correctly</em>. An agent that proceeds when it shouldn't is the one that's broken.</p>
 
-      <a href="https://github.com/statecapacity/judgment-routing" class="artifact-box">
+      <a href="https://github.com/quarterback/judgment-routing" class="artifact-box">
         <div>
           <div class="artifact-label">Source Artifact</div>
-          <div class="artifact-name">statecapacity/judgment-routing</div>
+          <div class="artifact-name">judgment-routing</div>
         </div>
         <span class="artifact-link">View on GitHub</span>
       </a>
 
       <hr>
-      <p><a href="/methods/interface/">&larr; Previous: II. The Interface</a> &nbsp;&middot;&nbsp; <a href="/methods/shield/">Next: IV. The Shield &rarr;</a></p>
+      <p><a href="/methods/interface/">&larr; Previous: I. The Interface</a> &nbsp;&middot;&nbsp; <a href="/methods/shield/">Next: III. The Shield &rarr;</a></p>
     </main>
   </div>
 
   <footer class="site-footer">
-    <p>State Capacity AI &mdash; A public research lab by <a href="https://blog.ronbronson.com">Ron Bronson</a></p>
+    <p>State Capacity AI</p>
     <div class="footer-links">
-      <a href="https://bsky.app/profile/ronbronson.bsky.social">Bluesky</a>
-      <a href="https://blog.ronbronson.com/rss.xml">RSS</a>
+      <a href="https://github.com/State-Capacity-AI">GitHub</a>
+      <a href="mailto:contact@statecapacity.ai">Contact</a>
     </div>
   </footer>
 

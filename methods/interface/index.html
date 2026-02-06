@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>II. The Interface — State Capacity AI</title>
-  <meta name="description" content="Designing agent-to-human boundaries that prioritize human context over machine speed.">
+  <title>I. The Interface — State Capacity AI</title>
+  <meta name="description" content="Draft standards for MCP and Agent Experience in public sector services.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="/css/sovereign.css">
 </head>
@@ -13,7 +13,7 @@
   <header class="site-header">
     <a href="/" class="site-title">State Capacity AI</a>
     <div class="header-links">
-      <a href="https://blog.ronbronson.com" class="desktop-only">Writing</a>
+      <a href="https://github.com/State-Capacity-AI" class="desktop-only">GitHub</a>
       <a href="mailto:contact@statecapacity.ai" class="desktop-only">Contact</a>
       <button class="sidebar-toggle" aria-label="Toggle navigation">Menu</button>
     </div>
@@ -32,10 +32,9 @@
       <div class="sidebar-section">
         <div class="sidebar-label">Methods</div>
         <ul class="sidebar-nav">
-          <li><a href="/methods/inventory/">I. The Inventory</a></li>
-          <li><a href="/methods/interface/" class="active">II. The Interface</a></li>
-          <li><a href="/methods/protocol/">III. The Protocol</a></li>
-          <li><a href="/methods/shield/">IV. The Shield</a></li>
+          <li><a href="/methods/interface/" class="active">I. The Interface</a></li>
+          <li><a href="/methods/protocol/">II. The Protocol</a></li>
+          <li><a href="/methods/shield/">III. The Shield</a></li>
         </ul>
       </div>
       <div class="sidebar-section">
@@ -49,14 +48,13 @@
       <div class="sidebar-section">
         <div class="sidebar-label">External</div>
         <ul class="sidebar-nav">
-          <li><a href="https://blog.ronbronson.com">Writing</a></li>
-          <li><a href="https://bsky.app/profile/ronbronson.bsky.social">Bluesky</a></li>
+          <li><a href="https://github.com/State-Capacity-AI">GitHub</a></li>
         </ul>
       </div>
     </nav>
 
     <main class="main-content">
-      <span class="method-number">Method II</span>
+      <span class="method-number">Method I</span>
       <h1>The Interface</h1>
 
       <blockquote>
@@ -66,41 +64,48 @@
       <h2>The Problem of Delegation</h2>
       <p>Most agent interfaces optimize for speed and convenience. They treat the human as a consumer of outputs&mdash;someone who reviews what the machine produced and clicks "approve." The interface becomes a rubber stamp.</p>
       <p>When the interface hides reasoning, compresses context, or defaults to automation, it doesn't just save time. It removes the human from the decision loop. The person is still nominally "in charge," but they lack the information, the framing, and the cognitive engagement to exercise real judgment.</p>
-      <p>This is disintermediation by design. The interface <em>looks</em> collaborative, but the human is a passenger.</p>
+      <p>In public services, this failure is compounded. Citizens interact with government systems they cannot exit. When an AI agent mediates benefits eligibility, case management, or regulatory compliance, the stakes of a hidden decision loop are not just inconvenience&mdash;they are due process violations.</p>
 
       <h2>The Method of Capacity</h2>
-      <p>Agent Experience (AX) design flips the default. Instead of optimizing for agent throughput, it optimizes for human comprehension. The interface is designed so that the human always has enough context to meaningfully evaluate, override, or redirect the agent's action.</p>
+      <p>This artifact establishes comprehensive draft standards for implementing agent-mediated public services. Rather than treating agent experience as a design afterthought, it defines six primary standards domains that must be satisfied before an agent system touches a public workflow.</p>
 
-      <h3>Core interface principles</h3>
+      <h3>Standards domains</h3>
       <ul>
-        <li><strong>Context surfacing:</strong> The agent must expose <em>why</em> it is recommending an action, not just <em>what</em> it recommends. Reasoning must be visible at the point of decision.</li>
-        <li><strong>Pace control:</strong> The human sets the tempo. Agents should not auto-execute in high-stakes contexts. There should be deliberate friction before irreversible actions.</li>
-        <li><strong>Override affordance:</strong> Every agent action must have a clear, accessible mechanism for the human to say "no" or "not like that." Override should not require technical expertise.</li>
-        <li><strong>State transparency:</strong> The human must always know what the agent has done, what it is doing, and what it plans to do next. No silent background operations in consequential workflows.</li>
+        <li><strong>Accessibility:</strong> Agent interfaces must meet the same accessibility requirements as any public-facing service. No citizen should be excluded because the mediation layer wasn't designed for them.</li>
+        <li><strong>Security &amp; Privacy:</strong> Agent actions on citizen data must be bounded, auditable, and minimized. The system collects only what the task requires and retains only what the law mandates.</li>
+        <li><strong>Transparency:</strong> Every agent decision produces a reasoning file&mdash;inputs, policy version, rule path, and intermediate steps. Citizens and oversight bodies can reconstruct any outcome.</li>
+        <li><strong>Interoperability:</strong> Agent systems must speak to existing government infrastructure. Agencies publish authoritative, machine-readable policy logic with unique version identifiers.</li>
+        <li><strong>User Experience:</strong> The human sets the tempo. Agents do not auto-execute in consequential workflows. Deliberate friction precedes irreversible actions.</li>
+        <li><strong>Compliance &amp; Governance:</strong> Agent authority is scoped, versioned, and revocable. No open-ended mandates.</li>
       </ul>
 
-      <h3>The MCP agent experience model</h3>
-      <p>The Model Context Protocol (MCP) provides a structured layer for agent-to-human communication. Rather than treating the interface as a chat window or a dashboard, MCP defines explicit channels for context exchange&mdash;ensuring the human and the agent are operating from the same information at the same time.</p>
-      <p>This matters because the failure mode is not "the agent did the wrong thing." The failure mode is "the human didn't know enough to catch it."</p>
+      <h3>Policy as versioned code</h3>
+      <p>A core requirement: agencies must publish authoritative, machine-readable policy logic with unique version identifiers. Each agent decision includes a reasoning file linking inputs to the specific policy version applied. When policy changes, the system can identify every prior decision made under the old version&mdash;enabling targeted review rather than blanket audits.</p>
 
-      <a href="https://github.com/statecapacity/mcp-agent-experience" class="artifact-box">
+      <h3>Structured handoffs</h3>
+      <p>When agents encounter uncertainty, rights-related issues, or user distress, they do not silently fail or loop. They transfer cases via a structured handoff package containing the reasoning file, all inputs, the policy version, and the complete action history. The receiving human has full context to continue&mdash;not a summary the agent wrote about its own work.</p>
+
+      <h3>Civic grounding</h3>
+      <p>The standards emphasize equity of access, public clarity about agent capabilities, preservation of human judgment for interpretation and rights determinations, and continuous review for algorithmic drift. These are not aspirational principles. They are testable requirements.</p>
+
+      <a href="https://github.com/quarterback/mcp-agent-experience" class="artifact-box">
         <div>
           <div class="artifact-label">Source Artifact</div>
-          <div class="artifact-name">statecapacity/mcp-agent-experience</div>
+          <div class="artifact-name">mcp-agent-experience</div>
         </div>
         <span class="artifact-link">View on GitHub</span>
       </a>
 
       <hr>
-      <p><a href="/methods/inventory/">&larr; Previous: I. The Inventory</a> &nbsp;&middot;&nbsp; <a href="/methods/protocol/">Next: III. The Protocol &rarr;</a></p>
+      <p><a href="/">&larr; Back to Overview</a> &nbsp;&middot;&nbsp; <a href="/methods/protocol/">Next: II. The Protocol &rarr;</a></p>
     </main>
   </div>
 
   <footer class="site-footer">
-    <p>State Capacity AI &mdash; A public research lab by <a href="https://blog.ronbronson.com">Ron Bronson</a></p>
+    <p>State Capacity AI</p>
     <div class="footer-links">
-      <a href="https://bsky.app/profile/ronbronson.bsky.social">Bluesky</a>
-      <a href="https://blog.ronbronson.com/rss.xml">RSS</a>
+      <a href="https://github.com/State-Capacity-AI">GitHub</a>
+      <a href="mailto:contact@statecapacity.ai">Contact</a>
     </div>
   </footer>
 
