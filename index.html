@@ -17,15 +17,15 @@
   <meta name="twitter:image" content="https://statecapacity.ai/img/card.png">
   <link rel="icon" href="/img/logo.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/img/logo.svg">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#873260">
   <link rel="stylesheet" href="/css/sovereign.css">
 </head>
 <body>
   <header class="site-header" role="banner">
     <a href="/" class="site-title">State Capacity AI</a>
     <nav class="header-nav" aria-label="Main navigation">
-      <a href="/#guides-section" class="nav-link">Guides</a>
-      <a href="/#tools-section" class="nav-link">Tools</a>
+      <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-controls="guides-dropdown">Guides</button>
+      <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-controls="tools-dropdown">Tools</button>
       <a href="/about/" class="nav-link">About</a>
     </nav>
     <div class="header-actions">
@@ -35,6 +35,24 @@
       </button>
     </div>
   </header>
+
+  <div class="nav-dropdown" id="guides-dropdown" hidden>
+    <div class="nav-dropdown-inner">
+      <a href="/guides/agent-standards/" class="nav-dropdown-link">Agent Experience Standards</a>
+      <a href="/guides/enablement-statements/" class="nav-dropdown-link">AI Enablement Statements</a>
+      <a href="/guides/taxonomy/" class="nav-dropdown-link">Decision-Grade Taxonomy</a>
+      <a href="/guides/practice-standards/" class="nav-dropdown-link">Practice Standards</a>
+      <a href="/guides/commons-license/" class="nav-dropdown-link">Parachute Commons</a>
+    </div>
+  </div>
+
+  <div class="nav-dropdown" id="tools-dropdown" hidden>
+    <div class="nav-dropdown-inner">
+      <a href="/guides/enablement-statements/widget/" class="nav-dropdown-link">Tardigrade</a>
+      <a href="https://occupant.ee/gov" target="_blank" rel="noopener" class="nav-dropdown-link">Gov AI Benchmarks</a>
+    </div>
+  </div>
+
   <div class="mobile-nav" id="mobile-nav" hidden>
     <nav aria-label="Mobile navigation">
       <div class="mobile-nav-section">
@@ -65,97 +83,15 @@
       <p>AI systems shape decisions about benefits, permits, enforcement, and services. State Capacity AI develops the policy, standards, and tools to keep those systems governable.</p>
     </div>
 
-    <div class="landing-section" id="guides-section">
-      <h2>Guides</h2>
-      <div class="search-filter">
-        <label for="guide-search" class="sr-only">Search guides and tools</label>
-        <input type="text" id="guide-search" class="search-input" placeholder="Filter guides and tools..." aria-label="Filter guides and tools">
-      </div>
-      <div class="guide-grid" role="list">
-        <a href="/guides/agent-standards/" class="guide-card" role="listitem" data-tags="agents government standards experience">
-          <div class="guide-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <div class="guide-card-body">
-            <div class="guide-card-title">Agent Experience Standards</div>
-            <p class="guide-card-desc">How AI agents should work in government services.</p>
-          </div>
-          <span class="guide-card-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a href="/guides/enablement-statements/" class="guide-card" role="listitem" data-tags="enablement disclosure transparency statements">
-          <div class="guide-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
-          <div class="guide-card-body">
-            <div class="guide-card-title">AI Enablement Statements</div>
-            <p class="guide-card-desc">Templates for telling people when AI is part of a decision.</p>
-          </div>
-          <span class="guide-card-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a href="/guides/taxonomy/" class="guide-card" role="listitem" data-tags="taxonomy classification authority decision grade">
-          <div class="guide-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-          </div>
-          <div class="guide-card-body">
-            <div class="guide-card-title">Decision-Grade Taxonomy</div>
-            <p class="guide-card-desc">A way to sort AI systems by how much authority they have.</p>
-          </div>
-          <span class="guide-card-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a href="/guides/practice-standards/" class="guide-card" role="listitem" data-tags="practice standards checklists responsible">
-          <div class="guide-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          </div>
-          <div class="guide-card-body">
-            <div class="guide-card-title">Practice Standards</div>
-            <p class="guide-card-desc">Checklists for using AI responsibly.</p>
-          </div>
-          <span class="guide-card-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a href="/guides/commons-license/" class="guide-card" role="listitem" data-tags="commons license protection parachute misuse">
-          <div class="guide-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <div class="guide-card-body">
-            <div class="guide-card-title">Parachute Commons</div>
-            <p class="guide-card-desc">A license that adds protections when your work is at risk of misuse.</p>
-          </div>
-          <span class="guide-card-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-      </div>
-      <p class="search-no-results" id="no-results" hidden>No guides match your search.</p>
-    </div>
-
-    <div class="landing-section" id="tools-section">
-      <h2>Tools</h2>
-      <div class="guide-grid" role="list">
-        <a href="/guides/enablement-statements/widget/" class="guide-card" role="listitem" data-tags="tardigrade widget disclosure tool">
-          <div class="guide-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <div class="guide-card-body">
-            <div class="guide-card-title">Tardigrade</div>
-            <p class="guide-card-desc">Add AI disclosure notices to your website.</p>
-          </div>
-          <span class="guide-card-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-        <a href="https://occupant.ee/gov" target="_blank" rel="noopener" class="guide-card" role="listitem" data-tags="benchmarks pricing procurement gov ai">
-          <div class="guide-card-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
-          <div class="guide-card-body">
-            <div class="guide-card-title">Gov AI Benchmarks</div>
-            <p class="guide-card-desc">Are you overpaying for AI? Pricing benchmarks for procurement. A collaboration with Occupant.</p>
-          </div>
-          <span class="guide-card-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-      </div>
+    <div class="landing-about">
+      <h2>About</h2>
+      <p>State Capacity AI develops standards, frameworks, and tools to help governments deploy AI systems responsibly. We work with agencies, policy makers, and civic technologists to build decision infrastructure that remains governable, accountable, and aligned with public interest.</p>
     </div>
   </main>
 
   <footer class="site-footer">
-    <span>State Capacity AI</span>
-    <a href="/guides/enablement-statements/widget/"><img src="https://img.shields.io/badge/AI_Disclosure-Advisory-brightgreen" alt="AI Disclosure: Advisory"></a>
+    <span>A project of <a href="https://occupant.ee" target="_blank" rel="noopener">Occupant</a></span>
+    <a href="mailto:hello@statecapacity.ai">Contact</a>
   </footer>
 
   <script src="/js/nav.js"></script>
