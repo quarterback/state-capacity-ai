@@ -49,6 +49,50 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Navigation dropdown toggles
+  var dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
+  var allDropdowns = document.querySelectorAll('.nav-dropdown');
+
+  function closeAllDropdowns() {
+    allDropdowns.forEach(function(dropdown) {
+      dropdown.hidden = true;
+    });
+    dropdownToggles.forEach(function(toggle) {
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  dropdownToggles.forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var targetId = this.getAttribute('aria-controls');
+      var targetDropdown = document.getElementById(targetId);
+      var isOpen = this.getAttribute('aria-expanded') === 'true';
+
+      // Close all dropdowns first
+      closeAllDropdowns();
+
+      // If this one wasn't open, open it
+      if (!isOpen && targetDropdown) {
+        targetDropdown.hidden = false;
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', function(e) {
+    var clickedInside = false;
+    allDropdowns.forEach(function(dropdown) {
+      if (dropdown.contains(e.target)) {
+        clickedInside = true;
+      }
+    });
+    if (!clickedInside) {
+      closeAllDropdowns();
+    }
+  });
+
   var themeBtn = document.querySelector('.theme-toggle');
   var html = document.documentElement;
 
