@@ -563,22 +563,6 @@ button:focus-visible {
   color: var(--text-muted);
   line-height: 1.7;
   max-width: 600px;
-  margin-bottom: 1.25rem;
-}
-
-.hero-posture {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.7;
-  max-width: 600px;
-  margin-bottom: 0.5rem;
-}
-
-.hero-thesis {
-  font-size: 0.9rem;
-  color: var(--text);
-  line-height: 1.7;
-  max-width: 600px;
   margin-bottom: 2.5rem;
 }
 
@@ -672,30 +656,13 @@ button:focus-visible {
   margin-bottom: 0.25rem;
 }
 
-.pillar-kicker {
-  color: var(--text) !important;
-  font-weight: 500;
-}
-
-/* Prose block — field work and similar */
-
-.prose-block p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-}
-
-.prose-block .list-label {
-  margin-bottom: 0.25rem;
-  color: var(--text);
-  font-weight: 500;
-}
+/* Prose block */
 
 .prose-block ul {
   font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.65;
-  margin: 0.25rem 0 1rem;
+  margin: 0;
   padding-left: 1.25rem;
 }
 
@@ -703,31 +670,11 @@ button:focus-visible {
   margin-bottom: 0.25rem;
 }
 
-/* Landing closing */
+/* Landing coda */
 
-.landing-closing {
-  padding-top: 2rem;
-  margin-top: 1rem;
+.landing-coda {
+  padding-top: 1.5rem;
   border-top: 1px solid var(--border);
-  margin-bottom: 2rem;
-}
-
-.landing-closing h2 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-top: 0;
-  margin-bottom: 1.25rem;
-  padding-bottom: 0;
-  color: var(--text-muted);
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-}
-
-.landing-closing p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.65;
 }
 
 .coda-link {
