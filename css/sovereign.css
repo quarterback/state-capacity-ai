@@ -1193,10 +1193,23 @@ button:focus-visible {
   padding: 2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-size: 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.02em;
+}
+
+.footer-description {
+  max-width: 540px;
+}
+
+.footer-description p {
+  margin: 0 0 0.4rem 0;
+  line-height: 1.5;
+}
+
+.footer-description p:last-child {
+  margin-bottom: 0;
 }
 
 .site-footer a {
