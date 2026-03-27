@@ -515,7 +515,7 @@ button:focus-visible {
 /* Full-viewport hero */
 
 .landing-hero-full {
-  min-height: calc(100vh - 56px);
+  min-height: auto;
   display: flex;
   align-items: center;
   padding: 6rem 2rem;
@@ -551,6 +551,32 @@ button:focus-visible {
   line-height: 1.75;
   max-width: 580px;
   margin-bottom: 3rem;
+}
+
+.hero-identity {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  max-width: 620px;
+}
+
+.hero-identity p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
+}
+
+.hero-identity p:last-child {
+  margin-bottom: 0;
+}
+
+.hero-identity a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.hero-identity a:hover {
+  text-decoration: underline;
 }
 
 .hero-cta {
@@ -1193,10 +1219,23 @@ button:focus-visible {
   padding: 2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-size: 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.02em;
+}
+
+.footer-description {
+  max-width: 540px;
+}
+
+.footer-description p {
+  margin: 0 0 0.4rem 0;
+  line-height: 1.5;
+}
+
+.footer-description p:last-child {
+  margin-bottom: 0;
 }
 
 .site-footer a {
