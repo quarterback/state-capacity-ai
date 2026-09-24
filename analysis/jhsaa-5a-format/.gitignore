@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+out_rows.json
+out_dualfill.csv
