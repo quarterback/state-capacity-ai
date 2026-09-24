@@ -1,4 +1,4 @@
-# 5A dual-meet format: can the rosters carry a wider card?
+# The 5A petition for 6S/5D
 
 Prepared for the JHSAA competition committee
 Data: Play to Clinch research exports, 2092–2094, boys and girls, all classifications
@@ -9,143 +9,160 @@ Engine constants verified against `quarterback/tennis-team-manager` @ `94997013`
 
 ## 1. Answer
 
-**Yes — to any format on the table, including the association's widest. 5A can field 4S/5D.**
+**Grant it. 6S/5D works, and the roster question is a settings change, not an obstacle.**
 
-The capacity question is settled by a structural fact rather than a judgement call: the
-association enforces a **hard roster floor of 16** (`jhsaa.ROSTER_FLOOR`), and 4S/5D — nine courts,
-the widest card anyone plays — puts **fourteen** on court. Every program in the association,
-in every class, clears the widest format with bodies to spare, by construction.
+The petitioners are right on the substance. 6S/5D is **eleven courts — odd, so it cannot tie** —
+and at **54.5% singles it would be the only singles-majority postseason format in the
+association**. That distinctiveness claim checks out exactly (§3). The engine's arranger is
+already written for any singles width, so this is closer to a membership change than a rebuild
+(§5).
 
-If the committee wants the most expansive format available, **4S/5D is the recommendation**. It is
-fieldable, it is odd-court so it cannot tie, and 7A/8A/9A/Group 1 already run it so nothing has to
-be designed. The only formats worth ruling out are **4S/4D and 3S/5D**, and not on capacity —
-they have even court counts and tie in roughly one dual in eight, which means adopting a tiebreak
-regime alongside the format.
-
----
-
-## 2. Headroom, format by format
-
-Players required is **S + 2D** — verified, not assumed: across all 152,522 varsity dual-sides, one
-player occupies exactly one court. No forfeits, no doubling up anywhere in the archive.
-
-5A, across 445 program-seasons:
-
-| Format | Courts | On court | Min spare | p5 spare | Median spare | % unable to field |
-|---|---|---|---|---|---|---|
-| 3S/2D | 5 | 7 | 9 | 9 | 12 | **0.0%** |
-| 2S/3D | 5 | 8 | 8 | 8 | 11 | **0.0%** |
-| 1S/4D *(current)* | 5 | 9 | 7 | 7 | 10 | **0.0%** |
-| 3S/3D | 6 | 9 | 7 | 7 | 10 | **0.0%** |
-| 3S/4D | 7 | 11 | 5 | 5 | 8 | **0.0%** |
-| 4S/4D | 8 | 12 | 4 | 4 | 7 | **0.0%** |
-| 3S/5D | 8 | 13 | 3 | 3 | 6 | **0.0%** |
-| **4S/5D** | **9** | **14** | **2** | **2** | **5** | **0.0%** |
-
-Not one 5A program-season in three seasons, across both genders, falls short of any candidate
-format. The thinnest 5A program on record carries sixteen and would dress fourteen with two in
-reserve.
-
-**This is not a 5A concession — it is the same floor everyone runs on.** Minimum spare at 4S/5D,
-by class:
-
-| Class | Currently plays | Min spare at 14 | Median spare | % with <4 spare |
-|---|---|---|---|---|
-| **5A** | 1S/4D | **2** | **5** | **33.3%** |
-| 6A | 3S/4D | 2 | 7 | 21.2% |
-| 7A | **4S/5D** | 2 | 7 | 17.3% |
-| 8A | **4S/5D** | 2 | 8 | 11.7% |
-| 9A | **4S/5D** | 2 | 8 | 14.0% |
-| Group 1 | **4S/5D** | 2 | 7 | 19.9% |
-
-Every class already running 4S/5D has exactly the same floor-case as 5A: two spare. 5A is thinner
-in the middle — median five spare against seven or eight, and a third of its programs carry fewer
-than four in reserve against 12–21% elsewhere. That is the real difference, and it is a bench-depth
-difference, not a can-they-field-it difference.
-
-The engine's own design note, on why a wide-format team meeting a narrow-format one plays the
-wider card rather than falling back:
-
-> *every program in this association carries the bench for a nine-court dual … Forcing the dual
-> down to 5S/2D would be defending a roster constraint that does not exist here.*
+The one thing the committee must decide deliberately is the roster setting, because **6S/5D puts
+sixteen on court and the current floor is sixteen**. That is not a coincidence to work around —
+today's floor of 16 *is* 11 varsity + a 5-player JV minimum. The same arithmetic at sixteen
+varsity gives **a floor of 21 and a 5A band of 23–25**. Set those and everything below resolves;
+leave them and the format quietly cannibalises the JV season.
 
 ---
 
-## 3. They have already done it
+## 2. What 6S/5D requires
 
-**Fifty-five distinct 5A programs have played 4S/5D** — 231 dual-sides across the three seasons, in
-showcase pods and tiered showcases against 6A through 9A and Group 1 opposition (the wider card
-wins when formats disagree, so 5A teams drawn against a wide-format opponent simply play nine
-courts).
+Players on court is **S + 2D** — verified, not assumed: across all 152,522 varsity dual-sides, one
+player occupies exactly one court, with no forfeits anywhere in the archive.
 
-**They filled all fourteen slots every time.** Seventy-eight of those sides were played by programs
-carrying seventeen players or fewer, several at exactly the sixteen-player floor. None came up
-short, and none forfeited a court.
+**6 singles + 5 doubles = 11 courts = 16 players on court.**
 
-That is the capacity question answered observationally as well as structurally.
+Against current 5A rosters (445 program-seasons, band 18–20, floor 16):
 
----
+| Spare after dressing 16 | Programs | Share |
+|---|---|---|
+| **0 — entire roster on court** | 89 | **20.0%** |
+| 1 | 59 | 13.3% |
+| 2 | 37 | 8.3% |
+| 3–5 | 126 | 28.3% |
+| 6+ | 134 | 30.1% |
 
-## 4. Which format
+Every 5A program *can* field sixteen — the floor guarantees it. But a fifth of them would dress
+their whole roster, where any injury, illness or ineligibility forfeits a court.
 
-With capacity not binding, the choice comes down to two mechanical properties.
+### The JV knock-on, which is the real mechanism
 
-**Court count parity.** Odd cannot tie; even can. 4S/4D and 3S/5D are both eight courts and tie in
-**10.7–14.6%** and **12.1–15.5%** of duals respectively (measured by re-scoring the 3,658 duals
-that actually contested all nine courts). The association does have machinery for this — Group 2's
-3S/3D road is settled on three concurrent 10-point tiebreakers at S1/D1/D2 — but importing it into
-5A is a bigger rule change than the format itself, landing on about one 5A championship dual in
-eight. **1S/4D (5), 3S/4D (7) and 4S/5D (9) are all odd and cannot tie.**
+JHSAA runs **one roster, one ladder**: the top N dress varsity and everyone below them is JV. A JV
+dual needs five a side. That is why the floor is 16 — it is 11 + 5, sized to guarantee every
+program a JV team.
 
-**Bench exposure.** The engine's injury rate applies per starter per dual (`injuries.BASE_RATE`
-0.025, scaled by durability). Dressing fourteen instead of nine raises exposure by half again, and
-it is the sixteen-player programs — a third of 5A carries fewer than four spare at 4S/5D — that
-would feel it first. This is the one genuine cost of going to the widest card, and it is a real
-one, not a reason to refuse.
+At sixteen varsity, on today's rosters:
 
-| Format | Courts | On court | Ties | Verdict |
-|---|---|---|---|---|
-| 3S/2D | 5 | 7 | no | **Contraction** — fewer on court than today. Doesn't answer the petition. |
-| 2S/3D | 5 | 8 | no | No wider than the status quo, one body smaller. |
-| 1S/4D | 5 | 9 | no | Status quo. |
-| 3S/3D | 6 | 9 | **16–18%** | Even courts, worst tie rate measured. |
-| 3S/4D | 7 | 11 | no | **Safe option** — zero new capacity ask, 6A precedent. |
-| 4S/4D | 8 | 12 | **10.7–14.6%** | Rule out — needs a tiebreak regime. |
-| 3S/5D | 8 | 13 | **12.1–15.5%** | Rule out — same, slightly worse. |
-| **4S/5D** | **9** | **14** | **no** | **Recommended if the committee wants maximum expansion.** |
+| | Kids in a match | Programs with no JV at all |
+|---|---|---|
+| Today (11 varsity) | 8,969 | **0 of 445** |
+| 6S/5D (16 varsity), rosters unchanged | 8,544 | **271 of 445 (61%)** |
 
-**4S/5D** if the intent is to go as wide as the association goes: fieldable by every 5A program,
-odd-court, and already administered by four other groups, so it is a membership change rather than
-a design job.
+On unchanged rosters the petition **reduces** the number of 5A kids playing by 425 (−4.7%), because
+the median program (19) would dress 16 and have three left over — below the five a JV dual needs,
+so those three play nothing. That is the opposite of the petitioners' stated goal, and it is worth
+being explicit that this is a roster-settings artifact, not an argument against the format.
 
-**3S/4D** if the committee wants expansion with literally zero new capacity ask. 5A programs
-already dress eleven for 3S/4D about twenty times a season — 9,071 dual-sides across the window —
-and 6A's format-continuity pilot already runs exactly this shape through its postseason. It is the
-conservative version of the same answer.
+### Set the rosters and it delivers what they asked for
 
-Either way the petition should be granted. The stated objection to it does not survive the data.
+| Setting | Today | For 6S/5D |
+|---|---|---|
+| `ROSTER_FLOOR` | 16 (= 11 varsity + 5 JV) | **21** (= 16 + 5) |
+| 5A band (`ROSTER_SIZE_BAND_BY_CLASS`) | (18, 20) → 7–9 spare | **(23, 25)** → same 7–9 spare |
+
+With those set: JV survives intact, and 6S/5D creates **five more varsity seats per program —
+about 371 per gender-season, ~742 per season across 5A**. That is the "more kids get
+opportunities" case, and it is real, but it comes from the roster raise as much as from the
+format.
 
 ---
 
-## 5. Method and limitations
+## 3. The distinctiveness claim is correct
 
-**Method.** Computed directly from the three exports. Format requirements verified by counting
+Singles share of every postseason format the association currently runs:
+
+| Format | Courts | Singles share | Who plays it |
+|---|---|---|---|
+| 1S/4D | 5 | 20.0% | 2A, 3A, 4A, **5A**, Group 3 |
+| 2S/3D | 5 | 40.0% | 1A |
+| 3S/4D | 7 | 42.9% | 6A |
+| 4S/5D | 9 | 44.4% | 7A, 8A, 9A, Group 1 |
+| 3S/3D | 6 | 50.0% | Group 2 |
+| **6S/5D** | **11** | **54.5%** | **— the petition** |
+
+Nothing in the association is singles-majority in the postseason. Group 2's 3S/3D is exactly even
+at 50%. 5A would be the only class where singles outweigh doubles, and it would do so while
+playing the largest card in the state. The identity argument holds on its own terms.
+
+Court count is odd, so **6S/5D cannot tie** — no tiebreak regime is needed. (This is the reason to
+keep rejecting 4S/4D and 3S/5D, which are even and tie in 10.7–15.5% of duals.)
+
+---
+
+## 4. The one constraint a 5A-only roster raise will not fix
+
+The association's rule when two formats meet is that **the wider card wins** — a program meeting a
+wider-format opponent plays the wider shape rather than falling back. 5A played **631 cross-class
+showcase dual-sides** over the three seasons. Under 6S/5D, every one of those opponents is pulled
+onto a sixteen-player card.
+
+All of them *can* do it — the floor is 16 association-wide, so nobody falls short. But for
+floor-sized programs it means their entire roster:
+
+| Class | Share sitting exactly at the 16 floor |
+|---|---|
+| 1A | **59.8%** |
+| Group 3 | **50.0%** |
+| 2A | 45.7% |
+| 3A | 35.4% |
+| 5A | 20.0% |
+| 9A | 7.3% |
+
+Raising only 5A's band does not touch this. Two clean options: raise `ROSTER_FLOOR` globally (it is
+a single module constant, so this is one edit and it lifts every class), or exempt cross-class
+showcases from the 5A card and play them at the opponent's shape. The first is simpler and matches
+how the bands were raised once before.
+
+---
+
+## 5. Implementation notes
+
+- **The arranger already generalises.** `_arrange_wide` is documented as "`_arrange_state`'s
+  mechanism at ANY singles width" — it pools the top `n_singles + 2` and searches which
+  `n_singles` play singles. 6S/5D pools eight and picks six. No new arrangement logic.
+- **What does need building:** a `DUAL_FORMATS` entry, a flight-weight table (there is a
+  per-shape `FLIGHT_WEIGHTS_4S5D`; 6S/5D needs its own), and the awards/TOSS tables extended to
+  S5/S6. That is a design job, but a much smaller one than the consolidated doubles point the 2079
+  study costed.
+- **5A shares its roster band with 4A** (`"5A": (18, 20), "4A": (18, 20)`). Raising 5A's band
+  requires splitting that entry, or 4A moves with it.
+- **`ROSTER_FLOOR` is a single global constant**, not per class. There is no per-class floor to set
+  today.
+- Roster growth is automatic once the targets move — the builder tops a roster up to the floor from
+  the current freshman class — so this propagates without a migration.
+
+---
+
+## 6. Method and limitations
+
+**Method.** Computed directly from the three exports. Court requirements verified by counting
 distinct players per dual-side rather than assumed. Tie rates come from re-scoring duals that
-actually contested all nine courts, so no outcome is modelled. Engine constants (`ROSTER_FLOOR`,
-`ROSTER_SIZE_BAND_BY_CLASS`, `WIDE_GROUPS`, `LEAGUE_SHAPE_GROUPS`, `DECIDER_FLIGHTS`,
-`injuries.BASE_RATE`) read from the simulator source rather than inferred from data.
+actually contested all nine courts. Engine constants (`ROSTER_FLOOR`, `ROSTER_SIZE_BAND_BY_CLASS`,
+`WIDE_GROUPS`, `_arrange_wide`, `JV_FORMATS`, `injuries.BASE_RATE`) read from the simulator source
+rather than inferred.
 
 **Limitations.**
 
-1. **Roster counts are season rosters, not per-dual availability.** The archive records who played,
-   not who was healthy and held back. The floor-of-16 guarantee is structural and holds regardless;
-   the bench-exposure point in §4 is a directional argument from the engine's injury rate, not a
-   measurement of 5A forfeits (there are none to measure).
-2. **The 231 5A dual-sides at 4S/5D were almost all against larger classes** — only ten were
-   5A-versus-5A. For the capacity finding this does not matter: filling fourteen slots is filling
-   fourteen slots whoever is across the net.
-3. **The 2092 export keys ~1.9% of its `line_players` rows by name rather than id**, collapsing a
-   few distinct players and producing an apparent short count on 46 of 152,522 dual-sides. All are
-   artifacts of that keying, not real shortfalls.
-4. **Rosters reflect current association configuration** applied to archived seasons, per the
-   export's own documentation.
+1. **No 6S/5D dual has ever been played**, in any class, in any archived season. Everything here
+   about 6S/5D is arithmetic on roster sizes and format shape, not observed play. The widest
+   evidence available is 4S/5D, which 55 5A programs have played across 231 dual-sides — filling
+   all fourteen slots every time, including programs at the sixteen-player floor.
+2. **The opportunity figures assume the JV minimum of five a side** (`JV_FORMATS`' smallest entry,
+   1S/2D). Programs sitting just below a JV threshold are counted as fielding no JV at all, which
+   is how the elastic table behaves but makes the cliff look sharper than a coach would experience
+   it in a season with a flexible schedule.
+3. **Roster counts are season rosters, not per-dual availability.** The zero-spare risk in §2 is
+   structural; the archive records no 5A forfeits because no 5A team has been asked to dress
+   sixteen.
+4. **The 2092 export keys ~1.9% of `line_players` rows by name rather than id**, producing an
+   apparent short count on 46 of 152,522 dual-sides. Artifacts of that keying, not real shortfalls.
