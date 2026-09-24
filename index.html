@@ -68,6 +68,14 @@
       letter-spacing: -0.01em;
     }
 
+    h2 span {
+      display: block;
+    }
+
+    h2 span + span {
+      margin-top: 1em;
+    }
+
     .license {
       margin-top: 2.5rem;
       font-size: 1rem;
@@ -88,7 +96,11 @@
 <body>
   <main>
     <h1>State Capacity AI</h1>
-    <h2>As of October 1, 2026, State Capacity AI has been sunset. For over a year, we focused on the use of AI in public services: how people can challenge decisions made by software, and where to draw guardrails between clearing backlogs, improving efficiency, and protecting rights. We look forward to continuing our work in other areas in the future.</h2>
+    <h2>
+      <span>As of October 1, 2026, State Capacity AI has been sunset.</span>
+      <span>For over a year, we focused on the use of AI in public services: how people can challenge decisions made by software, and where to draw guardrails between clearing backlogs, improving efficiency, and protecting rights.</span>
+      <span>We look forward to continuing our work in other areas in the future.</span>
+    </h2>
     <p class="license">The Parachute Commons License remains available on <a href="https://github.com/quarterback/parachute-commons-license">GitHub</a>.</p>
   </main>
 </body>
