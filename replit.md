@@ -23,6 +23,7 @@ A static website for the State Capacity AI project — focused on AI governance,
 - **Theme toggle**: Dark is default. Light mode available via toggle button. Preference stored in localStorage.
 
 ## Recent Changes
+- Site sunset (effective October 1, 2026): `index.html` is now a standalone shutdown notice; every other page and `404.html` redirect to `/`
 - Redesigned entire site with dark-first editorial aesthetic (Forensic Architecture-inspired)
 - Replaced light color scheme with high-contrast dark theme as default
 - Updated typography to Inter sans-serif with bold headings and tight letter-spacing
